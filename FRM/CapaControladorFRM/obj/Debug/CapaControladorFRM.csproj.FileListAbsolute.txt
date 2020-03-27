@@ -1,0 +1,6 @@
+C:\Users\Randy\source\repos\FRM\CapaControladorFRM\bin\Debug\CapaControladorFRM.dll
+C:\Users\Randy\source\repos\FRM\CapaControladorFRM\bin\Debug\CapaControladorFRM.pdb
+C:\Users\Randy\source\repos\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.csprojAssemblyReference.cache
+C:\Users\Randy\source\repos\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.csproj.CoreCompileInputs.cache
+C:\Users\Randy\source\repos\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.dll
+C:\Users\Randy\source\repos\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.pdb

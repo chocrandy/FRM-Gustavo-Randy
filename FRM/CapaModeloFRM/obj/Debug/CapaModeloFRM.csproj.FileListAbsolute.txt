@@ -1,0 +1,9 @@
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\bin\Debug\CapaModeloFRM.dll
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\bin\Debug\CapaModeloFRM.pdb
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\bin\Debug\CapaControladorFRM.dll
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\bin\Debug\CapaControladorFRM.pdb
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\obj\Debug\CapaModeloFRM.csprojAssemblyReference.cache
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\obj\Debug\CapaModeloFRM.csproj.CoreCompileInputs.cache
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\obj\Debug\CapaModeloFRM.csproj.CopyComplete
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\obj\Debug\CapaModeloFRM.dll
+C:\Users\Randy\source\repos\FRM\CapaModeloFRM\obj\Debug\CapaModeloFRM.pdb
