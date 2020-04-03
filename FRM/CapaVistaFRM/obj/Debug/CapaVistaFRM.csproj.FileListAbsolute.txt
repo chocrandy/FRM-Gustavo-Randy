@@ -7,3 +7,29 @@ C:\Users\Randy\source\repos\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csproj.CoreC
 C:\Users\Randy\source\repos\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csproj.CopyComplete
 C:\Users\Randy\source\repos\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.dll
 C:\Users\Randy\source\repos\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.pdb
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaVistaFRM.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaVistaFRM.pdb
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaModeloFRM.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaModeloFRM.pdb
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csprojAssemblyReference.cache
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.actualizacion_de_polizas.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csproj.GenerateResource.cache
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csproj.CoreCompileInputs.cache
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csproj.CopyComplete
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.pdb
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.formato.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.tipo_de_cambio.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.consultar_conciliacion.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.conciliacion_bancaria.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.movimientos_bancarios.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.balance_general.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.Properties.Resources.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaControladorFRM.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaControladorFRM.pdb
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csproj.ResolveComReference.cache
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.MDI_FRM.resources

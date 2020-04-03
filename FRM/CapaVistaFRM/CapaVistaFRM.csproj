@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,13 +43,165 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="consultar_conciliacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultar_conciliacion.Designer.cs">
+      <DependentUpon>consultar_conciliacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conciliacion_bancaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="conciliacion_bancaria.Designer.cs">
+      <DependentUpon>conciliacion_bancaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="balance_general.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="balance_general.Designer.cs">
+      <DependentUpon>balance_general.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDI_FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_FRM.Designer.cs">
+      <DependentUpon>MDI_FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="movimientos_bancarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="movimientos_bancarios.Designer.cs">
+      <DependentUpon>movimientos_bancarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formato.Designer.cs">
+      <DependentUpon>formato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_de_cambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tipo_de_cambio.Designer.cs">
+      <DependentUpon>tipo_de_cambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="actualizacion_de_polizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="actualizacion_de_polizas.Designer.cs">
+      <DependentUpon>actualizacion_de_polizas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaControladorFRM\CapaControladorFRM.csproj">
+      <Project>{f0231c63-aa6a-4a30-b47f-a70a9c1895c3}</Project>
+      <Name>CapaControladorFRM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaModeloFRM\CapaModeloFRM.csproj">
       <Project>{2c769e32-17f3-4943-a5aa-d4aa3e044427}</Project>
       <Name>CapaModeloFRM</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="consultar_conciliacion.resx">
+      <DependentUpon>consultar_conciliacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conciliacion_bancaria.resx">
+      <DependentUpon>conciliacion_bancaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="balance_general.resx">
+      <DependentUpon>balance_general.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_FRM.resx">
+      <DependentUpon>MDI_FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="movimientos_bancarios.resx">
+      <DependentUpon>movimientos_bancarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formato.resx">
+      <DependentUpon>formato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tipo_de_cambio.resx">
+      <DependentUpon>tipo_de_cambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="actualizacion_de_polizas.resx">
+      <DependentUpon>actualizacion_de_polizas.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-hacia-abajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-hacia-arriba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mantenimientos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conta.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\budget.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\pdf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
