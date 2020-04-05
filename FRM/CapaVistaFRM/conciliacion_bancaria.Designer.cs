@@ -46,7 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
+            this.pdfEstadoCuenta = new AxAcroPDFLib.AxAcroPDF();
             this.Btn_finalizarConciliacion = new System.Windows.Forms.Button();
             this.Btn_abrirEstadoDeCuenta = new System.Windows.Forms.Button();
             this.Btn_abajo = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_libroBancos)).BeginInit();
             this.Gpb_movValidados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_validados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfEstadoCuenta)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,16 +72,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 72);
+            this.label2.Location = new System.Drawing.Point(34, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 19);
+            this.label2.Size = new System.Drawing.Size(67, 19);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Bancos: ";
+            this.label2.Text = "Banco: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(310, 72);
+            this.label3.Location = new System.Drawing.Point(325, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 19);
             this.label3.TabIndex = 3;
@@ -90,7 +90,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(588, 72);
+            this.label4.Location = new System.Drawing.Point(631, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 19);
             this.label4.TabIndex = 4;
@@ -146,7 +146,7 @@
             // 
             this.Cbo_moneda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_moneda.FormattingEnabled = true;
-            this.Cbo_moneda.Location = new System.Drawing.Point(395, 68);
+            this.Cbo_moneda.Location = new System.Drawing.Point(410, 68);
             this.Cbo_moneda.Name = "Cbo_moneda";
             this.Cbo_moneda.Size = new System.Drawing.Size(159, 29);
             this.Cbo_moneda.TabIndex = 8;
@@ -155,11 +155,12 @@
             // Dtp_mes
             // 
             this.Dtp_mes.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_mes.CustomFormat = "MM/yyyy";
             this.Dtp_mes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_mes.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_mes.Location = new System.Drawing.Point(641, 68);
+            this.Dtp_mes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_mes.Location = new System.Drawing.Point(684, 68);
             this.Dtp_mes.Name = "Dtp_mes";
-            this.Dtp_mes.Size = new System.Drawing.Size(141, 27);
+            this.Dtp_mes.Size = new System.Drawing.Size(104, 27);
             this.Dtp_mes.TabIndex = 9;
             this.Dtp_mes.Value = new System.DateTime(2020, 4, 1, 0, 0, 0, 0);
             // 
@@ -217,14 +218,14 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "0.000";
             // 
-            // axAcroPDF1
+            // pdfEstadoCuenta
             // 
-            this.axAcroPDF1.Enabled = true;
-            this.axAcroPDF1.Location = new System.Drawing.Point(836, 140);
-            this.axAcroPDF1.Name = "axAcroPDF1";
-            this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
-            this.axAcroPDF1.Size = new System.Drawing.Size(392, 457);
-            this.axAcroPDF1.TabIndex = 22;
+            this.pdfEstadoCuenta.Enabled = true;
+            this.pdfEstadoCuenta.Location = new System.Drawing.Point(836, 140);
+            this.pdfEstadoCuenta.Name = "pdfEstadoCuenta";
+            this.pdfEstadoCuenta.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstadoCuenta.OcxState")));
+            this.pdfEstadoCuenta.Size = new System.Drawing.Size(392, 457);
+            this.pdfEstadoCuenta.TabIndex = 22;
             // 
             // Btn_finalizarConciliacion
             // 
@@ -299,7 +300,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1254, 643);
             this.Controls.Add(this.Btn_finalizarConciliacion);
-            this.Controls.Add(this.axAcroPDF1);
+            this.Controls.Add(this.pdfEstadoCuenta);
             this.Controls.Add(this.Btn_abrirEstadoDeCuenta);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -328,7 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_libroBancos)).EndInit();
             this.Gpb_movValidados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_validados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfEstadoCuenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +357,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Btn_abrirEstadoDeCuenta;
-        private AxAcroPDFLib.AxAcroPDF axAcroPDF1;
+        private AxAcroPDFLib.AxAcroPDF pdfEstadoCuenta;
         private System.Windows.Forms.Button Btn_finalizarConciliacion;
     }
 }

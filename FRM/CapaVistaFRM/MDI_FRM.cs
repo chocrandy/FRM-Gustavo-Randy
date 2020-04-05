@@ -17,6 +17,7 @@ namespace CapaVistaFRM
         private conciliacion_bancaria frm_conciliacion_bancaria;
         private consultar_conciliacion frm_consultar_conciliacion;
         private movimientos_bancarios frm_movimientos_bancarios;
+        private revision_presupuestaria frm_revision_presupuestaria;        
         private tipo_de_cambio frm_tipo_de_cambio;
         public MDI_FRM()
         {
@@ -35,6 +36,8 @@ namespace CapaVistaFRM
         { frm_consultar_conciliacion = null; }
         private void frm_movimientos_bancarios_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_movimientos_bancarios = null; }
+        private void frm_revision_presupuestaria_FormClosed(Object sender, FormClosedEventArgs e)
+        { frm_revision_presupuestaria = null; }        
         private void frm_tipo_de_cambio_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_tipo_de_cambio = null; }
         //====================Funciones de declaración de Eventos====================
@@ -126,6 +129,21 @@ namespace CapaVistaFRM
             else
             {
                 frm_movimientos_bancarios.Activate();
+            }
+        }
+
+        private void RevisiónDePresupuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            if (frm_revision_presupuestaria == null)
+            {
+                frm_revision_presupuestaria = new revision_presupuestaria();
+                frm_revision_presupuestaria.MdiParent = this;
+                frm_revision_presupuestaria.FormClosed += new FormClosedEventHandler(frm_revision_presupuestaria_FormClosed);
+                frm_revision_presupuestaria.Show();
+            }
+            else
+            {
+                frm_revision_presupuestaria.Activate();
             }
         }
     }

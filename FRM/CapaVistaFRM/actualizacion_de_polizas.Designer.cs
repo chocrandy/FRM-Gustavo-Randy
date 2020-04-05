@@ -39,6 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Dgv_polizas = new System.Windows.Forms.DataGridView();
             this.Btn_actualizarPolizas = new System.Windows.Forms.Button();
+            this.noPoliza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoPoliza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaContable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gpb_consulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_polizas)).BeginInit();
             this.SuspendLayout();
@@ -148,11 +154,20 @@
             // 
             // Dgv_polizas
             // 
+            this.Dgv_polizas.AllowUserToAddRows = false;
+            this.Dgv_polizas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv_polizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_polizas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.noPoliza,
+            this.tipoPoliza,
+            this.codigoCuenta,
+            this.cuentaContable,
+            this.debe,
+            this.haber});
             this.Dgv_polizas.Location = new System.Drawing.Point(18, 193);
             this.Dgv_polizas.Name = "Dgv_polizas";
             this.Dgv_polizas.Size = new System.Drawing.Size(918, 241);
-            this.Dgv_polizas.TabIndex = 2;
+            this.Dgv_polizas.TabIndex = 0;
             // 
             // Btn_actualizarPolizas
             // 
@@ -171,6 +186,36 @@
             this.Btn_actualizarPolizas.Text = "Actualizar Pólizas";
             this.Btn_actualizarPolizas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_actualizarPolizas.UseVisualStyleBackColor = false;
+            // 
+            // noPoliza
+            // 
+            this.noPoliza.HeaderText = "No. Póliza";
+            this.noPoliza.Name = "noPoliza";
+            // 
+            // tipoPoliza
+            // 
+            this.tipoPoliza.HeaderText = "Tipo Póliza";
+            this.tipoPoliza.Name = "tipoPoliza";
+            // 
+            // codigoCuenta
+            // 
+            this.codigoCuenta.HeaderText = "Código Cuenta";
+            this.codigoCuenta.Name = "codigoCuenta";
+            // 
+            // cuentaContable
+            // 
+            this.cuentaContable.HeaderText = "Cuenta Contable";
+            this.cuentaContable.Name = "cuentaContable";
+            // 
+            // debe
+            // 
+            this.debe.HeaderText = "Debe";
+            this.debe.Name = "debe";
+            // 
+            // haber
+            // 
+            this.haber.HeaderText = "Haber";
+            this.haber.Name = "haber";
             // 
             // actualizacion_de_polizas
             // 
@@ -209,5 +254,11 @@
         private System.Windows.Forms.ComboBox Cbo_seleccione;
         private System.Windows.Forms.Button Btn_consultar;
         private System.Windows.Forms.Button Btn_actualizarPolizas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noPoliza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoPoliza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuentaContable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn debe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn haber;
     }
 }

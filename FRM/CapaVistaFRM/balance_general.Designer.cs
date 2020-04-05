@@ -36,6 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gpb_periodoContable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -123,11 +127,37 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoCuenta,
+            this.cuenta,
+            this.columna1,
+            this.columna2});
             this.dataGridView1.Location = new System.Drawing.Point(12, 165);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(805, 332);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // codigoCuenta
+            // 
+            this.codigoCuenta.HeaderText = "Código Cuenta";
+            this.codigoCuenta.Name = "codigoCuenta";
+            // 
+            // cuenta
+            // 
+            this.cuenta.HeaderText = "Cuenta";
+            this.cuenta.Name = "cuenta";
+            // 
+            // columna1
+            // 
+            this.columna1.HeaderText = "";
+            this.columna1.Name = "columna1";
+            // 
+            // columna2
+            // 
+            this.columna2.HeaderText = "";
+            this.columna2.Name = "columna2";
             // 
             // balance_general
             // 
@@ -161,5 +191,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Btn_consultar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columna1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columna2;
     }
 }

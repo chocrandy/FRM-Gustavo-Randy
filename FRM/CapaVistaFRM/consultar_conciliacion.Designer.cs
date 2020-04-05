@@ -73,18 +73,19 @@
             // Dtp_mes
             // 
             this.Dtp_mes.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_mes.CustomFormat = "MM/yyyy";
             this.Dtp_mes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_mes.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_mes.Location = new System.Drawing.Point(499, 61);
+            this.Dtp_mes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_mes.Location = new System.Drawing.Point(512, 61);
             this.Dtp_mes.Name = "Dtp_mes";
-            this.Dtp_mes.Size = new System.Drawing.Size(138, 27);
+            this.Dtp_mes.Size = new System.Drawing.Size(107, 27);
             this.Dtp_mes.TabIndex = 9;
             // 
             // Cbo_moneda
             // 
             this.Cbo_moneda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_moneda.FormattingEnabled = true;
-            this.Cbo_moneda.Location = new System.Drawing.Point(266, 61);
+            this.Cbo_moneda.Location = new System.Drawing.Point(273, 61);
             this.Cbo_moneda.Name = "Cbo_moneda";
             this.Cbo_moneda.Size = new System.Drawing.Size(207, 29);
             this.Cbo_moneda.TabIndex = 8;
@@ -108,7 +109,7 @@
             this.Btn_consultar.ForeColor = System.Drawing.Color.Black;
             this.Btn_consultar.Image = global::CapaVistaFRM.Properties.Resources.search;
             this.Btn_consultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_consultar.Location = new System.Drawing.Point(673, 37);
+            this.Btn_consultar.Location = new System.Drawing.Point(667, 37);
             this.Btn_consultar.Name = "Btn_consultar";
             this.Btn_consultar.Size = new System.Drawing.Size(130, 57);
             this.Btn_consultar.TabIndex = 3;
@@ -121,7 +122,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(495, 37);
+            this.label4.Location = new System.Drawing.Point(508, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 19);
             this.label4.TabIndex = 2;
@@ -131,7 +132,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(262, 36);
+            this.label3.Location = new System.Drawing.Point(269, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 19);
             this.label3.TabIndex = 1;
