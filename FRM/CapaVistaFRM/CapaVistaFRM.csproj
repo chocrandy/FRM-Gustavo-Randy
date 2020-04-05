@@ -31,6 +31,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapaDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLLS\Seguridad\CapaDatos\bin\Debug\CapaDatos.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLLS\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaDiseno">
+      <HintPath>..\..\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -61,6 +74,12 @@
     <Compile Include="balance_general.Designer.cs">
       <DependentUpon>balance_general.cs</DependentUpon>
     </Compile>
+    <Compile Include="formato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formato.Designer.cs">
+      <DependentUpon>formato.cs</DependentUpon>
+    </Compile>
     <Compile Include="revision_presupuestaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +98,11 @@
     <Compile Include="movimientos_bancarios.Designer.cs">
       <DependentUpon>movimientos_bancarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="formato.cs">
+    <Compile Include="mantenimiento_modulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formato.Designer.cs">
-      <DependentUpon>formato.cs</DependentUpon>
+    <Compile Include="mantenimiento_modulos.Designer.cs">
+      <DependentUpon>mantenimiento_modulos.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,6 +143,9 @@
     <EmbeddedResource Include="balance_general.resx">
       <DependentUpon>balance_general.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formato.resx">
+      <DependentUpon>formato.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="revision_presupuestaria.resx">
       <DependentUpon>revision_presupuestaria.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,8 +155,8 @@
     <EmbeddedResource Include="movimientos_bancarios.resx">
       <DependentUpon>movimientos_bancarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formato.resx">
-      <DependentUpon>formato.cs</DependentUpon>
+    <EmbeddedResource Include="mantenimiento_modulos.resx">
+      <DependentUpon>mantenimiento_modulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

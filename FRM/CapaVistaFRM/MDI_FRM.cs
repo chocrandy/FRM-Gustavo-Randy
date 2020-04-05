@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDiseno;
+using CapaDatos;
 
 namespace CapaVistaFRM
 {
@@ -16,9 +18,13 @@ namespace CapaVistaFRM
         private balance_general frm_balance_General;
         private conciliacion_bancaria frm_conciliacion_bancaria;
         private consultar_conciliacion frm_consultar_conciliacion;
+        private mantenimiento_modulos frm_mantenimiento_modulos;
         private movimientos_bancarios frm_movimientos_bancarios;
         private revision_presupuestaria frm_revision_presupuestaria;        
         private tipo_de_cambio frm_tipo_de_cambio;
+
+        sentencia sn = new sentencia();                
+
         public MDI_FRM()
         {
             InitializeComponent();
@@ -34,6 +40,8 @@ namespace CapaVistaFRM
         { frm_conciliacion_bancaria = null; }
         private void frm_consultar_conciliacion_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_consultar_conciliacion = null; }
+        private void frm_mantenimiento_modulos_FormClosed(Object sender, FormClosedEventArgs e)
+        { frm_mantenimiento_modulos = null; }        
         private void frm_movimientos_bancarios_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_movimientos_bancarios = null; }
         private void frm_revision_presupuestaria_FormClosed(Object sender, FormClosedEventArgs e)
@@ -43,7 +51,7 @@ namespace CapaVistaFRM
         //====================Funciones de declaración de Eventos====================
 
         private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {            
             if (frm_conciliacion_bancaria == null)
             {
                 frm_conciliacion_bancaria = new conciliacion_bancaria();
@@ -145,6 +153,42 @@ namespace CapaVistaFRM
             {
                 frm_revision_presupuestaria.Activate();
             }
+        }
+
+        private void MDI_FRM_Load(object sender, EventArgs e)
+        {
+            frm_login login = new frm_login();
+            login.ShowDialog();
+            Lbl_usuario.Text = login.obtenerNombreUsuario();
+        }
+
+        private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MDI_Seguridad seguridad = new MDI_Seguridad(Lbl_usuario.Text);
+            seguridad.lbl_nombreUsuario.Text = Lbl_usuario.Text;
+            seguridad.ShowDialog();
+        }
+
+        private void Btn_prueba_Click(object sender, EventArgs e)
+        {
+            //                      Usuario        Mensaje a guardar     Tabla
+            sn.insertarBitacora(Lbl_usuario.Text, "Probó la Bitacora", "General");
+        }
+
+        private void MódulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {                        
+            if (frm_mantenimiento_modulos == null)
+            {
+                frm_mantenimiento_modulos = new mantenimiento_modulos();
+                frm_mantenimiento_modulos.MdiParent = this;
+                frm_mantenimiento_modulos.FormClosed += new FormClosedEventHandler(frm_mantenimiento_modulos_FormClosed);
+                frm_mantenimiento_modulos.Show();
+            }
+            else
+            {
+                frm_mantenimiento_modulos.Activate();
+            }
+
         }
     }
 }

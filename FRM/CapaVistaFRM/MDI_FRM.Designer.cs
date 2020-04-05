@@ -31,6 +31,17 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bancosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chequeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bancosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clasificadorDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contabilidadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposDeCuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposDePólizaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaciónDePresupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.módulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizaciónDePólizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,16 +54,8 @@
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revisiónDePresupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónPresupuestariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bancosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contabilidadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuentasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chequeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bancosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clasificadorDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiposDeCuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiposDePólizaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creaciónDePresupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Lbl_usuario = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +67,8 @@
             this.mantenimientosToolStripMenuItem,
             this.contabilidadToolStripMenuItem,
             this.bancosToolStripMenuItem,
-            this.presupuestosToolStripMenuItem});
+            this.presupuestosToolStripMenuItem,
+            this.seguridadToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -81,10 +85,88 @@
             // 
             this.mantenimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bancosToolStripMenuItem1,
-            this.contabilidadToolStripMenuItem1});
+            this.contabilidadToolStripMenuItem1,
+            this.módulosToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
+            // 
+            // bancosToolStripMenuItem1
+            // 
+            this.bancosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cuentasBancariasToolStripMenuItem,
+            this.chequeraToolStripMenuItem,
+            this.bancosToolStripMenuItem2,
+            this.clasificadorDeMovimientosToolStripMenuItem});
+            this.bancosToolStripMenuItem1.Name = "bancosToolStripMenuItem1";
+            this.bancosToolStripMenuItem1.Size = new System.Drawing.Size(173, 24);
+            this.bancosToolStripMenuItem1.Text = "Bancos";
+            // 
+            // cuentasBancariasToolStripMenuItem
+            // 
+            this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
+            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
+            this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
+            // 
+            // chequeraToolStripMenuItem
+            // 
+            this.chequeraToolStripMenuItem.Name = "chequeraToolStripMenuItem";
+            this.chequeraToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
+            this.chequeraToolStripMenuItem.Text = "Chequera";
+            // 
+            // bancosToolStripMenuItem2
+            // 
+            this.bancosToolStripMenuItem2.Name = "bancosToolStripMenuItem2";
+            this.bancosToolStripMenuItem2.Size = new System.Drawing.Size(285, 24);
+            this.bancosToolStripMenuItem2.Text = "Bancos";
+            // 
+            // clasificadorDeMovimientosToolStripMenuItem
+            // 
+            this.clasificadorDeMovimientosToolStripMenuItem.Name = "clasificadorDeMovimientosToolStripMenuItem";
+            this.clasificadorDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
+            this.clasificadorDeMovimientosToolStripMenuItem.Text = "Clasificador de movimientos";
+            // 
+            // contabilidadToolStripMenuItem1
+            // 
+            this.contabilidadToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cuentasContablesToolStripMenuItem,
+            this.tiposDeCuentasContablesToolStripMenuItem,
+            this.tiposDePólizaToolStripMenuItem,
+            this.creaciónDePresupuestosToolStripMenuItem});
+            this.contabilidadToolStripMenuItem1.Name = "contabilidadToolStripMenuItem1";
+            this.contabilidadToolStripMenuItem1.Size = new System.Drawing.Size(173, 24);
+            this.contabilidadToolStripMenuItem1.Text = "Contabilidad";
+            // 
+            // cuentasContablesToolStripMenuItem
+            // 
+            this.cuentasContablesToolStripMenuItem.Name = "cuentasContablesToolStripMenuItem";
+            this.cuentasContablesToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
+            this.cuentasContablesToolStripMenuItem.Text = "Cuentas contables";
+            // 
+            // tiposDeCuentasContablesToolStripMenuItem
+            // 
+            this.tiposDeCuentasContablesToolStripMenuItem.Name = "tiposDeCuentasContablesToolStripMenuItem";
+            this.tiposDeCuentasContablesToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
+            this.tiposDeCuentasContablesToolStripMenuItem.Text = "Tipos de cuentas contables";
+            // 
+            // tiposDePólizaToolStripMenuItem
+            // 
+            this.tiposDePólizaToolStripMenuItem.Name = "tiposDePólizaToolStripMenuItem";
+            this.tiposDePólizaToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
+            this.tiposDePólizaToolStripMenuItem.Text = "Tipos de póliza";
+            // 
+            // creaciónDePresupuestosToolStripMenuItem
+            // 
+            this.creaciónDePresupuestosToolStripMenuItem.Name = "creaciónDePresupuestosToolStripMenuItem";
+            this.creaciónDePresupuestosToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
+            this.creaciónDePresupuestosToolStripMenuItem.Text = "Creación de presupuestos";
+            // 
+            // módulosToolStripMenuItem
+            // 
+            this.módulosToolStripMenuItem.Name = "módulosToolStripMenuItem";
+            this.módulosToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.módulosToolStripMenuItem.Text = "Módulos";
+            this.módulosToolStripMenuItem.Click += new System.EventHandler(this.MódulosToolStripMenuItem_Click);
             // 
             // contabilidadToolStripMenuItem
             // 
@@ -177,80 +259,30 @@
             this.gestiónPresupuestariaToolStripMenuItem.Size = new System.Drawing.Size(261, 24);
             this.gestiónPresupuestariaToolStripMenuItem.Text = "Gestión Presupuestaria";
             // 
-            // bancosToolStripMenuItem1
+            // seguridadToolStripMenuItem
             // 
-            this.bancosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cuentasBancariasToolStripMenuItem,
-            this.chequeraToolStripMenuItem,
-            this.bancosToolStripMenuItem2,
-            this.clasificadorDeMovimientosToolStripMenuItem});
-            this.bancosToolStripMenuItem1.Name = "bancosToolStripMenuItem1";
-            this.bancosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.bancosToolStripMenuItem1.Text = "Bancos";
+            this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.seguridadToolStripMenuItem.Text = "Seguridad";
+            this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.SeguridadToolStripMenuItem_Click);
             // 
-            // contabilidadToolStripMenuItem1
+            // Lbl_usuario
             // 
-            this.contabilidadToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cuentasContablesToolStripMenuItem,
-            this.tiposDeCuentasContablesToolStripMenuItem,
-            this.tiposDePólizaToolStripMenuItem,
-            this.creaciónDePresupuestosToolStripMenuItem});
-            this.contabilidadToolStripMenuItem1.Name = "contabilidadToolStripMenuItem1";
-            this.contabilidadToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.contabilidadToolStripMenuItem1.Text = "Contabilidad";
-            // 
-            // cuentasBancariasToolStripMenuItem
-            // 
-            this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
-            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
-            this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
-            // 
-            // chequeraToolStripMenuItem
-            // 
-            this.chequeraToolStripMenuItem.Name = "chequeraToolStripMenuItem";
-            this.chequeraToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
-            this.chequeraToolStripMenuItem.Text = "Chequera";
-            // 
-            // bancosToolStripMenuItem2
-            // 
-            this.bancosToolStripMenuItem2.Name = "bancosToolStripMenuItem2";
-            this.bancosToolStripMenuItem2.Size = new System.Drawing.Size(285, 24);
-            this.bancosToolStripMenuItem2.Text = "Bancos";
-            // 
-            // clasificadorDeMovimientosToolStripMenuItem
-            // 
-            this.clasificadorDeMovimientosToolStripMenuItem.Name = "clasificadorDeMovimientosToolStripMenuItem";
-            this.clasificadorDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
-            this.clasificadorDeMovimientosToolStripMenuItem.Text = "Clasificador de movimientos";
-            // 
-            // cuentasContablesToolStripMenuItem
-            // 
-            this.cuentasContablesToolStripMenuItem.Name = "cuentasContablesToolStripMenuItem";
-            this.cuentasContablesToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
-            this.cuentasContablesToolStripMenuItem.Text = "Cuentas contables";
-            // 
-            // tiposDeCuentasContablesToolStripMenuItem
-            // 
-            this.tiposDeCuentasContablesToolStripMenuItem.Name = "tiposDeCuentasContablesToolStripMenuItem";
-            this.tiposDeCuentasContablesToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
-            this.tiposDeCuentasContablesToolStripMenuItem.Text = "Tipos de cuentas contables";
-            // 
-            // tiposDePólizaToolStripMenuItem
-            // 
-            this.tiposDePólizaToolStripMenuItem.Name = "tiposDePólizaToolStripMenuItem";
-            this.tiposDePólizaToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
-            this.tiposDePólizaToolStripMenuItem.Text = "Tipos de póliza";
-            // 
-            // creaciónDePresupuestosToolStripMenuItem
-            // 
-            this.creaciónDePresupuestosToolStripMenuItem.Name = "creaciónDePresupuestosToolStripMenuItem";
-            this.creaciónDePresupuestosToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
-            this.creaciónDePresupuestosToolStripMenuItem.Text = "Creación de presupuestos";
+            this.Lbl_usuario.AutoSize = true;
+            this.Lbl_usuario.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Lbl_usuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_usuario.Location = new System.Drawing.Point(0, 429);
+            this.Lbl_usuario.Name = "Lbl_usuario";
+            this.Lbl_usuario.Size = new System.Drawing.Size(66, 21);
+            this.Lbl_usuario.TabIndex = 2;
+            this.Lbl_usuario.Text = "Usuario";
+            this.Lbl_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MDI_FRM
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Lbl_usuario);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
@@ -259,6 +291,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MDI_FRM";
+            this.Load += new System.EventHandler(this.MDI_FRM_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -293,5 +326,8 @@
         private System.Windows.Forms.ToolStripMenuItem tiposDeCuentasContablesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposDePólizaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creaciónDePresupuestosToolStripMenuItem;
+        private System.Windows.Forms.Label Lbl_usuario;
+        private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem módulosToolStripMenuItem;
     }
 }
