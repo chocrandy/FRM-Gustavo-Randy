@@ -190,5 +190,12 @@ namespace CapaVistaFRM
             }
 
         }
-    }
+
+		private void LibroDiarioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			CapaVistaFRM.Conta.libro_Diario nuevo = new CapaVistaFRM.Conta.libro_Diario();
+			nuevo.MdiParent = this;
+			nuevo.Show();
+		}
+	}
 }

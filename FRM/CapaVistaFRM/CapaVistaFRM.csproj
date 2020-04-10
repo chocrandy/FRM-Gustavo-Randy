@@ -74,6 +74,18 @@
     <Compile Include="balance_general.Designer.cs">
       <DependentUpon>balance_general.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contabilidad\formato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\formato.Designer.cs">
+      <DependentUpon>formato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\libro_Diario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\libro_Diario.Designer.cs">
+      <DependentUpon>libro_Diario.cs</DependentUpon>
+    </Compile>
     <Compile Include="formato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="balance_general.resx">
       <DependentUpon>balance_general.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contabilidad\formato.resx">
+      <DependentUpon>formato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contabilidad\libro_Diario.resx">
+      <DependentUpon>libro_Diario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formato.resx">
       <DependentUpon>formato.cs</DependentUpon>
