@@ -17,7 +17,7 @@ namespace CapaVistaFRM.Conta
 		public formato()
 		{
 			InitializeComponent();
-			Libro.crearLibroDiario("","");
+			Libro.crearLibroDiario("","","");
 		}
 
 		private void Libro_Diario_Load(object sender, EventArgs e)

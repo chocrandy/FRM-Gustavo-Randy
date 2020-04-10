@@ -18,15 +18,27 @@ namespace CapaVistaFRM.Conta
 		public libro_Diario()
 		{
 			InitializeComponent();
+			Dtg_Fecha_Crear.Format = DateTimePickerFormat.Custom;
+			Dtg_Fecha_Crear.CustomFormat = "yyyy-MM-dd";
+			Dtg_Fecha_Modificar.Format = DateTimePickerFormat.Custom;
+			Dtg_Fecha_Modificar.CustomFormat = "yyyy-MM-dd";
+			Dtp_Fecha_Movimiento.Format = DateTimePickerFormat.Custom;
+			Dtp_Fecha_Movimiento.CustomFormat = "yyyy-MM-dd";
+			Txt_Libro.Text = Libro.IdLibro();
 			llenarLibros();
 		}
 
 		void llenarLibros() {
+			// 
+			
+			//// LLENAR TABLA DE LIBROS EN INGRESO
 			OdbcDataAdapter dt = Libro.llenarLibroDiario();
 			DataTable table = new DataTable();
 			dt.Fill(table);
 			Dtg_LibroDiario.DataSource = table;
 		}
+		
+		
 		private void Libro_Diario_Load(object sender, EventArgs e)
 		{
 
@@ -50,6 +62,59 @@ namespace CapaVistaFRM.Conta
 		private void Label10_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void Cmb_Empresa_Crear_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Btn_Guardar_Click(object sender, EventArgs e)
+		{
+			
+			Libro.crearLibroDiario(Txt_Libro.Text.ToString(), Cmb_Empresa_Crear.Text.ToString(),Dtg_Fecha_Crear.Text.ToString());
+			llenarLibros();
+			Txt_Libro.Text = Libro.IdLibro();
+		}
+
+		private void Dtg_LibroDiario_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			Gpb_Crear.Enabled = false;
+			Btn_Partidas.Enabled = false;
+			Cmb_Empresa_Modificar.Text =	Dtg_LibroDiario.CurrentRow.Cells[1].Value.ToString();
+			Dtg_Fecha_Modificar.Text = Dtg_LibroDiario.CurrentRow.Cells[2].Value.ToString();
+			if (Dtg_LibroDiario.CurrentRow.Cells[3].Value.ToString() == "0")
+			{
+				Chk_Estado.Checked = false;
+			}
+			else {
+				Chk_Estado.Checked = true;
+			}
+			Gpb_Modificar.Enabled = true;
+		}
+
+		private void Btn_actualizar_Click(object sender, EventArgs e)
+		{
+			string estado = "0";
+			if (Chk_Estado.Checked)
+			{
+				estado = "1";
+			}
+			Libro.ModificarLibroDiario(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString(),Cmb_Empresa_Modificar.Text.ToString(),Dtg_Fecha_Modificar.Text.ToString(),estado);
+			Gpb_Modificar.Enabled = false;
+			llenarLibros();
+			Gpb_Crear.Enabled = true;
+			Btn_Partidas.Enabled = true;
+		}
+
+		private void Btn_Partidas_Click(object sender, EventArgs e)
+		{
+			Tbc_LibroDiario.SelectedIndex = 1;
+			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+			DataTable table = new DataTable();
+			dt.Fill(table);
+			 Dtg_Partidas.DataSource = table;
+			
 		}
 	}
 }
