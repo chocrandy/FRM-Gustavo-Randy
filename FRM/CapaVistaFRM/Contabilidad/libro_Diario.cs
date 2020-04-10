@@ -22,20 +22,37 @@ namespace CapaVistaFRM.Conta
 			Dtg_Fecha_Crear.CustomFormat = "yyyy-MM-dd";
 			Dtg_Fecha_Modificar.Format = DateTimePickerFormat.Custom;
 			Dtg_Fecha_Modificar.CustomFormat = "yyyy-MM-dd";
-			Dtp_Fecha_Movimiento.Format = DateTimePickerFormat.Custom;
-			Dtp_Fecha_Movimiento.CustomFormat = "yyyy-MM-dd";
 			Txt_Libro.Text = Libro.IdLibro();
 			llenarLibros();
+			
 		}
 
 		void llenarLibros() {
 			// 
-			
 			//// LLENAR TABLA DE LIBROS EN INGRESO
 			OdbcDataAdapter dt = Libro.llenarLibroDiario();
 			DataTable table = new DataTable();
 			dt.Fill(table);
 			Dtg_LibroDiario.DataSource = table;
+		}
+
+		void tablaMovimientos() {
+
+			DataGridViewComboBoxColumn cuenta = new DataGridViewComboBoxColumn();
+			cuenta.Items.AddRange(Libro.comboTabla());
+			
+
+			DataGridViewTextBoxColumn fecha = new DataGridViewTextBoxColumn();
+			fecha.HeaderText = "Fecha";
+			DataGridViewTextBoxColumn debe = new DataGridViewTextBoxColumn();
+			debe.HeaderText = "Debe";
+			DataGridViewTextBoxColumn haber = new DataGridViewTextBoxColumn();
+			haber.HeaderText = "Haber";
+
+			Dtg_Movimientos.Columns.Add(fecha);
+			Dtg_Movimientos.Columns.Add(cuenta);
+			Dtg_Movimientos.Columns.Add(debe);
+			Dtg_Movimientos.Columns.Add(haber);
 		}
 		
 		
@@ -109,12 +126,27 @@ namespace CapaVistaFRM.Conta
 
 		private void Btn_Partidas_Click(object sender, EventArgs e)
 		{
+			tablaMovimientos();
 			Tbc_LibroDiario.SelectedIndex = 1;
 			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
 			DataTable table = new DataTable();
 			dt.Fill(table);
 			 Dtg_Partidas.DataSource = table;
 			
+		}
+
+		private void Btn_Guardar_partia_Click(object sender, EventArgs e)
+		{
+			int filas2 = Dtg_Movimientos.Rows.Count - 1;
+			for (int i = 0; i < filas2; i++)
+			{
+
+			}
+		}
+
+		private void Btn_quiat_Click(object sender, EventArgs e)
+		{
+			Dtg_Partidas.Rows.RemoveAt(Dtg_Partidas.CurrentRow.Index);
 		}
 	}
 }

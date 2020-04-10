@@ -66,14 +66,6 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.Dtg_Partidas = new System.Windows.Forms.DataGridView();
-			this.Gpb_Movimeintos = new System.Windows.Forms.GroupBox();
-			this.Cmb_Cuenta = new System.Windows.Forms.ComboBox();
-			this.Txt_monto = new System.Windows.Forms.TextBox();
-			this.Dtp_Fecha_Movimiento = new System.Windows.Forms.DateTimePicker();
-			this.Btn_agregar_movimiento = new System.Windows.Forms.Button();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.Gpb_Resumen = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -101,7 +93,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Movimientos)).BeginInit();
 			this.Gpb_Partida.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Partidas)).BeginInit();
-			this.Gpb_Movimeintos.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.Gpb_Resumen.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
@@ -355,7 +346,6 @@
 			this.tabPage2.Controls.Add(this.Dtg_Movimientos);
 			this.tabPage2.Controls.Add(this.Gpb_Partida);
 			this.tabPage2.Controls.Add(this.Dtg_Partidas);
-			this.tabPage2.Controls.Add(this.Gpb_Movimeintos);
 			this.tabPage2.Location = new System.Drawing.Point(4, 30);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -385,12 +375,13 @@
 			this.Btn_Guardar_partia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
 			this.Btn_Guardar_partia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Btn_Guardar_partia.ForeColor = System.Drawing.Color.White;
-			this.Btn_Guardar_partia.Location = new System.Drawing.Point(155, 472);
+			this.Btn_Guardar_partia.Location = new System.Drawing.Point(164, 472);
 			this.Btn_Guardar_partia.Name = "Btn_Guardar_partia";
 			this.Btn_Guardar_partia.Size = new System.Drawing.Size(119, 35);
 			this.Btn_Guardar_partia.TabIndex = 14;
 			this.Btn_Guardar_partia.Text = "Guardar";
 			this.Btn_Guardar_partia.UseVisualStyleBackColor = false;
+			this.Btn_Guardar_partia.Click += new System.EventHandler(this.Btn_Guardar_partia_Click);
 			// 
 			// Dtg_Movimientos
 			// 
@@ -412,11 +403,10 @@
 			dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.Dtg_Movimientos.DefaultCellStyle = dataGridViewCellStyle10;
-			this.Dtg_Movimientos.Location = new System.Drawing.Point(14, 291);
+			this.Dtg_Movimientos.Location = new System.Drawing.Point(14, 151);
 			this.Dtg_Movimientos.Name = "Dtg_Movimientos";
-			this.Dtg_Movimientos.ReadOnly = true;
 			this.Dtg_Movimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dtg_Movimientos.Size = new System.Drawing.Size(418, 175);
+			this.Dtg_Movimientos.Size = new System.Drawing.Size(418, 315);
 			this.Dtg_Movimientos.TabIndex = 13;
 			// 
 			// Gpb_Partida
@@ -491,87 +481,6 @@
 			this.Dtg_Partidas.Size = new System.Drawing.Size(565, 435);
 			this.Dtg_Partidas.TabIndex = 12;
 			this.Dtg_Partidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-			// 
-			// Gpb_Movimeintos
-			// 
-			this.Gpb_Movimeintos.Controls.Add(this.Cmb_Cuenta);
-			this.Gpb_Movimeintos.Controls.Add(this.Txt_monto);
-			this.Gpb_Movimeintos.Controls.Add(this.Dtp_Fecha_Movimiento);
-			this.Gpb_Movimeintos.Controls.Add(this.Btn_agregar_movimiento);
-			this.Gpb_Movimeintos.Controls.Add(this.label8);
-			this.Gpb_Movimeintos.Controls.Add(this.label9);
-			this.Gpb_Movimeintos.Controls.Add(this.label10);
-			this.Gpb_Movimeintos.Location = new System.Drawing.Point(14, 125);
-			this.Gpb_Movimeintos.Name = "Gpb_Movimeintos";
-			this.Gpb_Movimeintos.Size = new System.Drawing.Size(418, 150);
-			this.Gpb_Movimeintos.TabIndex = 11;
-			this.Gpb_Movimeintos.TabStop = false;
-			this.Gpb_Movimeintos.Text = "Movimiento";
-			this.Gpb_Movimeintos.Enter += new System.EventHandler(this.GroupBox1_Enter);
-			// 
-			// Cmb_Cuenta
-			// 
-			this.Cmb_Cuenta.FormattingEnabled = true;
-			this.Cmb_Cuenta.Location = new System.Drawing.Point(106, 69);
-			this.Cmb_Cuenta.Name = "Cmb_Cuenta";
-			this.Cmb_Cuenta.Size = new System.Drawing.Size(200, 29);
-			this.Cmb_Cuenta.TabIndex = 10;
-			// 
-			// Txt_monto
-			// 
-			this.Txt_monto.Location = new System.Drawing.Point(106, 105);
-			this.Txt_monto.Name = "Txt_monto";
-			this.Txt_monto.Size = new System.Drawing.Size(140, 27);
-			this.Txt_monto.TabIndex = 9;
-			// 
-			// Dtp_Fecha_Movimiento
-			// 
-			this.Dtp_Fecha_Movimiento.Location = new System.Drawing.Point(106, 34);
-			this.Dtp_Fecha_Movimiento.Name = "Dtp_Fecha_Movimiento";
-			this.Dtp_Fecha_Movimiento.Size = new System.Drawing.Size(292, 27);
-			this.Dtp_Fecha_Movimiento.TabIndex = 8;
-			// 
-			// Btn_agregar_movimiento
-			// 
-			this.Btn_agregar_movimiento.BackColor = System.Drawing.Color.Firebrick;
-			this.Btn_agregar_movimiento.FlatAppearance.BorderSize = 0;
-			this.Btn_agregar_movimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-			this.Btn_agregar_movimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Btn_agregar_movimiento.ForeColor = System.Drawing.Color.White;
-			this.Btn_agregar_movimiento.Location = new System.Drawing.Point(279, 104);
-			this.Btn_agregar_movimiento.Name = "Btn_agregar_movimiento";
-			this.Btn_agregar_movimiento.Size = new System.Drawing.Size(119, 35);
-			this.Btn_agregar_movimiento.TabIndex = 6;
-			this.Btn_agregar_movimiento.Text = "Agregar";
-			this.Btn_agregar_movimiento.UseVisualStyleBackColor = false;
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(10, 74);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(71, 21);
-			this.label8.TabIndex = 2;
-			this.label8.Text = "Cuenta";
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(19, 111);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(62, 21);
-			this.label9.TabIndex = 0;
-			this.label9.Text = "Monto";
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(30, 34);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(59, 21);
-			this.label10.TabIndex = 1;
-			this.label10.Text = "Fecha";
-			this.label10.Click += new System.EventHandler(this.Label10_Click);
 			// 
 			// tabPage3
 			// 
@@ -816,8 +725,6 @@
 			this.Gpb_Partida.ResumeLayout(false);
 			this.Gpb_Partida.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Partidas)).EndInit();
-			this.Gpb_Movimeintos.ResumeLayout(false);
-			this.Gpb_Movimeintos.PerformLayout();
 			this.tabPage3.ResumeLayout(false);
 			this.Gpb_Resumen.ResumeLayout(false);
 			this.Gpb_Resumen.PerformLayout();
@@ -856,11 +763,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.DataGridView Dtg_Partidas;
-		private System.Windows.Forms.GroupBox Gpb_Movimeintos;
-		private System.Windows.Forms.Button Btn_agregar_movimiento;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.GroupBox Gpb_Partida;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label13;
@@ -869,8 +771,6 @@
 		private System.Windows.Forms.DataGridView Dtg_Movimientos;
 		private System.Windows.Forms.TextBox Txt_Concepto;
 		private System.Windows.Forms.TextBox Txt_partida;
-		private System.Windows.Forms.TextBox Txt_monto;
-		private System.Windows.Forms.DateTimePicker Dtp_Fecha_Movimiento;
 		private System.Windows.Forms.GroupBox Gpb_Resumen;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label18;
@@ -881,7 +781,6 @@
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.DataGridView Dtg_Resumen;
-		private System.Windows.Forms.ComboBox Cmb_Cuenta;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label24;

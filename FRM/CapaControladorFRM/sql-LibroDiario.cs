@@ -37,6 +37,18 @@ namespace CapaControladorFRM
 			return Combo;
 		}
 
+		public string llenarComboTablaMovimientos()
+		{
+			string Combo = "";
+			OdbcCommand command = new OdbcCommand("SELECT nombre FROM cuentas ;", conectar.conexion("ERP"));
+			OdbcDataReader reader = command.ExecuteReader();
+			while (reader.Read())
+			{
+				Combo += reader.GetValue(0).ToString() + ",";
+			}
+			Combo.TrimEnd(',');
+			return Combo;
+		}
 		public string ObtenerIdLibro()
 		{
 			string id = "";
