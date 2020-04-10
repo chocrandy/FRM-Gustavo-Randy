@@ -46,6 +46,7 @@
 			this.actualizaciónDePólizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.balanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.libroDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.conciliaciónBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.consultarConciliaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@
 			this.gestiónPresupuestariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.Lbl_usuario = new System.Windows.Forms.Label();
-			this.libroDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -200,6 +200,13 @@
 			this.balanceGeneralToolStripMenuItem.Text = "Balance General";
 			this.balanceGeneralToolStripMenuItem.Click += new System.EventHandler(this.BalanceGeneralToolStripMenuItem_Click);
 			// 
+			// libroDiarioToolStripMenuItem
+			// 
+			this.libroDiarioToolStripMenuItem.Name = "libroDiarioToolStripMenuItem";
+			this.libroDiarioToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
+			this.libroDiarioToolStripMenuItem.Text = "Libro Diario";
+			this.libroDiarioToolStripMenuItem.Click += new System.EventHandler(this.LibroDiarioToolStripMenuItem_Click);
+			// 
 			// bancosToolStripMenuItem
 			// 
 			this.bancosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -279,13 +286,6 @@
 			this.Lbl_usuario.TabIndex = 2;
 			this.Lbl_usuario.Text = "Usuario";
 			this.Lbl_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// libroDiarioToolStripMenuItem
-			// 
-			this.libroDiarioToolStripMenuItem.Name = "libroDiarioToolStripMenuItem";
-			this.libroDiarioToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
-			this.libroDiarioToolStripMenuItem.Text = "Libro Diario";
-			this.libroDiarioToolStripMenuItem.Click += new System.EventHandler(this.LibroDiarioToolStripMenuItem_Click);
 			// 
 			// MDI_FRM
 			// 
