@@ -15,6 +15,7 @@ namespace CapaVistaFRM.Conta
 	public partial class libro_Diario : Form
 	{
 		LibroDiario Libro = new LibroDiario();
+		string idLibro = "";
 		public libro_Diario()
 		{
 			InitializeComponent();
@@ -24,6 +25,7 @@ namespace CapaVistaFRM.Conta
 			Dtg_Fecha_Modificar.CustomFormat = "yyyy-MM-dd";
 			Txt_Libro.Text = Libro.IdLibro();
 			llenarLibros();
+			tablaMovimientos();
 			
 		}
 
@@ -39,8 +41,8 @@ namespace CapaVistaFRM.Conta
 		void tablaMovimientos() {
 
 			DataGridViewComboBoxColumn cuenta = new DataGridViewComboBoxColumn();
+			cuenta.HeaderText = "Cuenta";
 			cuenta.Items.AddRange(Libro.comboTabla());
-			
 
 			DataGridViewTextBoxColumn fecha = new DataGridViewTextBoxColumn();
 			fecha.HeaderText = "Fecha";
@@ -126,7 +128,8 @@ namespace CapaVistaFRM.Conta
 
 		private void Btn_Partidas_Click(object sender, EventArgs e)
 		{
-			tablaMovimientos();
+			
+			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
 			Tbc_LibroDiario.SelectedIndex = 1;
 			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
 			DataTable table = new DataTable();
@@ -137,16 +140,50 @@ namespace CapaVistaFRM.Conta
 
 		private void Btn_Guardar_partia_Click(object sender, EventArgs e)
 		{
-			int filas2 = Dtg_Movimientos.Rows.Count - 1;
-			for (int i = 0; i < filas2; i++)
+			bool proceder = true;
+			int fil = Dtg_Movimientos.Rows.Count - 1;
+			int col = Dtg_Movimientos.Columns.Count;
+			for (int i = 0; i < fil; i++)
 			{
+				for (int j = 0; j < col; j++)
+				{
+					if (Dtg_Movimientos.Rows[i].Cells[j].Value == null)
+					{
+						MessageBox.Show("Por Favor llene la tabla en la fila " + (i+1).ToString()+" y Columna " + (j+1).ToString());
+						proceder = false;
+					}
+				}
+			}
 
+			if (proceder)
+			{
+				Libro.crearPartida(Txt_partida.Text.ToString(), idLibro, Txt_Concepto.Text.ToString());
+				foreach (DataGridViewRow row in Dtg_Movimientos.Rows)
+				{
+					if (Dtg_Movimientos.Rows.Count - 1 != row.Index)
+					{
+						Libro.crearDetalleLibroDiario(row.Index.ToString(), idLibro, Txt_partida.Text.ToString(), row.Cells[1].Value.ToString(), row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
+
+					}
+				}
+				Txt_partida.Text = Libro.IdPartida(idLibro);
+				Dtg_Movimientos.Rows.Clear();
+				OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+				DataTable table = new DataTable();
+				dt.Fill(table);
+				Dtg_Partidas.DataSource = table;
 			}
 		}
 
 		private void Btn_quiat_Click(object sender, EventArgs e)
 		{
 			Dtg_Partidas.Rows.RemoveAt(Dtg_Partidas.CurrentRow.Index);
+		}
+
+		private void Tbc_LibroDiario_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
+			Txt_partida.Text = Libro.IdPartida(idLibro);
 		}
 	}
 }

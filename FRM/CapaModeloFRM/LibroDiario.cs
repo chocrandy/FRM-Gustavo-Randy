@@ -17,6 +17,20 @@ namespace CapaModeloFRM
 			Diario.ejecutarQuery(query);
 		}
 
+		public void crearPartida(string id, string libro, string concepto)
+		{
+			string query = "INSERT INTO partidas (id_partida, id_libro_diario, concepto) " +
+			"VALUES (" + id + "," + libro + ", '" + concepto + "')";
+			Diario.ejecutarQuery(query);
+		}
+
+		public void crearDetalleLibroDiario(string mov, string libro, string partida, string cuenta, string fecha, string debe, string haber)
+		{
+			string query = "INSERT INTO libro_diario_detalles (numero_movimiento, id_libro_diario, id_partida, cuenta_contable, fecha, debe, haber) " +
+			"VALUES (" + mov+ ", "+libro+", "+partida+",'" + cuenta + "' ,'" + fecha + "', "+debe+", "+haber+")";
+			Diario.ejecutarQuery(query);
+		}
+
 		public void ModificarLibroDiario(string id, string empresa, string fecha, string estado)
 		{
 			string query = "UPDATE libro_diario_encabezados  SET empresa = '" + empresa + "', fecha = '" + fecha + "'," +
@@ -38,6 +52,11 @@ namespace CapaModeloFRM
 
 		public string IdLibro() {
 			return Diario.ObtenerIdLibro();
+		}
+
+		public string IdPartida(string no)
+		{
+			return Diario.ObtenerIdPartida(no);
 		}
 
 		public string[] comboTabla()

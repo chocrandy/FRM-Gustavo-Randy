@@ -19,7 +19,7 @@ namespace CapaControladorFRM
 		public OdbcDataAdapter LlenarTablaPartidas(string id)
 		{
 			string sql = "SELECT P.concepto as concepto,D.fecha as Fecha, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
-				"FROM partidas P, libro_diario_detalles D WHERE P.id_libro_diario = D.id_libro_diario  AND D.id_libro_diario = "+id+ " ORDER BY P.concepto ";
+				"FROM partidas P, libro_diario_detalles D WHERE P.id_partida = D.id_partida AND P.id_libro_diario = D.id_libro_diario AND D.id_libro_diario = " + id+ " ORDER BY P.id_partida ";
 			OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, conectar.conexion("ERP"));
 			return dataTable;
 		}
@@ -56,16 +56,46 @@ namespace CapaControladorFRM
 			OdbcDataReader reader = command.ExecuteReader();
 			if (reader.Read())
 			{
-				id= reader.GetValue(0).ToString();
-				int n = Convert.ToInt32(id)+1;
-				id = n.ToString();
+				id = reader.GetValue(0).ToString();
+				if (id == "" || id == null)
+				{
+					id = "1";
+				}
+				else
+				{
+					id = reader.GetValue(0).ToString();
+					int n = Convert.ToInt32(id) + 1;
+					id = n.ToString();
+				}	
 
 			}
-			if (id=="" || id == null)
-			{
-				id = "1";
-			}
+
 			
+			return id;
+		}
+
+		public string ObtenerIdPartida(string no)
+		{
+			string id = "";
+			OdbcCommand command = new OdbcCommand("SELECT MAX(id_partida) FROM partidas WHERE id_libro_diario = "+no+" ;", conectar.conexion("ERP"));
+			OdbcDataReader reader = command.ExecuteReader();
+			if (reader.Read())
+			{
+				id = reader.GetValue(0).ToString();
+				if (id == "" || id == null)
+				{
+					id = "1";
+				}
+				else {
+					id = reader.GetValue(0).ToString();
+					int n = Convert.ToInt32(id) + 1;
+					id = n.ToString();
+				}
+				
+
+			}
+		
+
 			return id;
 		}
 
