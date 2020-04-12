@@ -16,10 +16,8 @@ namespace CapaControladorFRM
 			OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, conectar.conexion("ERP"));
 			return dataTable;
 		}
-		public OdbcDataAdapter LlenarTablaPartidas(string id)
+		public OdbcDataAdapter LlenarTablaPartidas(string sql)
 		{
-			string sql = "SELECT P.concepto as concepto,D.fecha as Fecha, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
-				"FROM partidas P, libro_diario_detalles D WHERE P.id_partida = D.id_partida AND P.id_libro_diario = D.id_libro_diario AND D.id_libro_diario = " + id+ " ORDER BY P.id_partida ";
 			OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, conectar.conexion("ERP"));
 			return dataTable;
 		}
@@ -41,6 +39,18 @@ namespace CapaControladorFRM
 		{
 			string Combo = "";
 			OdbcCommand command = new OdbcCommand("SELECT nombre FROM cuentas ;", conectar.conexion("ERP"));
+			OdbcDataReader reader = command.ExecuteReader();
+			while (reader.Read())
+			{
+				Combo += reader.GetValue(0).ToString() + ",";
+			}
+			Combo.TrimEnd(',');
+			return Combo;
+		}
+		public string ObtenerPartidasLibro(string ID)
+		{
+			string Combo = "";
+			OdbcCommand command = new OdbcCommand("SELECT id_partida FROM partidas WHERE estado = 1 AND id_libro_diario = "+ID+" ;", conectar.conexion("ERP"));
 			OdbcDataReader reader = command.ExecuteReader();
 			while (reader.Read())
 			{

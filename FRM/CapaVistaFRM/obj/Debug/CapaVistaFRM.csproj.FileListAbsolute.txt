@@ -121,3 +121,4 @@ C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.pdb
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.Conta.formato.resources
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.Conta.libro_Diario.resources
+C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\bin\Debug\itextsharp.dll

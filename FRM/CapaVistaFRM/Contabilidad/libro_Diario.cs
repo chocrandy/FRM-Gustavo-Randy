@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Odbc;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaModeloFRM;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace CapaVistaFRM.Conta
 {
@@ -23,6 +26,8 @@ namespace CapaVistaFRM.Conta
 			Dtg_Fecha_Crear.CustomFormat = "yyyy-MM-dd";
 			Dtg_Fecha_Modificar.Format = DateTimePickerFormat.Custom;
 			Dtg_Fecha_Modificar.CustomFormat = "yyyy-MM-dd";
+			Dtp_partida.Format = DateTimePickerFormat.Custom;
+			Dtp_partida.CustomFormat = "yyyy-MM-dd";
 			Txt_Libro.Text = Libro.IdLibro();
 			llenarLibros();
 			tablaMovimientos();
@@ -44,14 +49,11 @@ namespace CapaVistaFRM.Conta
 			cuenta.HeaderText = "Cuenta";
 			cuenta.Items.AddRange(Libro.comboTabla());
 
-			DataGridViewTextBoxColumn fecha = new DataGridViewTextBoxColumn();
-			fecha.HeaderText = "Fecha";
 			DataGridViewTextBoxColumn debe = new DataGridViewTextBoxColumn();
 			debe.HeaderText = "Debe";
 			DataGridViewTextBoxColumn haber = new DataGridViewTextBoxColumn();
 			haber.HeaderText = "Haber";
 
-			Dtg_Movimientos.Columns.Add(fecha);
 			Dtg_Movimientos.Columns.Add(cuenta);
 			Dtg_Movimientos.Columns.Add(debe);
 			Dtg_Movimientos.Columns.Add(haber);
@@ -157,12 +159,12 @@ namespace CapaVistaFRM.Conta
 
 			if (proceder)
 			{
-				Libro.crearPartida(Txt_partida.Text.ToString(), idLibro, Txt_Concepto.Text.ToString());
+				Libro.crearPartida(Txt_partida.Text.ToString(), idLibro, Txt_Concepto.Text.ToString(), Dtp_partida.Text.ToString());
 				foreach (DataGridViewRow row in Dtg_Movimientos.Rows)
 				{
 					if (Dtg_Movimientos.Rows.Count - 1 != row.Index)
 					{
-						Libro.crearDetalleLibroDiario(row.Index.ToString(), idLibro, Txt_partida.Text.ToString(), row.Cells[1].Value.ToString(), row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
+						Libro.crearDetalleLibroDiario(row.Index.ToString(), idLibro, Txt_partida.Text.ToString(),  row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
 
 					}
 				}
@@ -184,6 +186,97 @@ namespace CapaVistaFRM.Conta
 		{
 			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
 			Txt_partida.Text = Libro.IdPartida(idLibro);
+
+			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+			DataTable table = new DataTable();
+			dt.Fill(table);
+			Dtg_Partidas.DataSource = table;
+
+			OdbcDataAdapter dt2 = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+			DataTable table2 = new DataTable();
+			dt2.Fill(table2);
+			Dtg_Resumen.DataSource = table;
+		}
+
+		private void Dtg_Partidas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+	
+		}
+
+		private void Button1_Click(object sender, EventArgs e)
+		{
+			string concepto = "";
+			if (Dtg_Partidas.CurrentRow.Cells[0].Value == null || Dtg_Partidas.CurrentRow.Cells[0].Value.ToString() == "" || Dtg_Partidas.CurrentRow.Cells[0].Value.ToString() ==" ")
+			{
+				MessageBox.Show("Por favor Seleccione el CONCEPTO de la partida a eliminar");
+			}
+			else
+			{
+				concepto = Dtg_Partidas.CurrentRow.Cells[0].Value.ToString();
+				DialogResult Eliminar;
+				Eliminar = MessageBox.Show("Se eliminarán todos los movimientos con concepto " + concepto + ", desea continuar?", "Eliminar Partida", MessageBoxButtons.YesNo);
+
+				if (Eliminar == DialogResult.Yes)
+				{
+					Libro.DeletePartida(concepto, idLibro);
+					OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+					DataTable table = new DataTable();
+					dt.Fill(table);
+					Dtg_Partidas.DataSource = table;
+				}
+			}
+			
+			
+		}
+
+		void exportarTabla(DataGridView dtg, string name)
+		{
+			BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+			PdfPTable pdftable = new PdfPTable(dtg.Columns.Count);
+			pdftable.DefaultCell.Padding = 3;
+			pdftable.WidthPercentage = 100;
+			pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
+			pdftable.DefaultCell.BorderWidth = 1;
+
+			iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+			foreach (DataGridViewColumn col in dtg.Columns)
+			{
+				PdfPCell cell = new PdfPCell(new Phrase(col.HeaderText));
+				cell.BackgroundColor = new iTextSharp.text.BaseColor(240,240,240);
+				pdftable.AddCell(cell);
+			}
+
+			foreach (DataGridViewRow row in dtg.Rows)
+			{
+				foreach (DataGridViewCell cell in row.Cells)
+				{
+					pdftable.AddCell(new Phrase(cell.Value.ToString(),text));
+				}
+			}
+
+
+			var savefeldialoge = new SaveFileDialog();
+			savefeldialoge.FileName = name;
+			savefeldialoge.DefaultExt = ".pdf";
+			if (savefeldialoge.ShowDialog()==DialogResult.OK)
+			{
+				using (FileStream stream = new FileStream(savefeldialoge.FileName,FileMode.Create))
+				{
+					Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+					PdfWriter.GetInstance(pdfdoc,stream);
+					pdfdoc.Open();
+					pdfdoc.Add(pdftable);
+					pdfdoc.Close();
+					stream.Close();
+				}
+
+			}
+
+
+		}
+		private void Button2_Click(object sender, EventArgs e)
+		{
+			exportarTabla(Dtg_Resumen,"test");
 		}
 	}
 }

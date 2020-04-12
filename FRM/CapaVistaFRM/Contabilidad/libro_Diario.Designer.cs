@@ -84,6 +84,9 @@
 			this.Dtg_Resumen = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.Dtp_partida = new System.Windows.Forms.DateTimePicker();
+			this.button2 = new System.Windows.Forms.Button();
 			this.Tbc_LibroDiario.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_LibroDiario)).BeginInit();
@@ -368,6 +371,7 @@
 			this.button1.TabIndex = 5;
 			this.button1.Text = "Eliminar";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.Button1_Click);
 			// 
 			// Btn_Guardar_partia
 			// 
@@ -412,13 +416,15 @@
 			// 
 			// Gpb_Partida
 			// 
+			this.Gpb_Partida.Controls.Add(this.Dtp_partida);
+			this.Gpb_Partida.Controls.Add(this.label8);
 			this.Gpb_Partida.Controls.Add(this.Txt_Concepto);
 			this.Gpb_Partida.Controls.Add(this.Txt_partida);
 			this.Gpb_Partida.Controls.Add(this.label11);
 			this.Gpb_Partida.Controls.Add(this.label13);
 			this.Gpb_Partida.Location = new System.Drawing.Point(14, 9);
 			this.Gpb_Partida.Name = "Gpb_Partida";
-			this.Gpb_Partida.Size = new System.Drawing.Size(418, 110);
+			this.Gpb_Partida.Size = new System.Drawing.Size(418, 136);
 			this.Gpb_Partida.TabIndex = 1;
 			this.Gpb_Partida.TabStop = false;
 			this.Gpb_Partida.Text = "Partida";
@@ -486,9 +492,11 @@
 			this.Dtg_Partidas.TabIndex = 12;
 			this.Dtg_Partidas.TabStop = false;
 			this.Dtg_Partidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+			this.Dtg_Partidas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dtg_Partidas_CellContentDoubleClick);
 			// 
 			// tabPage3
 			// 
+			this.tabPage3.Controls.Add(this.button2);
 			this.tabPage3.Controls.Add(this.Gpb_Resumen);
 			this.tabPage3.Controls.Add(this.Dtg_Resumen);
 			this.tabPage3.Location = new System.Drawing.Point(4, 30);
@@ -508,7 +516,7 @@
 			this.Gpb_Resumen.Controls.Add(this.label16);
 			this.Gpb_Resumen.Controls.Add(this.label12);
 			this.Gpb_Resumen.Controls.Add(this.label14);
-			this.Gpb_Resumen.Location = new System.Drawing.Point(602, 67);
+			this.Gpb_Resumen.Location = new System.Drawing.Point(602, 105);
 			this.Gpb_Resumen.Name = "Gpb_Resumen";
 			this.Gpb_Resumen.Size = new System.Drawing.Size(418, 400);
 			this.Gpb_Resumen.TabIndex = 16;
@@ -660,6 +668,7 @@
 			// 
 			// Dtg_Resumen
 			// 
+			this.Dtg_Resumen.AllowUserToAddRows = false;
 			this.Dtg_Resumen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -678,7 +687,7 @@
 			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.Dtg_Resumen.DefaultCellStyle = dataGridViewCellStyle8;
-			this.Dtg_Resumen.Location = new System.Drawing.Point(14, 29);
+			this.Dtg_Resumen.Location = new System.Drawing.Point(6, 29);
 			this.Dtg_Resumen.Name = "Dtg_Resumen";
 			this.Dtg_Resumen.ReadOnly = true;
 			this.Dtg_Resumen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -706,6 +715,37 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Libro Diario";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(14, 100);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(59, 21);
+			this.label8.TabIndex = 12;
+			this.label8.Text = "Fecha";
+			// 
+			// Dtp_partida
+			// 
+			this.Dtp_partida.Location = new System.Drawing.Point(120, 100);
+			this.Dtp_partida.Name = "Dtp_partida";
+			this.Dtp_partida.Size = new System.Drawing.Size(278, 27);
+			this.Dtp_partida.TabIndex = 13;
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.Firebrick;
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button2.ForeColor = System.Drawing.Color.White;
+			this.button2.Location = new System.Drawing.Point(602, 29);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(119, 35);
+			this.button2.TabIndex = 18;
+			this.button2.Text = "PDF";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.Button2_Click);
 			// 
 			// libro_Diario
 			// 
@@ -792,5 +832,8 @@
 		private System.Windows.Forms.Label label23;
 		private System.Windows.Forms.Label label22;
 		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.DateTimePicker Dtp_partida;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Button button2;
 	}
 }

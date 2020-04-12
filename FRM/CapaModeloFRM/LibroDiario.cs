@@ -17,17 +17,17 @@ namespace CapaModeloFRM
 			Diario.ejecutarQuery(query);
 		}
 
-		public void crearPartida(string id, string libro, string concepto)
+		public void crearPartida(string id, string libro, string concepto, string fecha)
 		{
-			string query = "INSERT INTO partidas (id_partida, id_libro_diario, concepto) " +
-			"VALUES (" + id + "," + libro + ", '" + concepto + "')";
+			string query = "INSERT INTO partidas (id_partida, id_libro_diario, concepto, fecha) " +
+			"VALUES (" + id + "," + libro + ", '" + concepto + "', '"+fecha+"')";
 			Diario.ejecutarQuery(query);
 		}
 
-		public void crearDetalleLibroDiario(string mov, string libro, string partida, string cuenta, string fecha, string debe, string haber)
+		public void crearDetalleLibroDiario(string mov, string libro, string partida, string cuenta, string debe, string haber)
 		{
-			string query = "INSERT INTO libro_diario_detalles (numero_movimiento, id_libro_diario, id_partida, cuenta_contable, fecha, debe, haber) " +
-			"VALUES (" + mov+ ", "+libro+", "+partida+",'" + cuenta + "' ,'" + fecha + "', "+debe+", "+haber+")";
+			string query = "INSERT INTO libro_diario_detalles (numero_movimiento, id_libro_diario, id_partida, cuenta_contable,  debe, haber) " +
+			"VALUES (" + mov+ ", "+libro+", "+partida+",'" + cuenta + "' , "+debe+", "+haber+")";
 			Diario.ejecutarQuery(query);
 		}
 
@@ -44,9 +44,41 @@ namespace CapaModeloFRM
 			return dataTable;
 		}
 
-		public OdbcDataAdapter llenarPartidas(string id)
+		string CrearQueryPartida(string idLibro)
 		{
-			OdbcDataAdapter dataTable = Diario.LlenarTablaPartidas(id);
+			string query = "";
+			
+			int n = 0;
+			string[] partidas = Diario.ObtenerPartidasLibro(idLibro).Split(',');
+			foreach (var partida in partidas)
+			{
+				if (partida!="" && partida !=" " && partida !=null )
+				{
+					if (n == partidas.Length - 2)
+					{
+						query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+								"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
+								"UNION " +
+								"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
+								"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " ;";
+					}
+					else {
+						query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+								"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
+								"UNION " +
+								"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
+								"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " UNION ";
+					}
+					
+				}
+				n++;
+			}
+			return query;
+		}
+
+		public OdbcDataAdapter llenarPartidas(string idLibro)
+		{
+			OdbcDataAdapter dataTable = Diario.LlenarTablaPartidas(CrearQueryPartida(idLibro));
 			return dataTable;
 		}
 
@@ -64,5 +96,13 @@ namespace CapaModeloFRM
 			string[] combo = Diario.llenarComboTablaMovimientos().Split(',');
 			return combo;
 		}
+
+		public void DeletePartida(string concepto, string libro)
+		{
+			string query = "UPDATE partidas SET estado = 0 WHERE concepto='"+concepto+"' AND id_libro_diario='"+libro+"'";
+			Diario.ejecutarQuery(query);
+		}
+
+
 	}
 }
