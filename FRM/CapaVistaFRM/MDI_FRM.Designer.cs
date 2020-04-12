@@ -46,7 +46,6 @@
 			this.actualizaciónDePólizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.balanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.libroDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.conciliaciónBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.consultarConciliaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,8 +173,7 @@
 			this.contabilidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actualizaciónDePólizasToolStripMenuItem,
             this.libroMayorToolStripMenuItem,
-            this.balanceGeneralToolStripMenuItem,
-            this.libroDiarioToolStripMenuItem});
+            this.balanceGeneralToolStripMenuItem});
 			this.contabilidadToolStripMenuItem.Name = "contabilidadToolStripMenuItem";
 			this.contabilidadToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
 			this.contabilidadToolStripMenuItem.Text = "Contabilidad";
@@ -199,13 +197,6 @@
 			this.balanceGeneralToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
 			this.balanceGeneralToolStripMenuItem.Text = "Balance General";
 			this.balanceGeneralToolStripMenuItem.Click += new System.EventHandler(this.BalanceGeneralToolStripMenuItem_Click);
-			// 
-			// libroDiarioToolStripMenuItem
-			// 
-			this.libroDiarioToolStripMenuItem.Name = "libroDiarioToolStripMenuItem";
-			this.libroDiarioToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
-			this.libroDiarioToolStripMenuItem.Text = "Libro Diario";
-			this.libroDiarioToolStripMenuItem.Click += new System.EventHandler(this.LibroDiarioToolStripMenuItem_Click);
 			// 
 			// bancosToolStripMenuItem
 			// 
@@ -338,6 +329,5 @@
         private System.Windows.Forms.Label Lbl_usuario;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem módulosToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem libroDiarioToolStripMenuItem;
 	}
 }

@@ -164,8 +164,8 @@ namespace CapaVistaFRM.Conta
 				{
 					if (Dtg_Movimientos.Rows.Count - 1 != row.Index)
 					{
-						Libro.crearDetalleLibroDiario(row.Index.ToString(), idLibro, Txt_partida.Text.ToString(),  row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
-
+						Libro.crearDetalleLibroDiario(row.Index.ToString(), idLibro, Txt_partida.Text.ToString(),  row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString());
+						MessageBox.Show("acac");
 					}
 				}
 				Txt_partida.Text = Libro.IdPartida(idLibro);
