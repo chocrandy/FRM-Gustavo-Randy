@@ -27,8 +27,12 @@ namespace CapaVistaFRM
         private movimientos_bancarios frm_movimientos_bancarios;                
         private revision_presupuestaria frm_revision_presupuestaria;        
         private tipo_de_cambio frm_tipo_de_cambio;
+		private mantenimiento_tipos_poliza frm_tipo_poliza;
+		private mantenimiento_tipos_cuentas_contables frm_tipo_cuentas_contables;
+		private mantenimiento_cuentas_contables frm_cuentas_contables;
+		private libro_Diario frm_libro_diario;
 
-        sentencia sn = new sentencia();
+		sentencia sn = new sentencia();
         String usuarioActivo = "rchocm";
 
         public MDI_FRM()
@@ -65,9 +69,17 @@ namespace CapaVistaFRM
         { frm_revision_presupuestaria = null; }        
         private void frm_tipo_de_cambio_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_tipo_de_cambio = null; }
-        //====================Funciones de declaración de Eventos====================
+		private void frm_tipo_poliza_FormClosed(Object sender, FormClosedEventArgs e)
+		{ frm_tipo_poliza = null; }
+		private void frm_tipo_cuentas_contables_FormClosed(Object sender, FormClosedEventArgs e)
+		{ frm_tipo_cuentas_contables = null; }
+		private void frm_cuentas_contables_FormClosed(Object sender, FormClosedEventArgs e)
+		{ frm_cuentas_contables = null; }
+		private void frm_libro_diario_FormClosed(Object sender, FormClosedEventArgs e)
+		{ frm_libro_diario = null; }
+		//====================Funciones de declaración de Eventos====================
 
-        private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
+		private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
         {            
             if (frm_conciliacion_bancaria == null)
             {
@@ -174,11 +186,11 @@ namespace CapaVistaFRM
         
         private void MDI_FRM_Load(object sender, EventArgs e)
         {
-            /*
+            
             frm_login login = new frm_login();
             login.ShowDialog();
             Lbl_usuario.Text = login.obtenerNombreUsuario();
-            usuarioActivo = Lbl_usuario.Text;            */
+            usuarioActivo = Lbl_usuario.Text;          
         } 
 
         private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -296,8 +308,63 @@ namespace CapaVistaFRM
 
 		private void LibroDiarioToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			libro_Diario nuevo = new libro_Diario();
-			nuevo.Show();
+			if (frm_libro_diario == null)
+			{
+				frm_libro_diario = new libro_Diario(usuarioActivo);
+				frm_libro_diario.MdiParent = this;
+				frm_libro_diario.FormClosed += new FormClosedEventHandler(frm_libro_diario_FormClosed);
+				frm_libro_diario.Show();
+			}
+			else
+			{
+				frm_libro_diario.Activate();
+			}
+		}
+
+		private void TiposDePólizaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (frm_tipo_poliza == null)
+			{
+				frm_tipo_poliza = new mantenimiento_tipos_poliza(usuarioActivo);
+				frm_tipo_poliza.MdiParent = this;
+				frm_tipo_poliza.FormClosed += new FormClosedEventHandler(frm_tipo_poliza_FormClosed);
+				frm_tipo_poliza.Show();
+			}
+			else
+			{
+				frm_tipo_poliza.Activate();
+			}
+
+		}
+
+		private void TiposDeCuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (frm_tipo_cuentas_contables == null)
+			{
+				frm_tipo_cuentas_contables = new mantenimiento_tipos_cuentas_contables(usuarioActivo);
+				frm_tipo_cuentas_contables.MdiParent = this;
+				frm_tipo_cuentas_contables.FormClosed += new FormClosedEventHandler(frm_tipo_cuentas_contables_FormClosed);
+				frm_tipo_cuentas_contables.Show();
+			}
+			else
+			{
+				frm_tipo_cuentas_contables.Activate();
+			}
+		}
+
+		private void CuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (frm_cuentas_contables == null)
+			{
+				frm_cuentas_contables = new mantenimiento_cuentas_contables(usuarioActivo);
+				frm_cuentas_contables.MdiParent = this;
+				frm_cuentas_contables.FormClosed += new FormClosedEventHandler(frm_cuentas_contables_FormClosed);
+				frm_cuentas_contables.Show();
+			}
+			else
+			{
+				frm_cuentas_contables.Activate();
+			}
 		}
 	}
 }

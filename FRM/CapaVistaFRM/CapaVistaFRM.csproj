@@ -89,6 +89,18 @@
     <Compile Include="libro_Diario.Designer.cs">
       <DependentUpon>libro_Diario.cs</DependentUpon>
     </Compile>
+    <Compile Include="mantenimiento_tipos_poliza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_tipos_poliza.Designer.cs">
+      <DependentUpon>mantenimiento_tipos_poliza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimiento_tipos_cuentas_contables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_tipos_cuentas_contables.Designer.cs">
+      <DependentUpon>mantenimiento_tipos_cuentas_contables.cs</DependentUpon>
+    </Compile>
     <Compile Include="mantenimiento_bancos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     </Compile>
     <Compile Include="mantenimiento_clasificador_mov.Designer.cs">
       <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimiento_cuentas_contables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_cuentas_contables.Designer.cs">
+      <DependentUpon>mantenimiento_cuentas_contables.cs</DependentUpon>
     </Compile>
     <Compile Include="mantenimiento_monedas.cs">
       <SubType>Form</SubType>
@@ -188,6 +206,12 @@
     <EmbeddedResource Include="libro_Diario.resx">
       <DependentUpon>libro_Diario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_tipos_poliza.resx">
+      <DependentUpon>mantenimiento_tipos_poliza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_tipos_cuentas_contables.resx">
+      <DependentUpon>mantenimiento_tipos_cuentas_contables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_bancos.resx">
       <DependentUpon>mantenimiento_bancos.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_clasificador_mov.resx">
       <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_cuentas_contables.resx">
+      <DependentUpon>mantenimiento_cuentas_contables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_monedas.resx">
       <DependentUpon>mantenimiento_monedas.cs</DependentUpon>

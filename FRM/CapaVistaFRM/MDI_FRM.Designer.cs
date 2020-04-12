@@ -40,7 +40,6 @@
 			this.cuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tiposDeCuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tiposDePólizaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.creaciónDePresupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.otrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.modulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.monedasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +47,7 @@
 			this.actualizaciónDePólizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.balanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.libroDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.conciliaciónBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.movimientosBancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +58,6 @@
 			this.gestiónPresupuestariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.Lbl_usuario = new System.Windows.Forms.Label();
-			this.libroDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -138,8 +137,7 @@
 			this.contabilidadToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cuentasContablesToolStripMenuItem,
             this.tiposDeCuentasContablesToolStripMenuItem,
-            this.tiposDePólizaToolStripMenuItem,
-            this.creaciónDePresupuestosToolStripMenuItem});
+            this.tiposDePólizaToolStripMenuItem});
 			this.contabilidadToolStripMenuItem1.Name = "contabilidadToolStripMenuItem1";
 			this.contabilidadToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
 			this.contabilidadToolStripMenuItem1.Text = "Contabilidad";
@@ -149,24 +147,21 @@
 			this.cuentasContablesToolStripMenuItem.Name = "cuentasContablesToolStripMenuItem";
 			this.cuentasContablesToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
 			this.cuentasContablesToolStripMenuItem.Text = "Cuentas contables";
+			this.cuentasContablesToolStripMenuItem.Click += new System.EventHandler(this.CuentasContablesToolStripMenuItem_Click);
 			// 
 			// tiposDeCuentasContablesToolStripMenuItem
 			// 
 			this.tiposDeCuentasContablesToolStripMenuItem.Name = "tiposDeCuentasContablesToolStripMenuItem";
 			this.tiposDeCuentasContablesToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
 			this.tiposDeCuentasContablesToolStripMenuItem.Text = "Tipos de cuentas contables";
+			this.tiposDeCuentasContablesToolStripMenuItem.Click += new System.EventHandler(this.TiposDeCuentasContablesToolStripMenuItem_Click);
 			// 
 			// tiposDePólizaToolStripMenuItem
 			// 
 			this.tiposDePólizaToolStripMenuItem.Name = "tiposDePólizaToolStripMenuItem";
 			this.tiposDePólizaToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
 			this.tiposDePólizaToolStripMenuItem.Text = "Tipos de póliza";
-			// 
-			// creaciónDePresupuestosToolStripMenuItem
-			// 
-			this.creaciónDePresupuestosToolStripMenuItem.Name = "creaciónDePresupuestosToolStripMenuItem";
-			this.creaciónDePresupuestosToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
-			this.creaciónDePresupuestosToolStripMenuItem.Text = "Creación de presupuestos";
+			this.tiposDePólizaToolStripMenuItem.Click += new System.EventHandler(this.TiposDePólizaToolStripMenuItem_Click);
 			// 
 			// otrosToolStripMenuItem
 			// 
@@ -221,6 +216,13 @@
 			this.balanceGeneralToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
 			this.balanceGeneralToolStripMenuItem.Text = "Balance General";
 			this.balanceGeneralToolStripMenuItem.Click += new System.EventHandler(this.BalanceGeneralToolStripMenuItem_Click);
+			// 
+			// libroDiarioToolStripMenuItem
+			// 
+			this.libroDiarioToolStripMenuItem.Name = "libroDiarioToolStripMenuItem";
+			this.libroDiarioToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
+			this.libroDiarioToolStripMenuItem.Text = "Libro Diario";
+			this.libroDiarioToolStripMenuItem.Click += new System.EventHandler(this.LibroDiarioToolStripMenuItem_Click);
 			// 
 			// bancosToolStripMenuItem
 			// 
@@ -302,13 +304,6 @@
 			this.Lbl_usuario.Text = "Usuario";
 			this.Lbl_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// libroDiarioToolStripMenuItem
-			// 
-			this.libroDiarioToolStripMenuItem.Name = "libroDiarioToolStripMenuItem";
-			this.libroDiarioToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
-			this.libroDiarioToolStripMenuItem.Text = "Libro Diario";
-			this.libroDiarioToolStripMenuItem.Click += new System.EventHandler(this.LibroDiarioToolStripMenuItem_Click);
-			// 
 			// MDI_FRM
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -356,7 +351,6 @@
         private System.Windows.Forms.ToolStripMenuItem cuentasContablesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposDeCuentasContablesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposDePólizaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem creaciónDePresupuestosToolStripMenuItem;
         private System.Windows.Forms.Label Lbl_usuario;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otrosToolStripMenuItem;

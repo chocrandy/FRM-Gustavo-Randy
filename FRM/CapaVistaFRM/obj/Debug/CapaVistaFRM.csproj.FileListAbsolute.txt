@@ -146,3 +146,6 @@ C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.csproj.CopyComplete
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.dll
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.pdb
+C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_tipos_poliza.resources
+C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_tipos_cuentas_contables.resources
+C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_cuentas_contables.resources

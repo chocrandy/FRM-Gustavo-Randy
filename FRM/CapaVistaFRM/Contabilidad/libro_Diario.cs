@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDatos;
 using CapaModeloFRM;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -19,12 +18,9 @@ namespace CapaVistaFRM
 	public partial class libro_Diario : Form
 	{
 		LibroDiario Libro = new LibroDiario();
-		sentencia sn = new sentencia();
-		string user = "";
 		string idLibro = "";
-		public libro_Diario(string usuario)
+		public libro_Diario()
 		{
-			user = usuario;
 			InitializeComponent();
 			Dtg_Fecha_Crear.Format = DateTimePickerFormat.Custom;
 			Dtg_Fecha_Crear.CustomFormat = "yyyy-MM-dd";
@@ -100,7 +96,6 @@ namespace CapaVistaFRM
 			Libro.crearLibroDiario(Txt_Libro.Text.ToString(), Cmb_Empresa_Crear.Text.ToString(),Dtg_Fecha_Crear.Text.ToString());
 			llenarLibros();
 			Txt_Libro.Text = Libro.IdLibro();
-			sn.insertarBitacora(user, "Creo un libro Diario", "Libro Diario");
 		}
 
 		private void Dtg_LibroDiario_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -131,7 +126,6 @@ namespace CapaVistaFRM
 			llenarLibros();
 			Gpb_Crear.Enabled = true;
 			Btn_Partidas.Enabled = true;
-			sn.insertarBitacora(user, "Modifico un libro Diario", "Libro Diario");
 		}
 
 		private void Btn_Partidas_Click(object sender, EventArgs e)
@@ -143,8 +137,7 @@ namespace CapaVistaFRM
 			DataTable table = new DataTable();
 			dt.Fill(table);
 			 Dtg_Partidas.DataSource = table;
-			sn.insertarBitacora(user, "Vio las partidas", "Libro Diario");
-
+			
 		}
 
 		private void Btn_Guardar_partia_Click(object sender, EventArgs e)
@@ -181,7 +174,6 @@ namespace CapaVistaFRM
 				DataTable table = new DataTable();
 				dt.Fill(table);
 				Dtg_Partidas.DataSource = table;
-				sn.insertarBitacora(user, "Creo una partida", "Libro Diario");
 			}
 		}
 
@@ -232,7 +224,6 @@ namespace CapaVistaFRM
 					dt.Fill(table);
 					Dtg_Partidas.DataSource = table;
 				}
-				sn.insertarBitacora(user, "Elimino una partida", "Libro Diario");
 			}
 			
 			
@@ -286,7 +277,6 @@ namespace CapaVistaFRM
 		private void Button2_Click(object sender, EventArgs e)
 		{
 			exportarTabla(Dtg_Resumen,"test");
-			sn.insertarBitacora(user, "Exporto un libro Diario", "Libro Diario");
 		}
 	}
 }
