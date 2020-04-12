@@ -293,5 +293,11 @@ namespace CapaVistaFRM
                 frm_mantenimiento_monedas.Activate();
             }
         }
-    }
+
+		private void LibroDiarioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			libro_Diario nuevo = new libro_Diario();
+			nuevo.Show();
+		}
+	}
 }
