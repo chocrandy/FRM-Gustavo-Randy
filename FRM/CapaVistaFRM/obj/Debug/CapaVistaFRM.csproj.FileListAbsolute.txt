@@ -72,3 +72,8 @@ C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Pro
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaDeDatos.pdb
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaLogica_Consultas.pdb
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\CapaDatos_Consultas.pdb
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_bancos.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_chequeras.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_cuentas_bancarias.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_clasificador_mov.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_monedas.resources

@@ -80,6 +80,36 @@
     <Compile Include="formato.Designer.cs">
       <DependentUpon>formato.cs</DependentUpon>
     </Compile>
+    <Compile Include="mantenimiento_bancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_bancos.Designer.cs">
+      <DependentUpon>mantenimiento_bancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimiento_chequeras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_chequeras.Designer.cs">
+      <DependentUpon>mantenimiento_chequeras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimiento_cuentas_bancarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_cuentas_bancarias.Designer.cs">
+      <DependentUpon>mantenimiento_cuentas_bancarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimiento_clasificador_mov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_clasificador_mov.Designer.cs">
+      <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimiento_monedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mantenimiento_monedas.Designer.cs">
+      <DependentUpon>mantenimiento_monedas.cs</DependentUpon>
+    </Compile>
     <Compile Include="revision_presupuestaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +175,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formato.resx">
       <DependentUpon>formato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_bancos.resx">
+      <DependentUpon>mantenimiento_bancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_chequeras.resx">
+      <DependentUpon>mantenimiento_chequeras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_cuentas_bancarias.resx">
+      <DependentUpon>mantenimiento_cuentas_bancarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_clasificador_mov.resx">
+      <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mantenimiento_monedas.resx">
+      <DependentUpon>mantenimiento_monedas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="revision_presupuestaria.resx">
       <DependentUpon>revision_presupuestaria.cs</DependentUpon>

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CapaVistaFRM
 {
-    public partial class mantenimiento_modulos : Form
+    public partial class mantenimiento_bancos : Form
     {
         string usuario = "";        
-        public mantenimiento_modulos(String usuarioActivo)
+        public mantenimiento_bancos(String usuarioActivo)
         {
             InitializeComponent();
             usuario = usuarioActivo;
-            string[] alias = { "Cod Modulo", "Nombre", "Descripción", "Estado" }; // Arreglo de nombres para campos
+            string[] alias = { "Codigo", "Nombre", "Estado" }; // Arreglo de nombres para campos
             navegador1.asignarAlias(alias); // Asignar nombres
             navegador1.asignarSalida(this); // Asignar form de salida
             Color nuevoColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF"); // Deficion de 
@@ -26,8 +26,8 @@ namespace CapaVistaFRM
             navegador1.asignarAyuda("1"); // asignar 1 por defecto 
                                           // LOS COMBOS SE ASIGNAN SEGUN EL ORDEN EN QUE SE DECLAREN
             //navegador1.asignarComboConTabla("tabla", "campo", 0); // 0 o 1 en modo, 0 pone el id y 1 coloca el nombre y consulta el id
-            navegador1.asignarTabla("modulos"); // tabla principal
-            navegador1.asignarNombreForm("Modulos"); // Titulo y nombre del form
+            navegador1.asignarTabla("bancos"); // tabla principal
+            navegador1.asignarNombreForm("Bancos"); // Titulo y nombre del form
         }
 
         private void Navegador1_Load(object sender, EventArgs e)
