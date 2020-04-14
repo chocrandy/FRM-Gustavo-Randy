@@ -62,20 +62,27 @@ namespace CapaModeloFRM
 						query = "";
 						if (n == partidas.Length - 2)
 						{
-							query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
-									"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
+							query += "SELECT P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+									"FROM partidas P WHERE P.id_partida =" + partida + " AND P.id_libro_diario = " + idLibro + "  " +
 									"UNION " +
 									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
-									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " ;";
+									"FROM libro_diario_detalles D WHERe D.id_partida =" + partida + " AND D.id_libro_diario =" + idLibro + " " +
+									"UNION " +
+									"SELECT '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe),2) as Debe, ROUND(SUM(D.haber),2) as haber " +
+									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario = " + idLibro + " ;";
 						}
 						else
 						{
-							query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
-									"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
+							query += "SELECT P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+									"FROM partidas P WHERE P.id_partida =" + partida + " AND P.id_libro_diario = " + idLibro + "  " +
 									"UNION " +
 									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
-									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " UNION ";
+									"FROM libro_diario_detalles D WHERe D.id_partida =" + partida + " AND D.id_libro_diario =" + idLibro + " " +
+									"UNION " +
+									"SELECT '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe), 2) as Debe, ROUND(SUM(D.haber), 2) as haber " +
+									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario = " + idLibro + " UNION ";
 						}
+
 
 					}
 					n++;
