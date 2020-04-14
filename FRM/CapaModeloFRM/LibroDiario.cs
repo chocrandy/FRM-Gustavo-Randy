@@ -46,33 +46,47 @@ namespace CapaModeloFRM
 
 		string CrearQueryPartida(string idLibro)
 		{
-			string query = "";
-			
+			string query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario=" + idLibro + "";
+
+
 			int n = 0;
 			string[] partidas = Diario.ObtenerPartidasLibro(idLibro).Split(',');
-			foreach (var partida in partidas)
+			if (partidas != null)
 			{
-				if (partida!="" && partida !=" " && partida !=null )
+				
+				foreach (var partida in partidas)
 				{
-					if (n == partidas.Length - 2)
-					{
-						query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
-								"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
-								"UNION " +
-								"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
-								"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " ;";
-					}
-					else {
-						query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
-								"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
-								"UNION " +
-								"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
-								"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " UNION ";
-					}
 					
+					if (partida != "" && partida != " " && partida != null)
+					{
+						query = "";
+						if (n == partidas.Length - 2)
+						{
+							query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+									"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
+									"UNION " +
+									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
+									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " ;";
+						}
+						else
+						{
+							query += "SELECT  P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+									"FROM partidas P WHERE P.id_partida = " + partida + " AND P.id_libro_diario = " + idLibro + " AND P.estado = 1 " +
+									"UNION " +
+									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
+									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario =" + idLibro + " UNION ";
+						}
+
+					}
+					n++;
 				}
-				n++;
 			}
+			else
+			{
+
+				query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario="+idLibro+"";
+			}
+			
 			return query;
 		}
 
