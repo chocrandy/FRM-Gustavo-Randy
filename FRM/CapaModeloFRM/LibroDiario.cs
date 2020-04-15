@@ -44,7 +44,7 @@ namespace CapaModeloFRM
 			return dataTable;
 		}
 
-		string CrearQueryPartida(string idLibro)
+		public string CrearQueryPartida(string idLibro)
 		{
 			string query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario=" + idLibro + "";
 
@@ -53,21 +53,21 @@ namespace CapaModeloFRM
 			string[] partidas = Diario.ObtenerPartidasLibro(idLibro).Split(',');
 			if (partidas != null)
 			{
-				
+				query = "";
 				foreach (var partida in partidas)
 				{
 					
 					if (partida != "" && partida != " " && partida != null)
 					{
-						query = "";
+				
 						if (n == partidas.Length - 2)
 						{
 							query += "SELECT P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
 									"FROM partidas P WHERE P.id_partida =" + partida + " AND P.id_libro_diario = " + idLibro + "  " +
-									"UNION " +
+									"UNION ALL " +
 									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
 									"FROM libro_diario_detalles D WHERe D.id_partida =" + partida + " AND D.id_libro_diario =" + idLibro + " " +
-									"UNION " +
+									"UNION ALL " +
 									"SELECT '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe),2) as Debe, ROUND(SUM(D.haber),2) as haber " +
 									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario = " + idLibro + " ;";
 						}
@@ -75,12 +75,12 @@ namespace CapaModeloFRM
 						{
 							query += "SELECT P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
 									"FROM partidas P WHERE P.id_partida =" + partida + " AND P.id_libro_diario = " + idLibro + "  " +
-									"UNION " +
+									"UNION ALL " +
 									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
 									"FROM libro_diario_detalles D WHERe D.id_partida =" + partida + " AND D.id_libro_diario =" + idLibro + " " +
-									"UNION " +
+									"UNION ALL " +
 									"SELECT '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe), 2) as Debe, ROUND(SUM(D.haber), 2) as haber " +
-									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario = " + idLibro + " UNION ";
+									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario = " + idLibro + " UNION ALL ";
 						}
 
 
@@ -99,7 +99,12 @@ namespace CapaModeloFRM
 
 		public OdbcDataAdapter llenarPartidas(string idLibro)
 		{
-			OdbcDataAdapter dataTable = Diario.LlenarTablaPartidas(CrearQueryPartida(idLibro));
+			string query = CrearQueryPartida(idLibro);
+			if (query=="")
+			{
+				query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario=" + idLibro + "";
+			}
+			OdbcDataAdapter dataTable = Diario.LlenarTablaPartidas(query);
 			return dataTable;
 		}
 
