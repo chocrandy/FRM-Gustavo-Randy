@@ -15,6 +15,7 @@ namespace CapaVistaFRM
     public partial class cuentas_contables : Form
     {
 		string usuario = "";
+		int estadoBtn = 0;
 		CuentasContables mod = new CuentasContables();
         public cuentas_contables( string user )
         {
@@ -31,7 +32,7 @@ namespace CapaVistaFRM
 			Dtgv_Cuentas.Rows.Clear();
 			foreach (DataRow row in table.Rows)
 			{
-				Dtgv_Cuentas.Rows.Add(row[0], row[1]);
+				Dtgv_Cuentas.Rows.Add(row[0], row[1], row[2]);
 			}
 			
 		}
@@ -48,32 +49,84 @@ namespace CapaVistaFRM
 
 		private void Cmb_Tipo_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
-			if (Cmb_Tipo.Text!="" && Cmb_Tipo.Text != " " && Cmb_Tipo.Text != null)
+			if (estadoBtn == 0)
 			{
-				Txt_Id.Enabled = false;
-				string idTipo = mod.ObtenerNextIdCuenta(mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString()));
-				Txt_Id.Text = mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString());
-				Txt_Id.Text += "." + (Convert.ToInt32(idTipo) + 1).ToString();
+				if (Cmb_Tipo.Text != "" && Cmb_Tipo.Text != " " && Cmb_Tipo.Text != null)
+				{
+					Txt_Id.Enabled = false;
+					string idTipo = mod.ObtenerNextIdCuenta(mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString()));
+					Txt_Id.Text = mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString());
+					Txt_Id.Text += "." + (Convert.ToInt32(idTipo) + 1).ToString();
+				}
 			}
+			
 			
 		}
 
 		private void Btn_plusLevel_Click(object sender, EventArgs e)
 		{
-			Txt_Id.Enabled = true;
+			if (estadoBtn == 0) { Txt_Id.Enabled = true; }else { Txt_Id.Enabled = false; }
 		}
 
 		private void Btn_guardar_Click(object sender, EventArgs e)
 		{
-			string idTipo = mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString());
-			string cod = (Convert.ToInt32(mod.ObtenerNextIdCuenta(mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString())))+1).ToString();
-			mod.GuardarCuenta(Txt_Id.Text, idTipo,cod,Txt_nombre.Text,Txt_desc.Text);
-			llenarCuentas();
-			Txt_Id.Text = "";
-			Txt_desc.Text = "";
-			Txt_nombre.Text = "";
-			Txt_Id.Enabled = false;
+			checkBox1.Visible = false;
+			button1.Visible = false;
+			if (estadoBtn == 0)
+			{
+				string idTipo = mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString());
+				string cod = (Convert.ToInt32(mod.ObtenerNextIdCuenta(mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString()))) + 1).ToString();
+				mod.GuardarCuenta(Txt_Id.Text, idTipo, cod, Txt_nombre.Text, Txt_desc.Text);
+				llenarCuentas();
+				Txt_Id.Text = "";
+				Txt_desc.Text = "";
+				Txt_nombre.Text = "";
+				Txt_Id.Enabled = false;
+			}
+			else
+			{
+				mod.ModCuenta(Txt_Id.Text,Txt_nombre.Text, Txt_desc.Text, (checkBox1.Checked) ? "1" : "0");
+				llenarCuentas();
+				Txt_Id.Text = "";
+				Txt_desc.Text = "";
+				Txt_nombre.Text = "";
+				Txt_Id.Enabled = false;
+			}
+			estadoBtn = 0;
+
+
+
+		}
+
+		private void Dtgv_Cuentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			checkBox1.Visible = true;
+			button1.Visible = true;
+			estadoBtn = 1;
+			Txt_Id.Text = Dtgv_Cuentas.CurrentRow.Cells[0].Value.ToString();
+			Txt_nombre.Text = Dtgv_Cuentas.CurrentRow.Cells[1].Value.ToString();
+			Txt_desc.Text= mod.ObtenerValor("cuentas","descripcion","id_cuenta",Txt_Id.Text,true);
+			string tipoCuenta = mod.ObtenerValor("cuentas", "id_tipo_cuenta", "id_cuenta", Txt_Id.Text, true);
+			Cmb_Tipo.Text = mod.ObtenerValor("tipo_cuentas", "nombre_tipo_cuenta", "id_tipo_cuenta", tipoCuenta, true);
+			if (mod.ObtenerValor("cuentas", "estado", "id_cuenta", Txt_Id.Text, true) == "1") { checkBox1.Checked = true; } else { checkBox1.Checked = false; }
+		}
+
+		private void Button1_Click(object sender, EventArgs e)
+		{
+			DialogResult Eliminar;
+			Eliminar = MessageBox.Show("Se eliminará la cuenta "+Dtgv_Cuentas.CurrentRow.Cells[1].Value.ToString()+" en forma PERMANENTEMENTE , desea continuar?", "Eliminar Cuenta", MessageBoxButtons.YesNo);
+			if (Eliminar == DialogResult.Yes)
+			{
+				mod.DeleteCuenta(Dtgv_Cuentas.CurrentRow.Cells[0].Value.ToString());
+				checkBox1.Visible = false;
+				button1.Visible = false;
+				Txt_Id.Text = "";
+				Txt_desc.Text = "";
+				Txt_nombre.Text = "";
+				Txt_Id.Enabled = false;
+				estadoBtn = 0;
+				llenarCuentas();
+			}
 		}
 	}
 }

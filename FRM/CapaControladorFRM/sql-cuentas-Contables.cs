@@ -13,7 +13,7 @@ namespace CapaControladorFRM
 
 		public OdbcDataAdapter LlenarTablaCuentas()
 		{
-			string sql = "SELECT id_cuenta, nombre FROM cuentas";
+			string sql = "SELECT C.id_cuenta, C.nombre, (SELECT IF(estado=1, 'ACTIVA', 'INACTIVA') )FROM cuentas C";
 			OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, conectar.conexion("ERP"));
 			return dataTable;
 		}
@@ -64,6 +64,28 @@ namespace CapaControladorFRM
 				id = reader.GetValue(0).ToString();
 			}
 			
+			return id;
+		}
+
+		public string ObtenerValor(string tabla, string campo, string llave, string valor, bool tipo)
+		{
+			string id = "";
+			string sql = "";
+			if (tipo)
+			{
+				 sql = "SELECT " + campo + " FROM " + tabla + " WHERE " + llave + " ='" + valor + "' LIMIT 1;";
+			}
+			else
+			{
+				sql = "SELECT " + campo + " FROM " + tabla + " WHERE " + llave + " =" + valor + " LIMIT 1;";
+			}
+			OdbcCommand command = new OdbcCommand(sql, conectar.conexion("ERP"));
+			OdbcDataReader reader = command.ExecuteReader();
+			while (reader.Read())
+			{
+				id = reader.GetValue(0).ToString();
+			}
+
 			return id;
 		}
 		public string ObtenerCodigo(string id)

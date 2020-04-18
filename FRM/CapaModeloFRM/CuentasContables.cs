@@ -29,6 +29,13 @@ namespace CapaModeloFRM
 			return id;
 		}
 
+		public string ObtenerValor(string tabla, string campo, string llave, string valor, bool tipo)
+		{
+			string id = sql.ObtenerValor( tabla,  campo, llave, valor,  tipo);
+
+			return id;
+		}
+
 		public string ObtenerNextIdCuenta(string cod)
 		{
 			string id = sql.ObtenerCodigo(cod);
@@ -42,6 +49,18 @@ namespace CapaModeloFRM
 		public void GuardarCuenta(string id, string tipo, string codigo,  string nombre, string Descr)
 		{
 			string query = "INSERT INTO cuentas  VALUES('"+id+"','"+tipo+"',"+codigo+",'"+nombre+"','"+Descr+"', 1)";
+			sql.ejecutarQuery(query);
+		}
+
+		public void ModCuenta(string id ,string nombre, string Descr, string estado)
+		{
+			string query = "UPDATE cuentas SET  nombre='" + nombre + "', descripcion='" + Descr + "', estado= "+estado+" where id_cuenta='"+id+"'";
+			sql.ejecutarQuery(query);
+		}
+		public void DeleteCuenta(string id)
+		{
+			string query = "DELETE FROM cuentas WHERE id_cuenta='"+id+"'";
+			
 			sql.ejecutarQuery(query);
 		}
 	}
