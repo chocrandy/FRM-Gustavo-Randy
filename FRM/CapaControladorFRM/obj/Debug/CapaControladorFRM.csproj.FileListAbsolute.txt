@@ -12,7 +12,7 @@ C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Pro
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.pdb
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaControladorFRM\bin\Debug\CapaControladorFRM.dll
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaControladorFRM\bin\Debug\CapaControladorFRM.pdb
-C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.csprojAssemblyReference.cache
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.csproj.CoreCompileInputs.cache
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.dll
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.pdb
+C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaControladorFRM\obj\Debug\CapaControladorFRM.csprojAssemblyReference.cache

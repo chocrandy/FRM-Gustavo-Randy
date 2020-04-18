@@ -29,7 +29,7 @@ namespace CapaVistaFRM
         private tipo_de_cambio frm_tipo_de_cambio;
 		private mantenimiento_tipos_poliza frm_tipo_poliza;
 		private mantenimiento_tipos_cuentas_contables frm_tipo_cuentas_contables;
-		private mantenimiento_cuentas_contables frm_cuentas_contables;
+		private cuentas_contables frm_cuentas_contables;
 		private libro_Diario frm_libro_diario;
 
 		sentencia sn = new sentencia();
@@ -356,7 +356,7 @@ namespace CapaVistaFRM
 		{
 			if (frm_cuentas_contables == null)
 			{
-				frm_cuentas_contables = new mantenimiento_cuentas_contables(usuarioActivo);
+				frm_cuentas_contables = new cuentas_contables(usuarioActivo);
 				frm_cuentas_contables.MdiParent = this;
 				frm_cuentas_contables.FormClosed += new FormClosedEventHandler(frm_cuentas_contables_FormClosed);
 				frm_cuentas_contables.Show();

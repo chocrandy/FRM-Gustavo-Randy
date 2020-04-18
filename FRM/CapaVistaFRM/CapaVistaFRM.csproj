@@ -77,6 +77,12 @@
     <Compile Include="balance_general.Designer.cs">
       <DependentUpon>balance_general.cs</DependentUpon>
     </Compile>
+    <Compile Include="cuentas_contables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cuentas_contables.Designer.cs">
+      <DependentUpon>cuentas_contables.cs</DependentUpon>
+    </Compile>
     <Compile Include="formato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,12 +130,6 @@
     </Compile>
     <Compile Include="mantenimiento_clasificador_mov.Designer.cs">
       <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mantenimiento_cuentas_contables.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mantenimiento_cuentas_contables.Designer.cs">
-      <DependentUpon>mantenimiento_cuentas_contables.cs</DependentUpon>
     </Compile>
     <Compile Include="mantenimiento_monedas.cs">
       <SubType>Form</SubType>
@@ -200,6 +200,9 @@
     <EmbeddedResource Include="balance_general.resx">
       <DependentUpon>balance_general.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cuentas_contables.resx">
+      <DependentUpon>cuentas_contables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formato.resx">
       <DependentUpon>formato.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,9 +226,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_clasificador_mov.resx">
       <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mantenimiento_cuentas_contables.resx">
-      <DependentUpon>mantenimiento_cuentas_contables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_monedas.resx">
       <DependentUpon>mantenimiento_monedas.cs</DependentUpon>
