@@ -134,3 +134,4 @@ C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_tipos_poliza.resources
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mantenimiento_tipos_cuentas_contables.resources
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.cuentas_contables.resources
+C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.libro_Mayor.resources

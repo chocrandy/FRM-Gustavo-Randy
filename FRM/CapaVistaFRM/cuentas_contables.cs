@@ -39,7 +39,6 @@ namespace CapaVistaFRM
 
 		void llenarCombosTipos() {
 			Cmb_Tipo.Items.AddRange(mod.ObtenerTIposCuentasContables());
-			Cmb_filtro.Items.AddRange(mod.ObtenerTIposCuentasContables());
 		}
 
 		private void Cuentas_contables_Load(object sender, EventArgs e)

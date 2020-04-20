@@ -1,6 +1,6 @@
 ﻿namespace CapaVistaFRM
 {
-	partial class libro_Diario
+	partial class libro_Mayor
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,26 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.Tbc_LibroDiario = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.Btn_Partidas = new System.Windows.Forms.Button();
 			this.Dtg_LibroDiario = new System.Windows.Forms.DataGridView();
 			this.Gpb_Modificar = new System.Windows.Forms.GroupBox();
+			this.label8 = new System.Windows.Forms.Label();
 			this.Chk_Estado = new System.Windows.Forms.CheckBox();
 			this.Btn_actualizar = new System.Windows.Forms.Button();
 			this.Dtg_Fecha_Modificar = new System.Windows.Forms.DateTimePicker();
 			this.Cmb_Empresa_Modificar = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
 			this.Gpb_Crear = new System.Windows.Forms.GroupBox();
 			this.Btn_Guardar = new System.Windows.Forms.Button();
 			this.Dtg_Fecha_Crear = new System.Windows.Forms.DateTimePicker();
@@ -57,30 +56,21 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.button1 = new System.Windows.Forms.Button();
 			this.Btn_Guardar_partia = new System.Windows.Forms.Button();
-			this.Dtg_Movimientos = new System.Windows.Forms.DataGridView();
-			this.Gpb_Partida = new System.Windows.Forms.GroupBox();
-			this.Dtp_partida = new System.Windows.Forms.DateTimePicker();
-			this.label8 = new System.Windows.Forms.Label();
-			this.Txt_Concepto = new System.Windows.Forms.TextBox();
-			this.Txt_partida = new System.Windows.Forms.TextBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
 			this.Dtg_Partidas = new System.Windows.Forms.DataGridView();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.button2 = new System.Windows.Forms.Button();
 			this.Dtg_Resumen = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
+			this.progressBar1 = new System.Windows.Forms.ProgressBar();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.Tbc_LibroDiario.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_LibroDiario)).BeginInit();
 			this.Gpb_Modificar.SuspendLayout();
 			this.Gpb_Crear.SuspendLayout();
 			this.tabPage2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.Dtg_Movimientos)).BeginInit();
-			this.Gpb_Partida.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Partidas)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Resumen)).BeginInit();
@@ -120,51 +110,51 @@
 			this.Btn_Partidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
 			this.Btn_Partidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Btn_Partidas.ForeColor = System.Drawing.Color.White;
-			this.Btn_Partidas.Location = new System.Drawing.Point(1142, 465);
+			this.Btn_Partidas.Location = new System.Drawing.Point(1130, 472);
 			this.Btn_Partidas.Name = "Btn_Partidas";
 			this.Btn_Partidas.Size = new System.Drawing.Size(119, 35);
 			this.Btn_Partidas.TabIndex = 8;
-			this.Btn_Partidas.Text = "Ver Partidas";
+			this.Btn_Partidas.Text = "Ver Detalle";
 			this.Btn_Partidas.UseVisualStyleBackColor = false;
 			this.Btn_Partidas.Click += new System.EventHandler(this.Btn_Partidas_Click);
 			// 
 			// Dtg_LibroDiario
 			// 
 			this.Dtg_LibroDiario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.Dtg_LibroDiario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.Dtg_LibroDiario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
 			this.Dtg_LibroDiario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.Dtg_LibroDiario.DefaultCellStyle = dataGridViewCellStyle2;
-			this.Dtg_LibroDiario.Location = new System.Drawing.Point(448, 16);
+			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.Dtg_LibroDiario.DefaultCellStyle = dataGridViewCellStyle16;
+			this.Dtg_LibroDiario.Location = new System.Drawing.Point(452, 16);
 			this.Dtg_LibroDiario.Name = "Dtg_LibroDiario";
 			this.Dtg_LibroDiario.ReadOnly = true;
 			this.Dtg_LibroDiario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dtg_LibroDiario.Size = new System.Drawing.Size(813, 443);
+			this.Dtg_LibroDiario.Size = new System.Drawing.Size(797, 443);
 			this.Dtg_LibroDiario.TabIndex = 9;
 			this.Dtg_LibroDiario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dtg_LibroDiario_CellContentDoubleClick);
 			// 
 			// Gpb_Modificar
 			// 
+			this.Gpb_Modificar.Controls.Add(this.label8);
 			this.Gpb_Modificar.Controls.Add(this.Chk_Estado);
 			this.Gpb_Modificar.Controls.Add(this.Btn_actualizar);
 			this.Gpb_Modificar.Controls.Add(this.Dtg_Fecha_Modificar);
 			this.Gpb_Modificar.Controls.Add(this.Cmb_Empresa_Modificar);
 			this.Gpb_Modificar.Controls.Add(this.label5);
 			this.Gpb_Modificar.Controls.Add(this.label6);
-			this.Gpb_Modificar.Controls.Add(this.label7);
 			this.Gpb_Modificar.Enabled = false;
 			this.Gpb_Modificar.Location = new System.Drawing.Point(6, 270);
 			this.Gpb_Modificar.Name = "Gpb_Modificar";
@@ -172,6 +162,15 @@
 			this.Gpb_Modificar.TabIndex = 8;
 			this.Gpb_Modificar.TabStop = false;
 			this.Gpb_Modificar.Text = "Modificar";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(52, 64);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(94, 21);
+			this.label8.TabIndex = 9;
+			this.label8.Text = "Libro Diario";
 			// 
 			// Chk_Estado
 			// 
@@ -207,9 +206,6 @@
 			// Cmb_Empresa_Modificar
 			// 
 			this.Cmb_Empresa_Modificar.FormattingEnabled = true;
-			this.Cmb_Empresa_Modificar.Items.AddRange(new object[] {
-            "BIenestar",
-            " Montreal"});
 			this.Cmb_Empresa_Modificar.Location = new System.Drawing.Point(167, 56);
 			this.Cmb_Empresa_Modificar.Name = "Cmb_Empresa_Modificar";
 			this.Cmb_Empresa_Modificar.Size = new System.Drawing.Size(200, 29);
@@ -232,15 +228,6 @@
 			this.label6.Size = new System.Drawing.Size(64, 21);
 			this.label6.TabIndex = 0;
 			this.label6.Text = "Estado";
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(50, 59);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(77, 21);
-			this.label7.TabIndex = 1;
-			this.label7.Text = "Empresa";
 			// 
 			// Gpb_Crear
 			// 
@@ -283,9 +270,6 @@
 			// Cmb_Empresa_Crear
 			// 
 			this.Cmb_Empresa_Crear.FormattingEnabled = true;
-			this.Cmb_Empresa_Crear.Items.AddRange(new object[] {
-            "Bienestar",
-            "Montreal"});
 			this.Cmb_Empresa_Crear.Location = new System.Drawing.Point(167, 99);
 			this.Cmb_Empresa_Crear.Name = "Cmb_Empresa_Crear";
 			this.Cmb_Empresa_Crear.Size = new System.Drawing.Size(200, 29);
@@ -323,39 +307,22 @@
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(51, 102);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(77, 21);
+			this.label3.Size = new System.Drawing.Size(94, 21);
 			this.label3.TabIndex = 1;
-			this.label3.Text = "Empresa";
+			this.label3.Text = "Libro Diario";
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.button1);
+			this.tabPage2.Controls.Add(this.progressBar1);
 			this.tabPage2.Controls.Add(this.Btn_Guardar_partia);
-			this.tabPage2.Controls.Add(this.Dtg_Movimientos);
-			this.tabPage2.Controls.Add(this.Gpb_Partida);
 			this.tabPage2.Controls.Add(this.Dtg_Partidas);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Location = new System.Drawing.Point(4, 30);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1270, 537);
+			this.tabPage2.Size = new System.Drawing.Size(1270, 529);
 			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Partidas";
+			this.tabPage2.Text = "Detalles";
 			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.Color.Firebrick;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Location = new System.Drawing.Point(1127, 486);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(119, 35);
-			this.button1.TabIndex = 5;
-			this.button1.Text = "Eliminar";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.Button1_Click);
 			// 
 			// Btn_Guardar_partia
 			// 
@@ -364,130 +331,39 @@
 			this.Btn_Guardar_partia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
 			this.Btn_Guardar_partia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Btn_Guardar_partia.ForeColor = System.Drawing.Color.White;
-			this.Btn_Guardar_partia.Location = new System.Drawing.Point(224, 486);
+			this.Btn_Guardar_partia.Location = new System.Drawing.Point(54, 191);
 			this.Btn_Guardar_partia.Name = "Btn_Guardar_partia";
-			this.Btn_Guardar_partia.Size = new System.Drawing.Size(119, 35);
+			this.Btn_Guardar_partia.Size = new System.Drawing.Size(129, 73);
 			this.Btn_Guardar_partia.TabIndex = 4;
 			this.Btn_Guardar_partia.Text = "Guardar";
 			this.Btn_Guardar_partia.UseVisualStyleBackColor = false;
 			this.Btn_Guardar_partia.Click += new System.EventHandler(this.Btn_Guardar_partia_Click);
 			// 
-			// Dtg_Movimientos
-			// 
-			this.Dtg_Movimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.Dtg_Movimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this.Dtg_Movimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.Dtg_Movimientos.DefaultCellStyle = dataGridViewCellStyle4;
-			this.Dtg_Movimientos.Location = new System.Drawing.Point(14, 151);
-			this.Dtg_Movimientos.Name = "Dtg_Movimientos";
-			this.Dtg_Movimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dtg_Movimientos.Size = new System.Drawing.Size(593, 329);
-			this.Dtg_Movimientos.TabIndex = 3;
-			// 
-			// Gpb_Partida
-			// 
-			this.Gpb_Partida.Controls.Add(this.Dtp_partida);
-			this.Gpb_Partida.Controls.Add(this.label8);
-			this.Gpb_Partida.Controls.Add(this.Txt_Concepto);
-			this.Gpb_Partida.Controls.Add(this.Txt_partida);
-			this.Gpb_Partida.Controls.Add(this.label11);
-			this.Gpb_Partida.Controls.Add(this.label13);
-			this.Gpb_Partida.Location = new System.Drawing.Point(14, 9);
-			this.Gpb_Partida.Name = "Gpb_Partida";
-			this.Gpb_Partida.Size = new System.Drawing.Size(593, 136);
-			this.Gpb_Partida.TabIndex = 1;
-			this.Gpb_Partida.TabStop = false;
-			this.Gpb_Partida.Text = "Partida";
-			// 
-			// Dtp_partida
-			// 
-			this.Dtp_partida.Location = new System.Drawing.Point(120, 100);
-			this.Dtp_partida.Name = "Dtp_partida";
-			this.Dtp_partida.Size = new System.Drawing.Size(341, 27);
-			this.Dtp_partida.TabIndex = 13;
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(14, 100);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(59, 21);
-			this.label8.TabIndex = 12;
-			this.label8.Text = "Fecha";
-			// 
-			// Txt_Concepto
-			// 
-			this.Txt_Concepto.Location = new System.Drawing.Point(120, 67);
-			this.Txt_Concepto.Name = "Txt_Concepto";
-			this.Txt_Concepto.Size = new System.Drawing.Size(467, 27);
-			this.Txt_Concepto.TabIndex = 2;
-			// 
-			// Txt_partida
-			// 
-			this.Txt_partida.Enabled = false;
-			this.Txt_partida.Location = new System.Drawing.Point(120, 31);
-			this.Txt_partida.Name = "Txt_partida";
-			this.Txt_partida.Size = new System.Drawing.Size(140, 27);
-			this.Txt_partida.TabIndex = 10;
-			this.Txt_partida.TabStop = false;
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(14, 63);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(91, 21);
-			this.label11.TabIndex = 2;
-			this.label11.Text = "Concepto";
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(69, 31);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(36, 21);
-			this.label13.TabIndex = 1;
-			this.label13.Text = "No.";
-			// 
 			// Dtg_Partidas
 			// 
 			this.Dtg_Partidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.Dtg_Partidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.Dtg_Partidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
 			this.Dtg_Partidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.Dtg_Partidas.DefaultCellStyle = dataGridViewCellStyle6;
-			this.Dtg_Partidas.Location = new System.Drawing.Point(624, 9);
+			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.Dtg_Partidas.DefaultCellStyle = dataGridViewCellStyle14;
+			this.Dtg_Partidas.Location = new System.Drawing.Point(251, 19);
 			this.Dtg_Partidas.Name = "Dtg_Partidas";
 			this.Dtg_Partidas.ReadOnly = true;
 			this.Dtg_Partidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dtg_Partidas.Size = new System.Drawing.Size(637, 471);
+			this.Dtg_Partidas.Size = new System.Drawing.Size(965, 471);
 			this.Dtg_Partidas.StandardTab = true;
 			this.Dtg_Partidas.TabIndex = 12;
 			this.Dtg_Partidas.TabStop = false;
@@ -498,10 +374,10 @@
 			// 
 			this.tabPage3.Controls.Add(this.button2);
 			this.tabPage3.Controls.Add(this.Dtg_Resumen);
-			this.tabPage3.Location = new System.Drawing.Point(4, 30);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(1270, 529);
+			this.tabPage3.Size = new System.Drawing.Size(1270, 537);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Visualizar";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -513,9 +389,9 @@
 			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
 			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button2.ForeColor = System.Drawing.Color.White;
-			this.button2.Location = new System.Drawing.Point(1124, 29);
+			this.button2.Location = new System.Drawing.Point(1031, 470);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(119, 35);
+			this.button2.Size = new System.Drawing.Size(192, 35);
 			this.button2.TabIndex = 18;
 			this.button2.Text = "PDF";
 			this.button2.UseVisualStyleBackColor = false;
@@ -525,28 +401,28 @@
 			// 
 			this.Dtg_Resumen.AllowUserToAddRows = false;
 			this.Dtg_Resumen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.Dtg_Resumen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.Dtg_Resumen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
 			this.Dtg_Resumen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.Dtg_Resumen.DefaultCellStyle = dataGridViewCellStyle8;
-			this.Dtg_Resumen.Location = new System.Drawing.Point(43, 29);
+			dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.Dtg_Resumen.DefaultCellStyle = dataGridViewCellStyle18;
+			this.Dtg_Resumen.Location = new System.Drawing.Point(55, 29);
 			this.Dtg_Resumen.Name = "Dtg_Resumen";
 			this.Dtg_Resumen.ReadOnly = true;
 			this.Dtg_Resumen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dtg_Resumen.Size = new System.Drawing.Size(1037, 476);
+			this.Dtg_Resumen.Size = new System.Drawing.Size(931, 476);
 			this.Dtg_Resumen.TabIndex = 17;
 			// 
 			// panel1
@@ -562,16 +438,28 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(39, 21);
+			this.label1.Location = new System.Drawing.Point(10, 7);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(219, 46);
+			this.label1.Size = new System.Drawing.Size(396, 79);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Libro Diario";
+			this.label1.Text = "Libro Mayor";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// libro_Diario
+			// progressBar1
+			// 
+			this.progressBar1.Location = new System.Drawing.Point(35, 300);
+			this.progressBar1.Name = "progressBar1";
+			this.progressBar1.Size = new System.Drawing.Size(164, 23);
+			this.progressBar1.TabIndex = 13;
+			this.progressBar1.Visible = false;
+			// 
+			// timer1
+			// 
+			this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+			// 
+			// libro_Mayor
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.ClientSize = new System.Drawing.Size(1279, 673);
@@ -579,9 +467,9 @@
 			this.Controls.Add(this.Tbc_LibroDiario);
 			this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-			this.Name = "libro_Diario";
+			this.Name = "libro_Mayor";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Load += new System.EventHandler(this.Libro_Diario_Load);
+			this.Load += new System.EventHandler(this.libro_Mayor_Load);
 			this.Tbc_LibroDiario.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_LibroDiario)).EndInit();
@@ -590,9 +478,6 @@
 			this.Gpb_Crear.ResumeLayout(false);
 			this.Gpb_Crear.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.Dtg_Movimientos)).EndInit();
-			this.Gpb_Partida.ResumeLayout(false);
-			this.Gpb_Partida.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Partidas)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Resumen)).EndInit();
@@ -618,7 +503,6 @@
 		private System.Windows.Forms.ComboBox Cmb_Empresa_Modificar;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.GroupBox Gpb_Crear;
 		private System.Windows.Forms.Button Btn_Guardar;
 		private System.Windows.Forms.DateTimePicker Dtg_Fecha_Crear;
@@ -628,18 +512,12 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.DataGridView Dtg_Partidas;
-		private System.Windows.Forms.GroupBox Gpb_Partida;
-		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Button Btn_Partidas;
 		private System.Windows.Forms.Button Btn_Guardar_partia;
-		private System.Windows.Forms.DataGridView Dtg_Movimientos;
-		private System.Windows.Forms.TextBox Txt_Concepto;
-		private System.Windows.Forms.TextBox Txt_partida;
 		private System.Windows.Forms.DataGridView Dtg_Resumen;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.DateTimePicker Dtp_partida;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.ProgressBar progressBar1;
+		private System.Windows.Forms.Timer timer1;
 	}
 }

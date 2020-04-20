@@ -101,7 +101,7 @@
             this.bancosToolStripMenuItem2,
             this.clasificadorDeMovimientosToolStripMenuItem});
 			this.bancosToolStripMenuItem1.Name = "bancosToolStripMenuItem1";
-			this.bancosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+			this.bancosToolStripMenuItem1.Size = new System.Drawing.Size(173, 24);
 			this.bancosToolStripMenuItem1.Text = "Bancos";
 			// 
 			// cuentasBancariasToolStripMenuItem
@@ -139,7 +139,7 @@
             this.tiposDeCuentasContablesToolStripMenuItem,
             this.tiposDePólizaToolStripMenuItem});
 			this.contabilidadToolStripMenuItem1.Name = "contabilidadToolStripMenuItem1";
-			this.contabilidadToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+			this.contabilidadToolStripMenuItem1.Size = new System.Drawing.Size(173, 24);
 			this.contabilidadToolStripMenuItem1.Text = "Contabilidad";
 			// 
 			// cuentasContablesToolStripMenuItem
@@ -169,7 +169,7 @@
             this.modulosToolStripMenuItem,
             this.monedasToolStripMenuItem1});
 			this.otrosToolStripMenuItem.Name = "otrosToolStripMenuItem";
-			this.otrosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+			this.otrosToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
 			this.otrosToolStripMenuItem.Text = "Otros";
 			// 
 			// modulosToolStripMenuItem
@@ -209,6 +209,7 @@
 			this.libroMayorToolStripMenuItem.Name = "libroMayorToolStripMenuItem";
 			this.libroMayorToolStripMenuItem.Size = new System.Drawing.Size(252, 24);
 			this.libroMayorToolStripMenuItem.Text = "Libro Mayor";
+			this.libroMayorToolStripMenuItem.Click += new System.EventHandler(this.LibroMayorToolStripMenuItem_Click);
 			// 
 			// balanceGeneralToolStripMenuItem
 			// 

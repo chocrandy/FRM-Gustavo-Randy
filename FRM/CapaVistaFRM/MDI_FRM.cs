@@ -31,6 +31,7 @@ namespace CapaVistaFRM
 		private mantenimiento_tipos_cuentas_contables frm_tipo_cuentas_contables;
 		private cuentas_contables frm_cuentas_contables;
 		private libro_Diario frm_libro_diario;
+		private libro_Mayor frm_libro_mayor;
 
 		sentencia sn = new sentencia();
         String usuarioActivo = "rchocm";
@@ -77,6 +78,8 @@ namespace CapaVistaFRM
 		{ frm_cuentas_contables = null; }
 		private void frm_libro_diario_FormClosed(Object sender, FormClosedEventArgs e)
 		{ frm_libro_diario = null; }
+		private void frm_libro_mayor_FormClosed(Object sender, FormClosedEventArgs e)
+		{ frm_libro_mayor = null; }
 		//====================Funciones de declaración de Eventos====================
 
 		private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -364,6 +367,21 @@ namespace CapaVistaFRM
 			else
 			{
 				frm_cuentas_contables.Activate();
+			}
+		}
+
+		private void LibroMayorToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (frm_libro_mayor == null)
+			{
+				frm_libro_mayor = new libro_Mayor(usuarioActivo);
+				frm_libro_mayor.MdiParent = this;
+				frm_libro_mayor.FormClosed += new FormClosedEventHandler(frm_libro_mayor_FormClosed);
+				frm_libro_mayor.Show();
+			}
+			else
+			{
+				frm_libro_mayor.Activate();
 			}
 		}
 	}
