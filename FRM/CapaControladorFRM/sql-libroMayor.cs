@@ -55,7 +55,7 @@ namespace CapaControladorFRM
 		}
 
 
-		public OdbcDataAdapter LlenarTablaPartidas(string sql)
+		public OdbcDataAdapter LlenarTablaMayor(string sql)
 		{
 			OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, conectar.conexion("ERP"));
 			return dataTable;

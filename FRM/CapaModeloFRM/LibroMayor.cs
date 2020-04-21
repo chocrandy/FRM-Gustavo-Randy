@@ -146,12 +146,60 @@ namespace CapaModeloFRM
 			return "Libro Mayor Generado Correctamente";
 		}
 
-		public OdbcDataAdapter llenarPartidas(string idLibro)
+		public string CrearQueryMayor(string idlibroMayor,string  idLibroDiario)
 		{
+			OdbcDataAdapter ODBC_Cuentas = Mayor.Cuentas(idLibroDiario);//Cuentas
+			DataTable cuentas = new DataTable();// Tabla de Cuentas
+			ODBC_Cuentas.Fill(cuentas);
+
+			string query = "";
+			int i = 0;
+			foreach (DataRow cuenta in cuentas.Rows)
+			{
+				MessageBox.Show("Cuenta " + cuenta[0]);
+				if (i==cuentas.Rows.Count-1)
+				{
+					query += "SELECT '','','"+cuenta[0].ToString()+"','' "+
+							"UNION ALL "+
+							"SELECT id_partida, concat('a: ', cuenta_contable), haber, '' " +
+							"FROM libro_mayor_detalles WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = "+idlibroMayor+" AND haber<>0 " +
+							"UNION ALL "+
+							"SELECT '','','', IF(ROUND(SUM(haber), 2) > 0, CONCAT('SALDO: ', ROUND(SUM(haber))), '') " +
+							"FROM libro_mayor_detalles WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = " + idlibroMayor + " AND haber<>0 " +
+							"UNION ALL "+
+							"SELECT id_partida, concat('por: ', cuenta_contable), debe, '' FROM libro_mayor_detalles " +
+							"WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = " + idlibroMayor + " AND debe<>0 " +
+							"UNION ALL "+
+							"SELECT '','','', IF((ROUND(SUM(debe), 2)) > 0, CONCAT('SALDO: ', ROUND(SUM(debe))), '') " +
+							"FROM libro_mayor_detalles WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = " + idlibroMayor + " AND debe<>0 ;";
+				}
+				else
+				{
+					query += "SELECT '','','" + cuenta[0].ToString() + "','' " +
+							"UNION ALL " +
+							"SELECT id_partida, concat('a: ', cuenta_contable), haber, ''  " +
+							"FROM libro_mayor_detalles WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = " + idlibroMayor + " AND haber<>0 " +
+							"UNION ALL " +
+							"SELECT '','','', IF(ROUND(SUM(haber), 2) > 0, CONCAT('SALDO: ', ROUND(SUM(haber))), '') " +
+							"FROM libro_mayor_detalles WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = " + idlibroMayor + " AND haber<>0 " +
+							"UNION ALL " +
+							"SELECT id_partida, concat('por: ', cuenta_contable), debe, '' FROM libro_mayor_detalles " +
+							"WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = " + idlibroMayor + " AND debe<>0 " +
+							"UNION ALL " +
+							"SELECT '','','', IF((ROUND(SUM(debe), 2)) > 0, CONCAT('SALDO: ', ROUND(SUM(debe))), '') " +
+							"FROM libro_mayor_detalles WHERE cuenta_mayor = '" + cuenta[0].ToString() + "' AND id_libro_mayor = " + idlibroMayor + " AND debe<>0 UNION ALL ";
+				}
+				i++;
+				
+			}
+			return query;
+		}
+		public OdbcDataAdapter llenarMayor(string idLibroDiario, string idlibroMayor)
+		{
+
+			string query = CrearQueryMayor(idlibroMayor, idLibroDiario);
 			
-			string	query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario=" + idLibro + "";
-			
-			OdbcDataAdapter dataTable = Mayor.LlenarTablaPartidas(query);
+			OdbcDataAdapter dataTable = Mayor.LlenarTablaMayor(query);
 			return dataTable;
 		}
 

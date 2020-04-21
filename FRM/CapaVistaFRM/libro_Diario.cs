@@ -143,7 +143,12 @@ namespace CapaVistaFRM
 			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
 			DataTable table = new DataTable();
 			dt.Fill(table);
-			 Dtg_Partidas.DataSource = table;
+			Dtg_Partidas.Rows.Clear();
+			foreach (DataRow row in table.Rows)
+			{
+				Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+			}
+			 
 			sn.insertarBitacora(user, "Vio las partidas", "Libro Diario");
 
 		}
@@ -181,7 +186,11 @@ namespace CapaVistaFRM
 				OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
 				DataTable table = new DataTable();
 				dt.Fill(table);
-				Dtg_Partidas.DataSource = table;
+				Dtg_Partidas.Rows.Clear();
+				foreach (DataRow row in table.Rows)
+				{
+					Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+				}
 				sn.insertarBitacora(user, "Creo una partida", "Libro Diario");
 			}
 		}
@@ -199,12 +208,18 @@ namespace CapaVistaFRM
 			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
 			DataTable table = new DataTable();
 			dt.Fill(table);
-			Dtg_Partidas.DataSource = table;
+			Dtg_Partidas.Rows.Clear();
+			foreach (DataRow row in table.Rows)
+			{
+				Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+			}
 
-			OdbcDataAdapter dt2 = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-			DataTable table2 = new DataTable();
-			dt2.Fill(table2);
-			Dtg_Resumen.DataSource = table;
+			
+			Dtg_Resumen.Rows.Clear();
+			foreach (DataRow row in table.Rows)
+			{
+				Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+			}
 		}
 
 		private void Dtg_Partidas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -231,9 +246,21 @@ namespace CapaVistaFRM
 					OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
 					DataTable table = new DataTable();
 					dt.Fill(table);
-					Dtg_Partidas.DataSource = table;
+					Dtg_Partidas.Rows.Clear();
+					foreach (DataRow row in table.Rows)
+					{
+						Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+					}
+
+
+					Dtg_Resumen.Rows.Clear();
+					foreach (DataRow row in table.Rows)
+					{
+						Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+					}
+					sn.insertarBitacora(user, "Elimino una partida", "Libro Diario");
 				}
-				sn.insertarBitacora(user, "Elimino una partida", "Libro Diario");
+			
 			}
 			
 			

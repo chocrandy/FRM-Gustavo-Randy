@@ -61,10 +61,18 @@
 			this.Dtg_Partidas = new System.Windows.Forms.DataGridView();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.button2 = new System.Windows.Forms.Button();
-			this.Dtg_Resumen = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.Partida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Parcial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Dtg_Resumen = new System.Windows.Forms.DataGridView();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Tbc_LibroDiario.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_LibroDiario)).BeginInit();
@@ -73,8 +81,8 @@
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Partidas)).BeginInit();
 			this.tabPage3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.Dtg_Resumen)).BeginInit();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Dtg_Resumen)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// Tbc_LibroDiario
@@ -352,7 +360,8 @@
 			// 
 			// Dtg_Partidas
 			// 
-			this.Dtg_Partidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.Dtg_Partidas.AllowUserToAddRows = false;
+			this.Dtg_Partidas.AllowUserToDeleteRows = false;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,6 +371,11 @@
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.Dtg_Partidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.Dtg_Partidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.Dtg_Partidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Partida,
+            this.Descripción,
+            this.Parcial,
+            this.Total});
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -370,11 +384,11 @@
 			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.Dtg_Partidas.DefaultCellStyle = dataGridViewCellStyle4;
-			this.Dtg_Partidas.Location = new System.Drawing.Point(251, 19);
+			this.Dtg_Partidas.Location = new System.Drawing.Point(213, 19);
 			this.Dtg_Partidas.Name = "Dtg_Partidas";
 			this.Dtg_Partidas.ReadOnly = true;
 			this.Dtg_Partidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dtg_Partidas.Size = new System.Drawing.Size(965, 471);
+			this.Dtg_Partidas.Size = new System.Drawing.Size(1000, 471);
 			this.Dtg_Partidas.StandardTab = true;
 			this.Dtg_Partidas.TabIndex = 12;
 			this.Dtg_Partidas.TabStop = false;
@@ -383,8 +397,8 @@
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Controls.Add(this.button2);
 			this.tabPage3.Controls.Add(this.Dtg_Resumen);
+			this.tabPage3.Controls.Add(this.button2);
 			this.tabPage3.Location = new System.Drawing.Point(4, 30);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -407,34 +421,6 @@
 			this.button2.Text = "PDF";
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.Button2_Click);
-			// 
-			// Dtg_Resumen
-			// 
-			this.Dtg_Resumen.AllowUserToAddRows = false;
-			this.Dtg_Resumen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.Dtg_Resumen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-			this.Dtg_Resumen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.Dtg_Resumen.DefaultCellStyle = dataGridViewCellStyle6;
-			this.Dtg_Resumen.Location = new System.Drawing.Point(55, 29);
-			this.Dtg_Resumen.Name = "Dtg_Resumen";
-			this.Dtg_Resumen.ReadOnly = true;
-			this.Dtg_Resumen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Dtg_Resumen.Size = new System.Drawing.Size(931, 476);
-			this.Dtg_Resumen.TabIndex = 17;
 			// 
 			// panel1
 			// 
@@ -462,6 +448,111 @@
 			// 
 			this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
 			// 
+			// Partida
+			// 
+			this.Partida.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Partida.FillWeight = 101.5228F;
+			this.Partida.HeaderText = "Partida";
+			this.Partida.Name = "Partida";
+			this.Partida.ReadOnly = true;
+			// 
+			// Descripción
+			// 
+			this.Descripción.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Descripción.FillWeight = 99.49239F;
+			this.Descripción.HeaderText = "Descripción";
+			this.Descripción.Name = "Descripción";
+			this.Descripción.ReadOnly = true;
+			this.Descripción.Width = 456;
+			// 
+			// Parcial
+			// 
+			this.Parcial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Parcial.FillWeight = 99.49239F;
+			this.Parcial.HeaderText = "Parcial";
+			this.Parcial.Name = "Parcial";
+			this.Parcial.ReadOnly = true;
+			this.Parcial.Width = 200;
+			// 
+			// Total
+			// 
+			this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Total.FillWeight = 99.49239F;
+			this.Total.HeaderText = "Total";
+			this.Total.Name = "Total";
+			this.Total.ReadOnly = true;
+			this.Total.Width = 200;
+			// 
+			// Dtg_Resumen
+			// 
+			this.Dtg_Resumen.AllowUserToAddRows = false;
+			this.Dtg_Resumen.AllowUserToDeleteRows = false;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.Dtg_Resumen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			this.Dtg_Resumen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.Dtg_Resumen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.Dtg_Resumen.DefaultCellStyle = dataGridViewCellStyle6;
+			this.Dtg_Resumen.Location = new System.Drawing.Point(25, 23);
+			this.Dtg_Resumen.Name = "Dtg_Resumen";
+			this.Dtg_Resumen.ReadOnly = true;
+			this.Dtg_Resumen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.Dtg_Resumen.Size = new System.Drawing.Size(1000, 471);
+			this.Dtg_Resumen.StandardTab = true;
+			this.Dtg_Resumen.TabIndex = 19;
+			this.Dtg_Resumen.TabStop = false;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.dataGridViewTextBoxColumn1.FillWeight = 101.5228F;
+			this.dataGridViewTextBoxColumn1.HeaderText = "Partida";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.dataGridViewTextBoxColumn2.FillWeight = 99.49239F;
+			this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.ReadOnly = true;
+			this.dataGridViewTextBoxColumn2.Width = 456;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.dataGridViewTextBoxColumn3.FillWeight = 99.49239F;
+			this.dataGridViewTextBoxColumn3.HeaderText = "Parcial";
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			this.dataGridViewTextBoxColumn3.ReadOnly = true;
+			this.dataGridViewTextBoxColumn3.Width = 200;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.dataGridViewTextBoxColumn4.FillWeight = 99.49239F;
+			this.dataGridViewTextBoxColumn4.HeaderText = "Total";
+			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			this.dataGridViewTextBoxColumn4.ReadOnly = true;
+			this.dataGridViewTextBoxColumn4.Width = 200;
+			// 
 			// libro_Mayor
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -483,9 +574,9 @@
 			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.Dtg_Partidas)).EndInit();
 			this.tabPage3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.Dtg_Resumen)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Dtg_Resumen)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -517,10 +608,18 @@
 		private System.Windows.Forms.DataGridView Dtg_Partidas;
 		private System.Windows.Forms.Button Btn_Partidas;
 		private System.Windows.Forms.Button Btn_Guardar_partia;
-		private System.Windows.Forms.DataGridView Dtg_Resumen;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Partida;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Parcial;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+		private System.Windows.Forms.DataGridView Dtg_Resumen;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 	}
 }
