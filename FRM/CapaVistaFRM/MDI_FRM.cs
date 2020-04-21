@@ -24,7 +24,7 @@ namespace CapaVistaFRM
         private mantenimiento_cuentas_bancarias frm_mantenimiento_cuentas_bancarias;
         private mantenimiento_clasificador_mov frm_mantenimiento_clasificador_mov;
         private mantenimiento_monedas frm_mantenimiento_monedas;
-        private movimientos_bancarios frm_movimientos_bancarios;                
+        private mov_banc_encabezado frm_mov_banc_encabezado;                
         private revision_presupuestaria frm_revision_presupuestaria;        
         private tipo_de_cambio frm_tipo_de_cambio;
 		private mantenimiento_tipos_poliza frm_tipo_poliza;
@@ -63,8 +63,8 @@ namespace CapaVistaFRM
         { frm_mantenimiento_clasificador_mov = null; }
         private void frm_mantenimiento_monedas_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_mantenimiento_monedas = null; }
-        private void frm_movimientos_bancarios_FormClosed(Object sender, FormClosedEventArgs e)
-        { frm_movimientos_bancarios = null; }
+        private void frm_mov_banc_encabezado_FormClosed(Object sender, FormClosedEventArgs e)
+        { frm_mov_banc_encabezado = null; }
         private void frm_revision_presupuestaria_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_revision_presupuestaria = null; }        
         private void frm_tipo_de_cambio_FormClosed(Object sender, FormClosedEventArgs e)
@@ -156,16 +156,17 @@ namespace CapaVistaFRM
 
         private void MovimientosBancariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frm_movimientos_bancarios == null)
+            //ENCABEZADO_MOVIMIENTOS_BANCARIOS
+            if (frm_mov_banc_encabezado == null)
             {
-                frm_movimientos_bancarios = new movimientos_bancarios();
-                frm_movimientos_bancarios.MdiParent = this;
-                frm_movimientos_bancarios.FormClosed += new FormClosedEventHandler(frm_movimientos_bancarios_FormClosed);
-                frm_movimientos_bancarios.Show();
+                frm_mov_banc_encabezado = new mov_banc_encabezado();
+                frm_mov_banc_encabezado.MdiParent = this;
+                frm_mov_banc_encabezado.FormClosed += new FormClosedEventHandler(frm_mov_banc_encabezado_FormClosed);
+                frm_mov_banc_encabezado.Show();
             }
             else
             {
-                frm_movimientos_bancarios.Activate();
+                frm_mov_banc_encabezado.Activate();
             }
         }
 
@@ -186,11 +187,11 @@ namespace CapaVistaFRM
         
         private void MDI_FRM_Load(object sender, EventArgs e)
         {
-            
+            /*
             frm_login login = new frm_login();
             login.ShowDialog();
             Lbl_usuario.Text = login.obtenerNombreUsuario();
-            usuarioActivo = Lbl_usuario.Text;          
+            usuarioActivo = Lbl_usuario.Text; */ 
         } 
 
         private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)

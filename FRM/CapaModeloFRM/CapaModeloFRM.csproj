@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CuentasContables.cs" />
     <Compile Include="LibroDiario.cs" />
+    <Compile Include="movBancarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

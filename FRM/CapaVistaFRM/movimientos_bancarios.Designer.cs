@@ -39,7 +39,7 @@
             this.Dtp_emision = new System.Windows.Forms.DateTimePicker();
             this.Txt_documento = new System.Windows.Forms.TextBox();
             this.Cbo_tipo = new System.Windows.Forms.ComboBox();
-            this.Cbo_transaccion = new System.Windows.Forms.ComboBox();
+            this.Cbo_banco = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.Gpb_encabezado.Controls.Add(this.Dtp_emision);
             this.Gpb_encabezado.Controls.Add(this.Txt_documento);
             this.Gpb_encabezado.Controls.Add(this.Cbo_tipo);
-            this.Gpb_encabezado.Controls.Add(this.Cbo_transaccion);
+            this.Gpb_encabezado.Controls.Add(this.Cbo_banco);
             this.Gpb_encabezado.Controls.Add(this.label6);
             this.Gpb_encabezado.Controls.Add(this.label5);
             this.Gpb_encabezado.Controls.Add(this.label4);
@@ -140,47 +140,51 @@
             // Dtp_vence
             // 
             this.Dtp_vence.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_vence.CustomFormat = "yyyy-MM-dd";
             this.Dtp_vence.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_vence.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtp_vence.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Dtp_vence.Location = new System.Drawing.Point(744, 60);
             this.Dtp_vence.Name = "Dtp_vence";
-            this.Dtp_vence.Size = new System.Drawing.Size(128, 27);
+            this.Dtp_vence.Size = new System.Drawing.Size(122, 27);
             this.Dtp_vence.TabIndex = 16;
+            this.Dtp_vence.Value = new System.DateTime(2020, 4, 18, 0, 0, 0, 0);
             // 
             // Dtp_emision
             // 
             this.Dtp_emision.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_emision.CustomFormat = "yyyy-MM-dd";
             this.Dtp_emision.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_emision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_emision.Location = new System.Drawing.Point(593, 60);
+            this.Dtp_emision.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_emision.Location = new System.Drawing.Point(615, 60);
             this.Dtp_emision.Name = "Dtp_emision";
-            this.Dtp_emision.Size = new System.Drawing.Size(128, 27);
+            this.Dtp_emision.Size = new System.Drawing.Size(120, 27);
             this.Dtp_emision.TabIndex = 15;
+            this.Dtp_emision.Value = new System.DateTime(2020, 4, 18, 0, 0, 0, 0);
             // 
             // Txt_documento
             // 
-            this.Txt_documento.Location = new System.Drawing.Point(373, 60);
+            this.Txt_documento.Location = new System.Drawing.Point(424, 60);
             this.Txt_documento.Name = "Txt_documento";
-            this.Txt_documento.Size = new System.Drawing.Size(200, 27);
+            this.Txt_documento.Size = new System.Drawing.Size(179, 27);
             this.Txt_documento.TabIndex = 14;
             // 
             // Cbo_tipo
             // 
             this.Cbo_tipo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_tipo.FormattingEnabled = true;
-            this.Cbo_tipo.Location = new System.Drawing.Point(197, 58);
+            this.Cbo_tipo.Location = new System.Drawing.Point(236, 58);
             this.Cbo_tipo.Name = "Cbo_tipo";
-            this.Cbo_tipo.Size = new System.Drawing.Size(152, 29);
+            this.Cbo_tipo.Size = new System.Drawing.Size(174, 29);
             this.Cbo_tipo.TabIndex = 13;
             // 
-            // Cbo_transaccion
+            // Cbo_banco
             // 
-            this.Cbo_transaccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_transaccion.FormattingEnabled = true;
-            this.Cbo_transaccion.Location = new System.Drawing.Point(27, 58);
-            this.Cbo_transaccion.Name = "Cbo_transaccion";
-            this.Cbo_transaccion.Size = new System.Drawing.Size(152, 29);
-            this.Cbo_transaccion.TabIndex = 12;
+            this.Cbo_banco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_banco.FormattingEnabled = true;
+            this.Cbo_banco.Location = new System.Drawing.Point(27, 58);
+            this.Cbo_banco.Name = "Cbo_banco";
+            this.Cbo_banco.Size = new System.Drawing.Size(194, 29);
+            this.Cbo_banco.TabIndex = 12;
             // 
             // label6
             // 
@@ -196,7 +200,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(589, 36);
+            this.label5.Location = new System.Drawing.Point(611, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 19);
             this.label5.TabIndex = 3;
@@ -206,7 +210,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(369, 36);
+            this.label4.Location = new System.Drawing.Point(420, 36);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 19);
             this.label4.TabIndex = 2;
@@ -216,7 +220,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(193, 36);
+            this.label3.Location = new System.Drawing.Point(232, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 19);
             this.label3.TabIndex = 1;
@@ -462,7 +466,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Cbo_tipo;
-        private System.Windows.Forms.ComboBox Cbo_transaccion;
+        private System.Windows.Forms.ComboBox Cbo_banco;
         private System.Windows.Forms.TextBox Txt_documento;
         private System.Windows.Forms.TextBox Txt_valorEncabezado;
         private System.Windows.Forms.Label label8;

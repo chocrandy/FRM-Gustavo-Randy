@@ -83,6 +83,12 @@
     <Compile Include="cuentas_contables.Designer.cs">
       <DependentUpon>cuentas_contables.cs</DependentUpon>
     </Compile>
+    <Compile Include="mov_banc_encabezado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mov_banc_encabezado.Designer.cs">
+      <DependentUpon>mov_banc_encabezado.cs</DependentUpon>
+    </Compile>
     <Compile Include="formato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,12 @@
     </Compile>
     <Compile Include="mantenimiento_monedas.Designer.cs">
       <DependentUpon>mantenimiento_monedas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="movimientos_bancarios_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="movimientos_bancarios_2.Designer.cs">
+      <DependentUpon>movimientos_bancarios_2.cs</DependentUpon>
     </Compile>
     <Compile Include="revision_presupuestaria.cs">
       <SubType>Form</SubType>
@@ -203,6 +215,9 @@
     <EmbeddedResource Include="cuentas_contables.resx">
       <DependentUpon>cuentas_contables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mov_banc_encabezado.resx">
+      <DependentUpon>mov_banc_encabezado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formato.resx">
       <DependentUpon>formato.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_monedas.resx">
       <DependentUpon>mantenimiento_monedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="movimientos_bancarios_2.resx">
+      <DependentUpon>movimientos_bancarios_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="revision_presupuestaria.resx">
       <DependentUpon>revision_presupuestaria.cs</DependentUpon>
