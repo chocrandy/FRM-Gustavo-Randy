@@ -60,6 +60,11 @@ namespace CapaModeloFRM
 			return dataTable;
 		}
 
+		public string ConsultarMayor(string idMayor)
+		{
+			return Mayor.ConsultarLibro(idMayor);
+		}
+
 		public string CrearLibroMayor(string idLibroDiario, string idLibroMayor)
 		{
 			
@@ -112,7 +117,7 @@ namespace CapaModeloFRM
 					//OPUESTO DEBE
 					//MessageBox.Show("DEBE CUENTA " + cuenta[0].ToString());
 					//MessageBox.Show("DEBE OPUESTA" + Cuenta_Opuesta_Debe.Rows[0].ItemArray[0].ToString());
-					InsertarDetalleMayor(noDetalle.ToString(), idLibroMayor, cuenta[0].ToString(), Cuenta_Opuesta_Debe.Rows[0].ItemArray[0].ToString(), "0",partidadebe[1].ToString());
+					InsertarDetalleMayor(noDetalle.ToString(), idLibroMayor, partidadebe[0].ToString(), cuenta[0].ToString(), Cuenta_Opuesta_Debe.Rows[0].ItemArray[0].ToString(), "0",partidadebe[1].ToString());
 					//MessageBox.Show("SALIO DE PARTIDAS");
 				}
 
@@ -132,7 +137,7 @@ namespace CapaModeloFRM
 					
 						//MessageBox.Show("HABER CUENTA " + cuenta[0].ToString());
 						//MessageBox.Show("HABER OPUESTA" + Cuenta_Opuesta_Haber.Rows[0].ItemArray[0].ToString());
-						InsertarDetalleMayor(noDetalle.ToString(), idLibroMayor, cuenta[0].ToString(), Cuenta_Opuesta_Haber.Rows[0].ItemArray[0].ToString(), partida[1].ToString(), "0");
+						InsertarDetalleMayor(noDetalle.ToString(), idLibroMayor, partida[0].ToString(), cuenta[0].ToString(), Cuenta_Opuesta_Haber.Rows[0].ItemArray[0].ToString(), partida[1].ToString(), "0");
 					
 				}
 				//MessageBox.Show("SALIO DE CUENTAS");
@@ -178,9 +183,9 @@ namespace CapaModeloFRM
 			Mayor.ejecutarQuery(query);
 		}
 
-		public void InsertarDetalleMayor(string nodetalle,string  libroMayor,string Cuenta, string opuesta,string debe, string haber)
+		public void InsertarDetalleMayor(string nodetalle,string  libroMayor,string idPartida, string Cuenta, string opuesta,string debe, string haber)
 		{
-			string query = "INSERT INTO libro_mayor_detalles VALUES("+nodetalle+","+libroMayor+",'" + Cuenta + "','"+opuesta+"', " + debe + ","+haber+",1)";
+			string query = "INSERT INTO libro_mayor_detalles VALUES("+nodetalle+","+libroMayor+","+idPartida+",'" + Cuenta + "','"+opuesta+"', " + debe + ","+haber+",1)";
 			Mayor.ejecutarQuery(query);
 		}
 	}

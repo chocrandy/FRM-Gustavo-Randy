@@ -129,23 +129,47 @@ namespace CapaVistaFRM
 			
 			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
 			idLibro2 = Dtg_LibroDiario.CurrentRow.Cells[1].Value.ToString();
-			Tbc_LibroDiario.SelectedIndex = 1;
-			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-			DataTable table = new DataTable();
-			dt.Fill(table);
-			 Dtg_Partidas.DataSource = table;
+			if (Libro.ConsultarMayor(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString())=="0")
+			{
+				Tbc_LibroDiario.SelectedIndex = 1;
+			}
+			else
+			{
+				Tbc_LibroDiario.SelectedIndex = 2;
+			}
+			
+			//OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+			//DataTable table = new DataTable();
+			//dt.Fill(table);
+			//Dtg_Partidas.DataSource = table;
 			sn.insertarBitacora(user, "Vio las partidas", "Libro Diario");
 
 		}
 
 		private void Btn_Guardar_partia_Click(object sender, EventArgs e)
 		{
-			progressBar1.Visible = true;
-			timer1.Enabled = true;
-			MessageBox.Show(Libro.CrearLibroMayor(idLibro2,idLibro));
-			timer1.Enabled = false;
-			progressBar1.Visible = false;
-			progressBar1.Value = 0;
+			if (Libro.ConsultarMayor(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString()) == "0")
+			{
+				progressBar1.Visible = true;
+				timer1.Enabled = true;
+				MessageBox.Show(Libro.CrearLibroMayor(idLibro2, idLibro));
+				timer1.Enabled = false;
+				progressBar1.Visible = false;
+				progressBar1.Value = 0;
+				//lenar tabla
+				OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+				DataTable table = new DataTable();
+				dt.Fill(table);
+				Dtg_Partidas.DataSource = table;
+			}
+			else
+			{
+				MessageBox.Show("El libro mayor #"+ Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString()+" Ya ha sido Generado ");
+				Tbc_LibroDiario.SelectedIndex = 2;
+
+			}
+			
+
 		}
 
 		private void Btn_quiat_Click(object sender, EventArgs e)
@@ -155,18 +179,27 @@ namespace CapaVistaFRM
 
 		private void Tbc_LibroDiario_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
-		
+			if (Libro.ConsultarMayor(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString()) == "0")
+			{
+				Tbc_LibroDiario.SelectedIndex = 1;
+			}
+			else
+			{
+				if (Tbc_LibroDiario.SelectedIndex!=0)
+				{
+					MessageBox.Show("El libro mayor #" + Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString() + " Ya ha sido Generado ");
+					Tbc_LibroDiario.SelectedIndex = 2;
+					OdbcDataAdapter dt2 = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+					DataTable table2 = new DataTable();
+					dt2.Fill(table2);
+					Dtg_Resumen.DataSource = table2;
+				}
+				
+			}
 
-			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-			DataTable table = new DataTable();
-			dt.Fill(table);
-			Dtg_Partidas.DataSource = table;
 
-			OdbcDataAdapter dt2 = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-			DataTable table2 = new DataTable();
-			dt2.Fill(table2);
-			Dtg_Resumen.DataSource = table;
+
+			
 		}
 
 		private void Dtg_Partidas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

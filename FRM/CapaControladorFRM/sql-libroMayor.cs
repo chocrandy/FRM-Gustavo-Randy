@@ -74,6 +74,18 @@ namespace CapaControladorFRM
 			return Combo;
 		}
 
+		public string ConsultarLibro(string idMayor)
+		{
+			int i = 0;
+			OdbcCommand command = new OdbcCommand("SELECT * FROM libro_mayor_cuentas WHERE id_libro_mayor="+idMayor+";", conectar.conexion("ERP"));
+			OdbcDataReader reader = command.ExecuteReader();
+			while (reader.Read())
+			{
+				i++;
+			}
+			return i.ToString();
+		}
+
 		public string llenarComboTablaMovimientos()
 		{
 			string Combo = "";
