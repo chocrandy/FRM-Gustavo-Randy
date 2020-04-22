@@ -33,14 +33,14 @@ namespace CapaVistaFRM
 		private libro_Diario frm_libro_diario;
 
 		sentencia sn = new sentencia();
-        String usuarioActivo = "rchocm";
-
+		String usuarioActivo = "rchocm";
         public MDI_FRM()
         {
             InitializeComponent();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			usuarioActivo = Lbl_usuario.Text;
 
-        }
+		}
         
         //==========Funciones para evitar que se habrá 2 veces la misma ventana==========
         private void frm_balance_General_FormClosed(Object sender, FormClosedEventArgs e)
@@ -187,11 +187,11 @@ namespace CapaVistaFRM
         
         private void MDI_FRM_Load(object sender, EventArgs e)
         {
-            /*
+           
             frm_login login = new frm_login();
             login.ShowDialog();
             Lbl_usuario.Text = login.obtenerNombreUsuario();
-            usuarioActivo = Lbl_usuario.Text; */ 
+            usuarioActivo = Lbl_usuario.Text; 
         } 
 
         private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -366,6 +366,17 @@ namespace CapaVistaFRM
 			{
 				frm_cuentas_contables.Activate();
 			}
+		}
+
+		private void ContabilidadToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void LibroMayorToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			libro_Mayor nuevo = new libro_Mayor(usuarioActivo);
+			nuevo.Show();
 		}
 	}
 }
