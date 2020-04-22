@@ -12,7 +12,7 @@ using CapaDatos;
 
 namespace CapaVistaFRM
 {
-    public partial class MDI_FRM : Form
+    public partial class MDI_CONTA : Form
     {
         private actualizacion_de_polizas frm_actualizacion_de_polizas;
         private balance_general frm_balance_General;
@@ -34,7 +34,7 @@ namespace CapaVistaFRM
 
 		sentencia sn = new sentencia();
 		String usuarioActivo = "rchocm";
-        public MDI_FRM()
+        public MDI_CONTA()
         {
             InitializeComponent();
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -185,7 +185,7 @@ namespace CapaVistaFRM
             }
         }
         
-        private void MDI_FRM_Load(object sender, EventArgs e)
+        private void MDI_CONTA_Load(object sender, EventArgs e)
         {
            
             frm_login login = new frm_login();

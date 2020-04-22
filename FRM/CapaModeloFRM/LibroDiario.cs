@@ -46,7 +46,7 @@ namespace CapaModeloFRM
 
 		public string CrearQueryPartida(string idLibro)
 		{
-			string query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario=" + idLibro + "";
+			string query = "SELECT '0','0','0','0','0'";
 
 
 			int n = 0;
@@ -62,24 +62,24 @@ namespace CapaModeloFRM
 				
 						if (n == partidas.Length - 2)
 						{
-							query += "SELECT P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+							query += "SELECT P.id_partida as No , P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
 									"FROM partidas P WHERE P.id_partida =" + partida + " AND P.id_libro_diario = " + idLibro + "  " +
 									"UNION ALL " +
-									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
+									"SELECT '' as a, '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
 									"FROM libro_diario_detalles D WHERe D.id_partida =" + partida + " AND D.id_libro_diario =" + idLibro + " " +
 									"UNION ALL " +
-									"SELECT '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe),2) as Debe, ROUND(SUM(D.haber),2) as haber " +
+									"SELECT '' as a, '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe),2) as Debe, ROUND(SUM(D.haber),2) as haber " +
 									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario = " + idLibro + " ;";
 						}
 						else
 						{
-							query += "SELECT P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
+							query += "SELECT P.id_partida as No , P.concepto as CONCEPTO, P.fecha as FECHA , '' as DEBE , '' as HABER " +
 									"FROM partidas P WHERE P.id_partida =" + partida + " AND P.id_libro_diario = " + idLibro + "  " +
 									"UNION ALL " +
-									"SELECT '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
+									"SELECT '' as a, '' as a, D.cuenta_contable AS cuenta , D.debe as Debe, D.haber as haber " +
 									"FROM libro_diario_detalles D WHERe D.id_partida =" + partida + " AND D.id_libro_diario =" + idLibro + " " +
 									"UNION ALL " +
-									"SELECT '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe), 2) as Debe, ROUND(SUM(D.haber), 2) as haber " +
+									"SELECT '' as a, '' as a,'SUMAS IGUALES' as b, ROUND(SUM(D.debe), 2) as Debe, ROUND(SUM(D.haber), 2) as haber " +
 									"FROM libro_diario_detalles D WHERe D.id_partida = " + partida + " AND D.id_libro_diario = " + idLibro + " UNION ALL ";
 						}
 
@@ -91,7 +91,7 @@ namespace CapaModeloFRM
 			else
 			{
 
-				query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario="+idLibro+"";
+				query = "SELECT '0','0','0','0','0'";
 			}
 			
 			return query;
@@ -102,7 +102,7 @@ namespace CapaModeloFRM
 			string query = CrearQueryPartida(idLibro);
 			if (query=="")
 			{
-				query = "SELECT * FROM libro_diario_encabezados WHERE id_libro_diario=" + idLibro + "";
+				query = "SELECT '0','0','0','0','0'";
 			}
 			OdbcDataAdapter dataTable = Diario.LlenarTablaPartidas(query);
 			return dataTable;

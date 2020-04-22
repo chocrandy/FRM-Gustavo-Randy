@@ -14,15 +14,17 @@ using CapaModeloFRM;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
+
 namespace CapaVistaFRM
 {
-	public partial class libro_Diario : Form
+	public partial class libro_Mayor : Form
 	{
-		LibroDiario Libro = new LibroDiario();
+		LibroMayor Libro = new LibroMayor();
 		sentencia sn = new sentencia();
 		string user = "";
 		string idLibro = "";
-		public libro_Diario(string usuario)
+		string idLibro2 = "";
+		public libro_Mayor(string usuario)
 		{
 			user = usuario;
 			InitializeComponent();
@@ -30,11 +32,9 @@ namespace CapaVistaFRM
 			Dtg_Fecha_Crear.CustomFormat = "yyyy-MM-dd";
 			Dtg_Fecha_Modificar.Format = DateTimePickerFormat.Custom;
 			Dtg_Fecha_Modificar.CustomFormat = "yyyy-MM-dd";
-			Dtp_partida.Format = DateTimePickerFormat.Custom;
-			Dtp_partida.CustomFormat = "yyyy-MM-dd";
 			Txt_Libro.Text = Libro.IdLibro();
 			llenarLibros();
-			tablaMovimientos();
+			llenarCombo();
 			
 		}
 
@@ -47,25 +47,14 @@ namespace CapaVistaFRM
 			Dtg_LibroDiario.DataSource = table;
 		}
 
-		void tablaMovimientos() {
-
-			DataGridViewComboBoxColumn cuenta = new DataGridViewComboBoxColumn();
-			cuenta.HeaderText = "Cuenta";
-			cuenta.Items.AddRange(Libro.comboTabla());
-			cuenta.Width = 500;
-
-			DataGridViewTextBoxColumn debe = new DataGridViewTextBoxColumn();
-			debe.HeaderText = "Debe";
-			DataGridViewTextBoxColumn haber = new DataGridViewTextBoxColumn();
-			haber.HeaderText = "Haber";
-
-			Dtg_Movimientos.Columns.Add(cuenta);
-			Dtg_Movimientos.Columns.Add(debe);
-			Dtg_Movimientos.Columns.Add(haber);
+		void llenarCombo() {
+			Cmb_Empresa_Crear.Items.AddRange(Libro.ComboDiario());
+			Cmb_Empresa_Modificar.Items.AddRange(Libro.ComboDiario());
 		}
+
 		
 		
-		private void Libro_Diario_Load(object sender, EventArgs e)
+		private void libro_Mayor_Load(object sender, EventArgs e)
 		{
 
 		}
@@ -101,7 +90,7 @@ namespace CapaVistaFRM
 			Libro.crearLibroDiario(Txt_Libro.Text.ToString(), Cmb_Empresa_Crear.Text.ToString(),Dtg_Fecha_Crear.Text.ToString());
 			llenarLibros();
 			Txt_Libro.Text = Libro.IdLibro();
-			sn.insertarBitacora(user, "Creo un libro Diario", "Libro Diario");
+			sn.insertarBitacora(user, "Creo un libro Mayor", "Libro Mayor");
 		}
 
 		private void Dtg_LibroDiario_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -132,67 +121,70 @@ namespace CapaVistaFRM
 			llenarLibros();
 			Gpb_Crear.Enabled = true;
 			Btn_Partidas.Enabled = true;
-			sn.insertarBitacora(user, "Modifico un libro Diario", "Libro Diario");
+			sn.insertarBitacora(user, "Modifico un libro mayor", "Libro Mayor");
 		}
 
 		private void Btn_Partidas_Click(object sender, EventArgs e)
 		{
 			
 			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
-			Tbc_LibroDiario.SelectedIndex = 1;
-			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-			DataTable table = new DataTable();
-			dt.Fill(table);
-			Dtg_Partidas.Rows.Clear();
-			foreach (DataRow row in table.Rows)
+			idLibro2 = Dtg_LibroDiario.CurrentRow.Cells[1].Value.ToString();
+			if (Libro.ConsultarMayor(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString())=="0")
 			{
-				Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+				Tbc_LibroDiario.SelectedIndex = 1;
 			}
-			 
+			else
+			{
+				Tbc_LibroDiario.SelectedIndex = 2;
+			}
+			
+			//OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+			//DataTable table = new DataTable();
+			//dt.Fill(table);
+			//Dtg_Partidas.DataSource = table;
 			sn.insertarBitacora(user, "Vio las partidas", "Libro Diario");
 
 		}
 
 		private void Btn_Guardar_partia_Click(object sender, EventArgs e)
 		{
-			bool proceder = true;
-			int fil = Dtg_Movimientos.Rows.Count - 1;
-			int col = Dtg_Movimientos.Columns.Count;
-			for (int i = 0; i < fil; i++)
-			{
-				for (int j = 0; j < col; j++)
-				{
-					if (Dtg_Movimientos.Rows[i].Cells[j].Value == null)
-					{
-						MessageBox.Show("Por Favor llene la tabla en la fila " + (i+1).ToString()+" y Columna " + (j+1).ToString());
-						proceder = false;
-					}
-				}
-			}
 
-			if (proceder)
+			if (Libro.ConsultarMayor(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString()) == "0")
 			{
-				Libro.crearPartida(Txt_partida.Text.ToString(), idLibro, Txt_Concepto.Text.ToString(), Dtp_partida.Text.ToString());
-				foreach (DataGridViewRow row in Dtg_Movimientos.Rows)
-				{
-					if (Dtg_Movimientos.Rows.Count - 1 != row.Index)
-					{
-						Libro.crearDetalleLibroDiario(row.Index.ToString(), idLibro, Txt_partida.Text.ToString(),  row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString());
-
-					}
-				}
-				Txt_partida.Text = Libro.IdPartida(idLibro);
-				Dtg_Movimientos.Rows.Clear();
-				OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+				progressBar1.Visible = true;
+				timer1.Enabled = true;
+				MessageBox.Show(Libro.CrearLibroMayor(idLibro2, idLibro));
+				timer1.Enabled = false;
+				progressBar1.Visible = false;
+				progressBar1.Value = 0;
+				//lenar tabla
+				OdbcDataAdapter dt = Libro.llenarMayor(Dtg_LibroDiario.CurrentRow.Cells[1].Value.ToString(), Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
 				DataTable table = new DataTable();
 				dt.Fill(table);
 				Dtg_Partidas.Rows.Clear();
 				foreach (DataRow row in table.Rows)
 				{
-					Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+					Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3]);
 				}
-				sn.insertarBitacora(user, "Creo una partida", "Libro Diario");
+				
 			}
+			else
+			{
+				MessageBox.Show("El libro mayor #"+ Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString()+" Ya ha sido Generado ");
+				Tbc_LibroDiario.SelectedIndex = 2;
+				OdbcDataAdapter dt = Libro.llenarMayor(Dtg_LibroDiario.CurrentRow.Cells[1].Value.ToString(), Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+				DataTable table = new DataTable();
+				dt.Fill(table);
+				Dtg_Resumen.Rows.Clear();
+				foreach (DataRow row in table.Rows)
+				{
+					Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3]);
+				}
+				
+
+			}
+			
+
 		}
 
 		private void Btn_quiat_Click(object sender, EventArgs e)
@@ -202,24 +194,33 @@ namespace CapaVistaFRM
 
 		private void Tbc_LibroDiario_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
-			Txt_partida.Text = Libro.IdPartida(idLibro);
-
-			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-			DataTable table = new DataTable();
-			dt.Fill(table);
-			Dtg_Partidas.Rows.Clear();
-			foreach (DataRow row in table.Rows)
+			if (Libro.ConsultarMayor(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString()) == "0")
 			{
-				Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+				Tbc_LibroDiario.SelectedIndex = 1;
 			}
+			else
+			{
+				if (Tbc_LibroDiario.SelectedIndex!=0)
+				{
+					MessageBox.Show("El libro mayor #" + Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString() + " Ya ha sido Generado ");
+					Tbc_LibroDiario.SelectedIndex = 2;
+
+					OdbcDataAdapter dt = Libro.llenarMayor(Dtg_LibroDiario.CurrentRow.Cells[1].Value.ToString(), Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+					DataTable table = new DataTable();
+					dt.Fill(table);
+					Dtg_Resumen.Rows.Clear();
+					foreach (DataRow row in table.Rows)
+					{
+						Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3]);
+					}
+
+				}
+
+			}
+
+
 
 			
-			Dtg_Resumen.Rows.Clear();
-			foreach (DataRow row in table.Rows)
-			{
-				Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
-			}
 		}
 
 		private void Dtg_Partidas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -229,39 +230,27 @@ namespace CapaVistaFRM
 
 		private void Button1_Click(object sender, EventArgs e)
 		{
-			string concepto = "";
-			if (Dtg_Partidas.CurrentRow.Cells[0].Value == null || Dtg_Partidas.CurrentRow.Cells[0].Value.ToString() == "" || Dtg_Partidas.CurrentRow.Cells[0].Value.ToString() ==" ")
-			{
-				MessageBox.Show("Por favor Seleccione el CONCEPTO de la partida a eliminar");
-			}
-			else
-			{
-				concepto = Dtg_Partidas.CurrentRow.Cells[0].Value.ToString();
-				DialogResult Eliminar;
-				Eliminar = MessageBox.Show("Se eliminarán todos los movimientos con concepto " + concepto + ", desea continuar?", "Eliminar Partida", MessageBoxButtons.YesNo);
+			//string concepto = "";
+			//if (Dtg_Partidas.CurrentRow.Cells[0].Value == null || Dtg_Partidas.CurrentRow.Cells[0].Value.ToString() == "" || Dtg_Partidas.CurrentRow.Cells[0].Value.ToString() ==" ")
+			//{
+			//	MessageBox.Show("Por favor Seleccione el CONCEPTO de la partida a eliminar");
+			//}
+			//else
+			//{
+			//	concepto = Dtg_Partidas.CurrentRow.Cells[0].Value.ToString();
+			//	DialogResult Eliminar;
+			//	Eliminar = MessageBox.Show("Se eliminarán todos los movimientos con concepto " + concepto + ", desea continuar?", "Eliminar Partida", MessageBoxButtons.YesNo);
 
-				if (Eliminar == DialogResult.Yes)
-				{
-					Libro.DeletePartida(concepto, idLibro);
-					OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-					DataTable table = new DataTable();
-					dt.Fill(table);
-					Dtg_Partidas.Rows.Clear();
-					foreach (DataRow row in table.Rows)
-					{
-						Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
-					}
-
-
-					Dtg_Resumen.Rows.Clear();
-					foreach (DataRow row in table.Rows)
-					{
-						Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
-					}
-					sn.insertarBitacora(user, "Elimino una partida", "Libro Diario");
-				}
-			
-			}
+			//	if (Eliminar == DialogResult.Yes)
+			//	{
+			//		Libro.DeletePartida(concepto, idLibro);
+			//		OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+			//		DataTable table = new DataTable();
+			//		dt.Fill(table);
+			//		Dtg_Partidas.DataSource = table;
+			//	}
+			//	sn.insertarBitacora(user, "Elimino una partida", "Libro Diario");
+			//}
 			
 			
 		}
@@ -315,6 +304,11 @@ namespace CapaVistaFRM
 		{
 			exportarTabla(Dtg_Resumen,"test");
 			sn.insertarBitacora(user, "Exporto un libro Diario", "Libro Diario");
+		}
+
+		private void Timer1_Tick(object sender, EventArgs e)
+		{
+			progressBar1.Value = Libro.progreso;
 		}
 	}
 }

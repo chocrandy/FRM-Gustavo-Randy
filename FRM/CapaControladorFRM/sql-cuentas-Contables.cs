@@ -13,7 +13,7 @@ namespace CapaControladorFRM
 
 		public OdbcDataAdapter LlenarTablaCuentas()
 		{
-			string sql = "SELECT C.id_cuenta, C.nombre, (SELECT IF(estado=1, 'ACTIVA', 'INACTIVA') )FROM cuentas C";
+			string sql = "SELECT C.id_cuenta, C.nombre, (SELECT IF(estado=1, 'ACTIVA', 'INACTIVA') )FROM cuentas C WHERE id_cuenta <>'0.0'";
 			OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, conectar.conexion("ERP"));
 			return dataTable;
 		}
