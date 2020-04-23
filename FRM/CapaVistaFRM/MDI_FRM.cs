@@ -21,8 +21,7 @@ namespace CapaVistaFRM
         private mantenimiento_modulos frm_mantenimiento_modulos;
         private mantenimiento_bancos frm_mantenimiento_bancos;
         private mantenimiento_chequeras frm_mantenimiento_chequeras;
-        private mantenimiento_cuentas_bancarias frm_mantenimiento_cuentas_bancarias;
-        private mantenimiento_clasificador_mov frm_mantenimiento_clasificador_mov;
+        private mantenimiento_cuentas_bancarias frm_mantenimiento_cuentas_bancarias;        
         private mantenimiento_monedas frm_mantenimiento_monedas;
         private mov_banc_encabezado frm_mov_banc_encabezado;                
         private revision_presupuestaria frm_revision_presupuestaria;        
@@ -58,9 +57,7 @@ namespace CapaVistaFRM
         private void frm_mantenimiento_chequeras_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_mantenimiento_chequeras = null; } 
         private void frm_mantenimiento_cuentas_bancarias_FormClosed(Object sender, FormClosedEventArgs e)
-        { frm_mantenimiento_cuentas_bancarias = null; }
-        private void frm_mantenimiento_clasificador_mov_FormClosed(Object sender, FormClosedEventArgs e)
-        { frm_mantenimiento_clasificador_mov = null; }
+        { frm_mantenimiento_cuentas_bancarias = null; }        
         private void frm_mantenimiento_monedas_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_mantenimiento_monedas = null; }
         private void frm_mov_banc_encabezado_FormClosed(Object sender, FormClosedEventArgs e)
@@ -259,17 +256,7 @@ namespace CapaVistaFRM
 
         private void ClasificadorDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {            
-            if (frm_mantenimiento_clasificador_mov == null)
-            {
-                frm_mantenimiento_clasificador_mov = new mantenimiento_clasificador_mov(usuarioActivo);
-                frm_mantenimiento_clasificador_mov.MdiParent = this;
-                frm_mantenimiento_clasificador_mov.FormClosed += new FormClosedEventHandler(frm_mantenimiento_clasificador_mov_FormClosed);
-                frm_mantenimiento_clasificador_mov.Show();
-            }
-            else
-            {
-                frm_mantenimiento_clasificador_mov.Activate();
-            }
+            
         }
 
         private void MonedasToolStripMenuItem_Click(object sender, EventArgs e)

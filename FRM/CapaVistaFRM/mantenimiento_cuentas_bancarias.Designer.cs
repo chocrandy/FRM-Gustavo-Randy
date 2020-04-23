@@ -53,7 +53,7 @@
             this.panel1.Size = new System.Drawing.Size(840, 83);
             this.panel1.TabIndex = 1;
             // 
-            // mantenimiento_modulos
+            // mantenimiento_cuentas_bancarias
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -63,9 +63,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "mantenimiento_modulos";
+            this.Name = "mantenimiento_cuentas_bancarias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Módulos";
+            this.Text = "5201 - Cuentas Bancarias";
             this.ResumeLayout(false);
             this.PerformLayout();
 

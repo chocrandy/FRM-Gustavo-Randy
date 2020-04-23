@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.Gpb_datos = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Cbo_cuentaBancaria = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Btn_siguiente = new System.Windows.Forms.Button();
             this.Gpb_datos.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,15 @@
             this.Gpb_datos.TabStop = false;
             this.Gpb_datos.Text = "Datos";
             // 
+            // Cbo_cuentaBancaria
+            // 
+            this.Cbo_cuentaBancaria.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_cuentaBancaria.FormattingEnabled = true;
+            this.Cbo_cuentaBancaria.Location = new System.Drawing.Point(25, 65);
+            this.Cbo_cuentaBancaria.Name = "Cbo_cuentaBancaria";
+            this.Cbo_cuentaBancaria.Size = new System.Drawing.Size(416, 29);
+            this.Cbo_cuentaBancaria.TabIndex = 39;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -68,15 +77,6 @@
             this.label2.Size = new System.Drawing.Size(405, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cuenta Bancaria donde va registrar el movimiento:";
-            // 
-            // Cbo_cuentaBancaria
-            // 
-            this.Cbo_cuentaBancaria.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_cuentaBancaria.FormattingEnabled = true;
-            this.Cbo_cuentaBancaria.Location = new System.Drawing.Point(25, 65);
-            this.Cbo_cuentaBancaria.Name = "Cbo_cuentaBancaria";
-            this.Cbo_cuentaBancaria.Size = new System.Drawing.Size(416, 29);
-            this.Cbo_cuentaBancaria.TabIndex = 39;
             // 
             // Btn_siguiente
             // 
@@ -110,7 +110,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "mov_banc_encabezado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Movimientos Bancarios";
+            this.Text = "5210 - Movimientos Bancarios";
             this.Load += new System.EventHandler(this.Mov_banc_encabezado_Load);
             this.Gpb_datos.ResumeLayout(false);
             this.Gpb_datos.PerformLayout();

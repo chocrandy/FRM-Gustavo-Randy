@@ -155,7 +155,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "tipo_de_cambio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tipo de Cambio";
+            this.Text = "5211 - Tipo de Cambio";
             this.Gpb_consultar.ResumeLayout(false);
             this.Gpb_consultar.PerformLayout();
             this.Gpb_cambioAlDia.ResumeLayout(false);

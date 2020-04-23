@@ -169,7 +169,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "consultar_conciliacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consultar Conciliación";
+            this.Text = "5213 - Consultar Conciliación";
             this.Load += new System.EventHandler(this.Formato_Load);
             this.Gpb_consultaConciliacion.ResumeLayout(false);
             this.Gpb_consultaConciliacion.PerformLayout();
