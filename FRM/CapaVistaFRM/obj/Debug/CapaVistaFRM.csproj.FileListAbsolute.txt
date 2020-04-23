@@ -310,3 +310,5 @@ C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.mov_banc_encabezado.resources
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.movimientos_bancarios_2.resources
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Gustavo-Randy\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.MDI_CONTA.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.libro_Mayor.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\CapaVistaFRM.MDI_CONTA.resources
