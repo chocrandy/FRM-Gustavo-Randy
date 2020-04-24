@@ -27,6 +27,32 @@ namespace CapaVistaFRM
             registro();
             llenarDetalleMovBank();
             verificarApertura();
+            llenarCargoAbono();
+        }
+
+        void llenarCargoAbono()
+        {
+            decimal valCargo = movBank.ObtenerCargoAbono("Cargo", words[0]);
+            decimal valAbono = movBank.ObtenerCargoAbono("Abono", words[0]);            
+            if (valCargo == 0)
+            {
+                Lbl_totalCargos.Text = "0.00";
+            }
+            else
+            {
+                Lbl_totalCargos.Text = valCargo.ToString();
+            }
+            if (valAbono == 0)
+            {
+                MessageBox.Show("Abono en 0. Posiblemente se aperturo mal la cuenta.",
+                    "Verificar", MessageBoxButtons.OK);
+            }
+            else
+            {                
+                Lbl_totalAbonos.Text = valAbono.ToString();
+                decimal valDif = Math.Abs(valCargo - valAbono);
+                Lbl_diferencial.Text = valDif.ToString();
+            }
         }
 
         void verificarApertura()
@@ -154,5 +180,9 @@ namespace CapaVistaFRM
             }
         }
 
+        private void Gpb_detalle_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

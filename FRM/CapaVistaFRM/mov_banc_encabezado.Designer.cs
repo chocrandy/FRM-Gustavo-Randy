@@ -110,7 +110,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "mov_banc_encabezado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "5210 - Movimientos Bancarios";
+            this.Text = "5220 - Movimientos Bancarios";
             this.Load += new System.EventHandler(this.Mov_banc_encabezado_Load);
             this.Gpb_datos.ResumeLayout(false);
             this.Gpb_datos.PerformLayout();

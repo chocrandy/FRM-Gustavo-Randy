@@ -78,6 +78,7 @@ namespace CapaVistaFRM
 
 		private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
         {            
+            //CONCILICACIÓN BANCARIA
             if (frm_conciliacion_bancaria == null)
             {
                 frm_conciliacion_bancaria = new conciliacion_bancaria();
@@ -108,6 +109,7 @@ namespace CapaVistaFRM
 
         private void TipoDeCambioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //TIPO DE CAMBIO
             if (frm_tipo_de_cambio == null)
             {
                 frm_tipo_de_cambio = new tipo_de_cambio();
@@ -138,6 +140,7 @@ namespace CapaVistaFRM
 
         private void ConsultarConciliaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //CONSULTAR CONCILICACIÓN
             if (frm_consultar_conciliacion == null)
             {
                 frm_consultar_conciliacion = new consultar_conciliacion();
@@ -184,15 +187,16 @@ namespace CapaVistaFRM
         
         private void MDI_FRM_Load(object sender, EventArgs e)
         {
-           
-            frm_login login = new frm_login();
-            login.ShowDialog();
-            Lbl_usuario.Text = login.obtenerNombreUsuario();
-            usuarioActivo = Lbl_usuario.Text; 
-        } 
+            /*/
+             frm_login login = new frm_login();
+             login.ShowDialog();
+             Lbl_usuario.Text = login.obtenerNombreUsuario();
+             usuarioActivo = Lbl_usuario.Text; /*/
+        }
 
         private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //SEGURIDAD
             MDI_Seguridad seguridad = new MDI_Seguridad(Lbl_usuario.Text);
             seguridad.lbl_nombreUsuario.Text = Lbl_usuario.Text;
             seguridad.ShowDialog();
@@ -202,97 +206,7 @@ namespace CapaVistaFRM
         {
             //                      Usuario        Mensaje a guardar     Tabla
             sn.insertarBitacora(Lbl_usuario.Text, "Probó la Bitacora", "General");
-        }
-
-        private void MódulosToolStripMenuItem_Click(object sender, EventArgs e)
-        {                        
-            
-        }
-
-        private void BancosToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            if (frm_mantenimiento_bancos == null)
-            {
-                frm_mantenimiento_bancos = new mantenimiento_bancos(usuarioActivo);
-                frm_mantenimiento_bancos.MdiParent = this;
-                frm_mantenimiento_bancos.FormClosed += new FormClosedEventHandler(frm_mantenimiento_bancos_FormClosed);
-                frm_mantenimiento_bancos.Show();
-            }
-            else
-            {
-                frm_mantenimiento_bancos.Activate();
-            }
-        }
-
-        private void ChequeraToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
-            if (frm_mantenimiento_chequeras == null)
-            {
-                frm_mantenimiento_chequeras = new mantenimiento_chequeras(usuarioActivo);
-                frm_mantenimiento_chequeras.MdiParent = this;
-                frm_mantenimiento_chequeras.FormClosed += new FormClosedEventHandler(frm_mantenimiento_chequeras_FormClosed);
-                frm_mantenimiento_chequeras.Show();
-            }
-            else
-            {
-                frm_mantenimiento_chequeras.Activate();
-            }
-        }
-
-        private void CuentasBancariasToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
-            if (frm_mantenimiento_cuentas_bancarias == null)
-            {
-                frm_mantenimiento_cuentas_bancarias = new mantenimiento_cuentas_bancarias(usuarioActivo);
-                frm_mantenimiento_cuentas_bancarias.MdiParent = this;
-                frm_mantenimiento_cuentas_bancarias.FormClosed += new FormClosedEventHandler(frm_mantenimiento_cuentas_bancarias_FormClosed);
-                frm_mantenimiento_cuentas_bancarias.Show();
-            }
-            else
-            {
-                frm_mantenimiento_cuentas_bancarias.Activate();
-            }
-        }
-
-        private void ClasificadorDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
-            
-        }
-
-        private void MonedasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ModulosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frm_mantenimiento_modulos == null)
-            {
-                frm_mantenimiento_modulos = new mantenimiento_modulos(usuarioActivo);
-                frm_mantenimiento_modulos.MdiParent = this;
-                frm_mantenimiento_modulos.FormClosed += new FormClosedEventHandler(frm_mantenimiento_modulos_FormClosed);
-                frm_mantenimiento_modulos.Show();
-            }
-            else
-            {
-                frm_mantenimiento_modulos.Activate();
-            }
-        }
-
-        private void MonedasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (frm_mantenimiento_monedas == null)
-            {
-                frm_mantenimiento_monedas = new mantenimiento_monedas(usuarioActivo);
-                frm_mantenimiento_monedas.MdiParent = this;
-                frm_mantenimiento_monedas.FormClosed += new FormClosedEventHandler(frm_mantenimiento_monedas_FormClosed);
-                frm_mantenimiento_monedas.Show();
-            }
-            else
-            {
-                frm_mantenimiento_monedas.Activate();
-            }
-        }
+        }       
 
 		private void LibroDiarioToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -322,7 +236,6 @@ namespace CapaVistaFRM
 			{
 				frm_tipo_poliza.Activate();
 			}
-
 		}
 
 		private void TiposDeCuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -341,7 +254,7 @@ namespace CapaVistaFRM
 		}
 
 		private void CuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
-		{
+		{            
 			if (frm_cuentas_contables == null)
 			{
 				frm_cuentas_contables = new cuentas_contables(usuarioActivo);
@@ -355,15 +268,84 @@ namespace CapaVistaFRM
 			}
 		}
 
-		private void ContabilidadToolStripMenuItem_Click(object sender, EventArgs e)
-		{
+        private void CuentasBancariasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //CUENTAS BANCARIAS
+            if (frm_mantenimiento_cuentas_bancarias == null)
+            {
+                frm_mantenimiento_cuentas_bancarias = new mantenimiento_cuentas_bancarias(usuarioActivo);
+                frm_mantenimiento_cuentas_bancarias.MdiParent = this;
+                frm_mantenimiento_cuentas_bancarias.FormClosed += new FormClosedEventHandler(frm_mantenimiento_cuentas_bancarias_FormClosed);
+                frm_mantenimiento_cuentas_bancarias.Show();
+            }
+            else
+            {
+                frm_mantenimiento_cuentas_bancarias.Activate();
+            }
+        }
 
-		}
+        private void ChequeraToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //CHEQUERA
+            if (frm_mantenimiento_chequeras == null)
+            {
+                frm_mantenimiento_chequeras = new mantenimiento_chequeras(usuarioActivo);
+                frm_mantenimiento_chequeras.MdiParent = this;
+                frm_mantenimiento_chequeras.FormClosed += new FormClosedEventHandler(frm_mantenimiento_chequeras_FormClosed);
+                frm_mantenimiento_chequeras.Show();
+            }
+            else
+            {
+                frm_mantenimiento_chequeras.Activate();
+            }
+        }
 
-		private void LibroMayorToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			libro_Mayor nuevo = new libro_Mayor(usuarioActivo);
-			nuevo.Show();
-		}
-	}
+        private void BancosToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            //BANCOS
+            if (frm_mantenimiento_bancos == null)
+            {
+                frm_mantenimiento_bancos = new mantenimiento_bancos(usuarioActivo);
+                frm_mantenimiento_bancos.MdiParent = this;
+                frm_mantenimiento_bancos.FormClosed += new FormClosedEventHandler(frm_mantenimiento_bancos_FormClosed);
+                frm_mantenimiento_bancos.Show();
+            }
+            else
+            {
+                frm_mantenimiento_bancos.Activate();
+            }
+        }
+
+        private void MódulosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //MÓDULOS
+            if (frm_mantenimiento_modulos == null)
+            {
+                frm_mantenimiento_modulos = new mantenimiento_modulos(usuarioActivo);
+                frm_mantenimiento_modulos.MdiParent = this;
+                frm_mantenimiento_modulos.FormClosed += new FormClosedEventHandler(frm_mantenimiento_modulos_FormClosed);
+                frm_mantenimiento_modulos.Show();
+            }
+            else
+            {
+                frm_mantenimiento_modulos.Activate();
+            }
+        }
+
+        private void MonedasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //MONEDAS
+            if (frm_mantenimiento_monedas == null)
+            {
+                frm_mantenimiento_monedas = new mantenimiento_monedas(usuarioActivo);
+                frm_mantenimiento_monedas.MdiParent = this;
+                frm_mantenimiento_monedas.FormClosed += new FormClosedEventHandler(frm_mantenimiento_monedas_FormClosed);
+                frm_mantenimiento_monedas.Show();
+            }
+            else
+            {
+                frm_mantenimiento_monedas.Activate();
+            }
+        }
+    }
 }

@@ -324,7 +324,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "conciliacion_bancaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "5212 - Conciliacion Bancaria";
+            this.Text = "5222 - Conciliacion Bancaria";
             this.Gpb_movLibroBancos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_libroBancos)).EndInit();
             this.Gpb_movValidados.ResumeLayout(false);

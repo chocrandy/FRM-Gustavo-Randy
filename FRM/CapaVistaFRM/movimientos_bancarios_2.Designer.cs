@@ -201,6 +201,7 @@
             this.Gpb_detalle.TabIndex = 4;
             this.Gpb_detalle.TabStop = false;
             this.Gpb_detalle.Text = "Detalle";
+            this.Gpb_detalle.Enter += new System.EventHandler(this.Gpb_detalle_Enter);
             // 
             // Chk_registrado
             // 
@@ -484,7 +485,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "movimientos_bancarios_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "5210 - Movimientos Bancarios";
+            this.Text = "5220 - Movimientos Bancarios";
             this.Gpb_encabezado.ResumeLayout(false);
             this.Gpb_encabezado.PerformLayout();
             this.Gpb_detalle.ResumeLayout(false);
