@@ -192,6 +192,7 @@ namespace CapaVistaFRM
              login.ShowDialog();
              Lbl_usuario.Text = login.obtenerNombreUsuario();
              usuarioActivo = Lbl_usuario.Text; /*/
+             usuarioActivo = "rchocm";
         }
 
         private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)

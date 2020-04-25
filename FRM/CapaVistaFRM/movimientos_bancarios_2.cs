@@ -149,6 +149,7 @@ namespace CapaVistaFRM
                         registro();
                         llenarCombos();
                         llenarDetalleMovBank();
+                        llenarCargoAbono();
                     }
                     else
                     {

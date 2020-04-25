@@ -126,8 +126,8 @@
             this.conciliaciónBancariaToolStripMenuItem,
             this.consultarConciliaciónToolStripMenuItem});
             this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
-            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
-            this.bancosToolStripMenuItem.Text = "Bancos";
+            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.bancosToolStripMenuItem.Text = "Procesos";
             // 
             // movimientosBancariosToolStripMenuItem
             // 
@@ -202,6 +202,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Lbl_usuario);
             this.Controls.Add(this.menuStrip1);
