@@ -17,7 +17,7 @@ namespace CapaVistaFRM
         {
             InitializeComponent();
             usuario = usuarioActivo;
-            string[] alias = { "Código", "Nombre", "Descripción", "Estado" }; // Arreglo de nombres para campos
+            string[] alias = { "Cod. Modulo", "Nombre", "Descripción", "Estado" }; // Arreglo de nombres para campos
             navegador1.asignarAlias(alias); // Asignar nombres
             navegador1.asignarSalida(this); // Asignar form de salida
             Color nuevoColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF"); // Deficion de 
@@ -27,7 +27,7 @@ namespace CapaVistaFRM
                                           // LOS COMBOS SE ASIGNAN SEGUN EL ORDEN EN QUE SE DECLAREN
             //navegador1.asignarComboConTabla("tabla", "campo", 0); // 0 o 1 en modo, 0 pone el id y 1 coloca el nombre y consulta el id
             navegador1.asignarTabla("modulos"); // tabla principal
-            navegador1.asignarNombreForm("Beneficiario"); // Titulo y nombre del form
+            navegador1.asignarNombreForm("Módulos"); // Titulo y nombre del form
         }
 
         private void Navegador1_Load(object sender, EventArgs e)

@@ -27,6 +27,32 @@ namespace CapaVistaFRM
             registro();
             llenarDetalleMovBank();
             verificarApertura();
+            llenarCargoAbono();
+        }
+
+        void llenarCargoAbono()
+        {
+            decimal valCargo = movBank.ObtenerCargoAbono("Cargo", words[0]);
+            decimal valAbono = movBank.ObtenerCargoAbono("Abono", words[0]);            
+            if (valCargo == 0)
+            {
+                Lbl_totalCargos.Text = "0.00";
+            }
+            else
+            {
+                Lbl_totalCargos.Text = valCargo.ToString();
+            }
+            if (valAbono == 0)
+            {
+                MessageBox.Show("Abono en 0. Posiblemente se aperturo mal la cuenta.",
+                    "Verificar", MessageBoxButtons.OK);
+            }
+            else
+            {                
+                Lbl_totalAbonos.Text = valAbono.ToString();
+                decimal valDif = Math.Abs(valCargo - valAbono);
+                Lbl_diferencial.Text = valDif.ToString();
+            }
         }
 
         void verificarApertura()
@@ -67,73 +93,144 @@ namespace CapaVistaFRM
         }
 
         void llenarCombos()
-        {            
+        {
+            Cbo_cargoAbono.Items.Clear();
+            Cbo_cargoAbono.Items.Add("Cargo");
+            Cbo_cargoAbono.Items.Add("Abono");
+            Cbo_tipo.Items.Clear();
+            Cbo_tipo.Items.Add("Cheque");
+            Cbo_tipo.Items.Add("Deposito");
+            Cbo_tipo.Items.Add("Transferencia");
             Cbo_beneRegistrado.Items.AddRange(movBank.ObtenerCuentasBancarias());            
             words = cuentaBank.Split(' ');            
             Txt_moneda.Text = movBank.ObtenerMoneda(words[0]);            
             Txt_saldoActual.Text = movBank.ObtenerSaldoCuenta(words[0]).ToString();                
         }
 
+        
         private void Btn_registrar_Click(object sender, EventArgs e)
-        {
+        {            
             if (Cbo_tipo.Text == "" || Dtp_fechaMov.Text == "" || Txt_referencia.Text == ""  || 
-                Txt_descripcion.Text == "" || Cbo_cargoAbono.Text == "" || Txt_monto.Text == "")
+                Txt_descripcion.Text == "" || Cbo_cargoAbono.Text == "" || Txt_monto.Text == "" || 
+                Cbo_tipo.SelectedItem == null || Cbo_beneRegistrado.SelectedItem == null || 
+                Cbo_cargoAbono.SelectedItem == null)
             {
                 MessageBox.Show("Debe llenar todos los campos", "VERIFICAR DATOS", 
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
-            {
-                if (Convert.ToDecimal(Txt_monto.Text) >= 0)
+            {                
+                try
                 {
-                    if (Convert.ToDecimal(Txt_saldoActual.Text) >= 0)
+                    decimal montoAux = Convert.ToDecimal(Txt_monto.Text);
+                    decimal saldoActualAux = Convert.ToDecimal(Txt_saldoActual.Text);
+                    decimal totalAux = 0;
+                    if (montoAux > 0)
                     {
-                        decimal auxMonto = Convert.ToDecimal(Txt_monto.Text);
-                        decimal auxSaldoActual = Convert.ToDecimal(Txt_saldoActual.Text);
-
-                        if (Chk_registrado.Checked == true)
+                        if (saldoActualAux >= 0)
                         {
-                            Cbo_beneRegistrado.Enabled = false;
-                            Txt_beneNoRegistrado.Enabled = true;
-                            beneficiarioFinal = Txt_beneNoRegistrado.Text;                            
+                            totalAux = saldoActualAux - montoAux;
+                            if (Cbo_cargoAbono.Text == "Cargo")
+                            {
+                                if (totalAux < 0)
+                                {
+                                    MessageBox.Show(" No se puede realizar el registro. " +
+                                        "\n El Saldo de la cuenta es Insuficiente.", "VERIFICAR SALDO",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else if (totalAux >= 0)
+                                {
+                                    if (Chk_registrado.Checked == true)
+                                    {
+                                        Cbo_beneRegistrado.Enabled = false;
+                                        Txt_beneNoRegistrado.Enabled = true;
+                                        beneficiarioFinal = Txt_beneNoRegistrado.Text;
+                                    }
+                                    else if (Chk_registrado.Checked == false)
+                                    {
+                                        Cbo_beneRegistrado.Enabled = true;
+                                        Txt_beneNoRegistrado.Enabled = false;
+                                        beneficiarioFinal = Cbo_beneRegistrado.Text;
+                                    }
+
+                                    //string cuentaBancaria, string tipo_mov, string no_referencia, string beneficiario, string descrip, string cargoAbono, int monto, int saldoAnterior
+                                    movBank.GuardarDetalleMov(words[0], Cbo_tipo.Text, Txt_referencia.Text, beneficiarioFinal, Txt_descripcion.Text, Cbo_cargoAbono.Text, montoAux, saldoActualAux);
+                                    movBank.ModificarDetalleMov();
+                                    Cbo_tipo.Refresh();
+                                    Cbo_tipo.Items.Clear();
+                                    Cbo_tipo.Text = "";
+                                    Txt_referencia.Text = "";
+                                    Cbo_beneRegistrado.Refresh();
+                                    Cbo_beneRegistrado.Items.Clear();
+                                    Cbo_beneRegistrado.Text = "";
+                                    Txt_beneNoRegistrado.Text = "";
+                                    Txt_descripcion.Text = "";
+                                    Cbo_cargoAbono.Refresh();
+                                    Cbo_cargoAbono.Text = "";
+                                    Txt_monto.Text = "";
+                                    Txt_saldoActual.Text = "";
+
+                                    registro();
+                                    llenarCombos();
+                                    llenarDetalleMovBank();
+                                    llenarCargoAbono();
+                                }
+                            }
+                            else if (Cbo_cargoAbono.Text == "Abono")
+                            {
+                                if (Chk_registrado.Checked == true)
+                                {
+                                    Cbo_beneRegistrado.Enabled = false;
+                                    Txt_beneNoRegistrado.Enabled = true;
+                                    beneficiarioFinal = Txt_beneNoRegistrado.Text;
+                                }
+                                else if (Chk_registrado.Checked == false)
+                                {
+                                    Cbo_beneRegistrado.Enabled = true;
+                                    Txt_beneNoRegistrado.Enabled = false;
+                                    beneficiarioFinal = Cbo_beneRegistrado.Text;
+                                }
+
+                                //string cuentaBancaria, string tipo_mov, string no_referencia, string beneficiario, string descrip, string cargoAbono, int monto, int saldoAnterior
+                                movBank.GuardarDetalleMov(words[0], Cbo_tipo.Text, Txt_referencia.Text, beneficiarioFinal, Txt_descripcion.Text, Cbo_cargoAbono.Text, montoAux, saldoActualAux);
+                                movBank.ModificarDetalleMov();
+                                Cbo_tipo.Refresh();
+                                Cbo_tipo.Items.Clear();
+                                Cbo_tipo.Text = "";
+                                Txt_referencia.Text = "";
+                                Cbo_beneRegistrado.Refresh();
+                                Cbo_beneRegistrado.Items.Clear();
+                                Cbo_beneRegistrado.Text = "";
+                                Txt_beneNoRegistrado.Text = "";
+                                Txt_descripcion.Text = "";
+                                Cbo_cargoAbono.Refresh();
+                                Cbo_cargoAbono.Text = "";
+                                Txt_monto.Text = "";
+                                Txt_saldoActual.Text = "";
+
+                                registro();
+                                llenarCombos();
+                                llenarDetalleMovBank();
+                                llenarCargoAbono();
+                            }
                         }
-                        else if (Chk_registrado.Checked == false)
+                        else
                         {
-                            Cbo_beneRegistrado.Enabled = true;
-                            Txt_beneNoRegistrado.Enabled = false;
-                            beneficiarioFinal = Cbo_beneRegistrado.Text;                            
+                            MessageBox.Show("Verifique que el Saldo Actual sea mayor o igual a 0. " +
+                                "\n Consulte con el Administrador. ", "VERIFICAR SALDO ACTUAL",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
-                        //string cuentaBancaria, string tipo_mov, string no_referencia, string beneficiario, string descrip, string cargoAbono, int monto, int saldoAnterior
-                        movBank.GuardarDetalleMov(words[0], Cbo_tipo.Text, Txt_referencia.Text, beneficiarioFinal, Txt_descripcion.Text, Cbo_cargoAbono.Text, auxMonto, auxSaldoActual);
-                        movBank.ModificarDetalleMov();
-                        Cbo_tipo.Refresh();
-                        Cbo_tipo.Text = "";
-                        Txt_referencia.Text = "";
-                        Cbo_beneRegistrado.Refresh();
-                        Cbo_beneRegistrado.Items.Clear();
-                        Cbo_beneRegistrado.Text = "";
-                        Txt_beneNoRegistrado.Text = "";
-                        Txt_descripcion.Text = "";
-                        Cbo_cargoAbono.Refresh();
-                        Cbo_cargoAbono.Text = "";
-                        Txt_monto.Text = "";
-                        Txt_saldoActual.Text = "";
-
-                        registro();
-                        llenarCombos();
-                        llenarDetalleMovBank();
                     }
                     else
                     {
-                        MessageBox.Show("Verifique que el Saldo Actual sea mayor o igual a 0.", "VERIFICAR SALDO ACTUAL",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);                        
+                        MessageBox.Show("Verifique que el Monto sea Mayor a 0.", "VERIFICAR MONTO",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Verifique que el campo Monto sea un número.", "VERIFICAR MONTO", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Verifique que el campo Monto sea un número. ", 
+                        "VERIFICAR MONTO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }                
             }
         }
@@ -154,5 +251,9 @@ namespace CapaVistaFRM
             }
         }
 
+        private void Gpb_detalle_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

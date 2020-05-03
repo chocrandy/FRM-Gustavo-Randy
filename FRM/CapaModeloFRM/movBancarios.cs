@@ -13,7 +13,12 @@ namespace CapaModeloFRM
         sql_movBancarios sql = new sql_movBancarios();
         decimal saldoActual = 0;
         String auxCuentaBancaria = "";
-        
+
+        public decimal ObtenerCargoAbono(string cargoAbono, string cuenta)
+        {
+            decimal id = sql.obtenerCargoAbono(cargoAbono, cuenta);
+            return id;
+        }
         public decimal ObtenerDatoApertura(string name)
         {
             decimal id = sql.obtenerDatoApertura(name);

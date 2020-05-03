@@ -89,12 +89,6 @@
     <Compile Include="libro_Mayor.Designer.cs">
       <DependentUpon>libro_Mayor.cs</DependentUpon>
     </Compile>
-    <Compile Include="MDI_CONTA.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDI_CONTA.Designer.cs">
-      <DependentUpon>MDI_CONTA.cs</DependentUpon>
-    </Compile>
     <Compile Include="mov_banc_encabezado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +136,6 @@
     </Compile>
     <Compile Include="mantenimiento_cuentas_bancarias.Designer.cs">
       <DependentUpon>mantenimiento_cuentas_bancarias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mantenimiento_clasificador_mov.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mantenimiento_clasificador_mov.Designer.cs">
-      <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
     </Compile>
     <Compile Include="mantenimiento_monedas.cs">
       <SubType>Form</SubType>
@@ -230,9 +218,6 @@
     <EmbeddedResource Include="libro_Mayor.resx">
       <DependentUpon>libro_Mayor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDI_CONTA.resx">
-      <DependentUpon>MDI_CONTA.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="mov_banc_encabezado.resx">
       <DependentUpon>mov_banc_encabezado.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,9 +241,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_cuentas_bancarias.resx">
       <DependentUpon>mantenimiento_cuentas_bancarias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mantenimiento_clasificador_mov.resx">
-      <DependentUpon>mantenimiento_clasificador_mov.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mantenimiento_monedas.resx">
       <DependentUpon>mantenimiento_monedas.cs</DependentUpon>

@@ -52,7 +52,7 @@ namespace CapaVistaFRM
                 if (frm_movimientos_bancarios_2 == null)
                 {
                     frm_movimientos_bancarios_2 = new movimientos_bancarios_2(cuentaBank);
-                    //frm_movimientos_bancarios_2.MdiParent = this;
+                    frm_movimientos_bancarios_2.MdiParent = this.MdiParent;
                     frm_movimientos_bancarios_2.FormClosed += new FormClosedEventHandler(frm_movimientos_bancarios_2_FormClosed);
                     frm_movimientos_bancarios_2.Show();
                 }

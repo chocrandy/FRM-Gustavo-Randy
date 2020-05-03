@@ -27,7 +27,40 @@ namespace CapaControladorFRM
             }
         }
 
-
+        public decimal obtenerCargoAbono(string cargoAbono, string idCuenta)
+        {
+            decimal saldoCuenta = 0;
+            int idCuentaBank = Int32.Parse(idCuenta);
+            //SELECT COUNT(`monto`) FROM `mov_bancarios` WHERE `id_cuenta_bancaria`=3 AND `cargo_abono`='Cargo' AND `estado`=1 
+            OdbcCommand command = new OdbcCommand("SELECT COUNT(`monto`) FROM `mov_bancarios` " +
+                "WHERE `id_cuenta_bancaria`=" + idCuentaBank +
+                " AND `cargo_abono`='" + cargoAbono + "' AND `estado`=1", conn.conexion("ERP"));
+            //SELECT SUM(`monto`) FROM `mov_bancarios` WHERE `id_cuenta_bancaria`=2 AND `cargo_abono`='Cargo' AND `estado`=1
+            OdbcCommand command2 = new OdbcCommand("SELECT SUM(`monto`) FROM `mov_bancarios` " +
+                "WHERE `id_cuenta_bancaria`=" + idCuentaBank + 
+                " AND `cargo_abono`='" + cargoAbono + "' AND `estado`=1", conn.conexion("ERP"));
+            //READER
+            OdbcDataReader reader = command.ExecuteReader();
+            OdbcDataReader reader2 = command2.ExecuteReader();
+            int count = 0;
+            while (reader.Read())
+            {
+                count = Int32.Parse(reader.GetValue(0).ToString());
+            }            
+            if (count == 0)
+            {
+                saldoCuenta = 0;
+                return saldoCuenta;
+            }
+            else
+            {
+                while (reader2.Read())
+                {
+                    saldoCuenta = Convert.ToDecimal(reader2.GetValue(0).ToString());
+                }
+                return saldoCuenta;
+            }
+        }
         public decimal obtenerDatoApertura(string idCuenta)
         {
             decimal saldoCuenta = 0;

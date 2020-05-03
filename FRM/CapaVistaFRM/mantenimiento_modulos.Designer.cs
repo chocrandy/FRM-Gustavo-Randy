@@ -65,7 +65,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "mantenimiento_modulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Módulos";
+            this.Text = "5204 - Módulos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
