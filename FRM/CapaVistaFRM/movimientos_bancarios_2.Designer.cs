@@ -217,6 +217,7 @@
             // 
             // Cbo_beneRegistrado
             // 
+            this.Cbo_beneRegistrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cbo_beneRegistrado.Enabled = false;
             this.Cbo_beneRegistrado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_beneRegistrado.FormattingEnabled = true;
@@ -278,12 +279,9 @@
             // 
             // Cbo_tipo
             // 
+            this.Cbo_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cbo_tipo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_tipo.FormattingEnabled = true;
-            this.Cbo_tipo.Items.AddRange(new object[] {
-            "Cheque",
-            "Deposito",
-            "Transferencia"});
             this.Cbo_tipo.Location = new System.Drawing.Point(25, 45);
             this.Cbo_tipo.Name = "Cbo_tipo";
             this.Cbo_tipo.Size = new System.Drawing.Size(214, 29);
@@ -337,11 +335,9 @@
             // 
             // Cbo_cargoAbono
             // 
+            this.Cbo_cargoAbono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cbo_cargoAbono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_cargoAbono.FormattingEnabled = true;
-            this.Cbo_cargoAbono.Items.AddRange(new object[] {
-            "Cargo",
-            "Abono"});
             this.Cbo_cargoAbono.Location = new System.Drawing.Point(440, 169);
             this.Cbo_cargoAbono.Name = "Cbo_cargoAbono";
             this.Cbo_cargoAbono.Size = new System.Drawing.Size(209, 29);
@@ -403,6 +399,8 @@
             this.Dgv_detalleDeMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_detalleDeMovimientos.Location = new System.Drawing.Point(12, 31);
             this.Dgv_detalleDeMovimientos.Name = "Dgv_detalleDeMovimientos";
+            this.Dgv_detalleDeMovimientos.ReadOnly = true;
+            this.Dgv_detalleDeMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_detalleDeMovimientos.Size = new System.Drawing.Size(756, 147);
             this.Dgv_detalleDeMovimientos.TabIndex = 29;
             // 
