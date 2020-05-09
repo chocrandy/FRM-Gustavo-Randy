@@ -48,6 +48,7 @@
     <Compile Include="sql-LibroDiario.cs" />
     <Compile Include="sql-libroMayor.cs" />
     <Compile Include="sql-movBancarios.cs" />
+    <Compile Include="sql-tipoCambio.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
