@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Cbo_monedaDe = new System.Windows.Forms.ComboBox();
-            this.Cbo_monedaA = new System.Windows.Forms.ComboBox();
+            this.Cbo_monedaBase = new System.Windows.Forms.ComboBox();
+            this.Cbo_monedaObjetivo = new System.Windows.Forms.ComboBox();
             this.Gpb_consultar = new System.Windows.Forms.GroupBox();
             this.Btn_consultar = new System.Windows.Forms.Button();
             this.Gpb_cambioAlDia = new System.Windows.Forms.GroupBox();
-            this.Lbl_cambioAlDia = new System.Windows.Forms.Label();
+            this.Lbl_resultado = new System.Windows.Forms.Label();
             this.Gpb_consultar.SuspendLayout();
             this.Gpb_cambioAlDia.SuspendLayout();
             this.SuspendLayout();
@@ -70,32 +70,32 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "A: ";
             // 
-            // Cbo_monedaDe
+            // Cbo_monedaBase
             // 
-            this.Cbo_monedaDe.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_monedaDe.FormattingEnabled = true;
-            this.Cbo_monedaDe.Location = new System.Drawing.Point(54, 39);
-            this.Cbo_monedaDe.Name = "Cbo_monedaDe";
-            this.Cbo_monedaDe.Size = new System.Drawing.Size(224, 29);
-            this.Cbo_monedaDe.TabIndex = 4;
-            this.Cbo_monedaDe.Text = "Seleccione moneda";
+            this.Cbo_monedaBase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbo_monedaBase.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_monedaBase.FormattingEnabled = true;
+            this.Cbo_monedaBase.Location = new System.Drawing.Point(54, 39);
+            this.Cbo_monedaBase.Name = "Cbo_monedaBase";
+            this.Cbo_monedaBase.Size = new System.Drawing.Size(224, 29);
+            this.Cbo_monedaBase.TabIndex = 4;
             // 
-            // Cbo_monedaA
+            // Cbo_monedaObjetivo
             // 
-            this.Cbo_monedaA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbo_monedaA.FormattingEnabled = true;
-            this.Cbo_monedaA.Location = new System.Drawing.Point(54, 94);
-            this.Cbo_monedaA.Name = "Cbo_monedaA";
-            this.Cbo_monedaA.Size = new System.Drawing.Size(224, 29);
-            this.Cbo_monedaA.TabIndex = 5;
-            this.Cbo_monedaA.Text = "Seleccione moneda";
+            this.Cbo_monedaObjetivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbo_monedaObjetivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbo_monedaObjetivo.FormattingEnabled = true;
+            this.Cbo_monedaObjetivo.Location = new System.Drawing.Point(54, 94);
+            this.Cbo_monedaObjetivo.Name = "Cbo_monedaObjetivo";
+            this.Cbo_monedaObjetivo.Size = new System.Drawing.Size(224, 29);
+            this.Cbo_monedaObjetivo.TabIndex = 5;
             // 
             // Gpb_consultar
             // 
             this.Gpb_consultar.Controls.Add(this.Btn_consultar);
-            this.Gpb_consultar.Controls.Add(this.Cbo_monedaDe);
+            this.Gpb_consultar.Controls.Add(this.Cbo_monedaBase);
             this.Gpb_consultar.Controls.Add(this.label2);
-            this.Gpb_consultar.Controls.Add(this.Cbo_monedaA);
+            this.Gpb_consultar.Controls.Add(this.Cbo_monedaObjetivo);
             this.Gpb_consultar.Controls.Add(this.label3);
             this.Gpb_consultar.Location = new System.Drawing.Point(22, 78);
             this.Gpb_consultar.Name = "Gpb_consultar";
@@ -121,10 +121,11 @@
             this.Btn_consultar.Text = "Consultar";
             this.Btn_consultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_consultar.UseVisualStyleBackColor = false;
+            this.Btn_consultar.Click += new System.EventHandler(this.Btn_consultar_Click);
             // 
             // Gpb_cambioAlDia
             // 
-            this.Gpb_cambioAlDia.Controls.Add(this.Lbl_cambioAlDia);
+            this.Gpb_cambioAlDia.Controls.Add(this.Lbl_resultado);
             this.Gpb_cambioAlDia.Location = new System.Drawing.Point(350, 78);
             this.Gpb_cambioAlDia.Name = "Gpb_cambioAlDia";
             this.Gpb_cambioAlDia.Size = new System.Drawing.Size(170, 204);
@@ -132,15 +133,15 @@
             this.Gpb_cambioAlDia.TabStop = false;
             this.Gpb_cambioAlDia.Text = "Cambio al día";
             // 
-            // Lbl_cambioAlDia
+            // Lbl_resultado
             // 
-            this.Lbl_cambioAlDia.AutoSize = true;
-            this.Lbl_cambioAlDia.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_cambioAlDia.Location = new System.Drawing.Point(36, 88);
-            this.Lbl_cambioAlDia.Name = "Lbl_cambioAlDia";
-            this.Lbl_cambioAlDia.Size = new System.Drawing.Size(98, 32);
-            this.Lbl_cambioAlDia.TabIndex = 0;
-            this.Lbl_cambioAlDia.Text = "0.0000";
+            this.Lbl_resultado.AutoSize = true;
+            this.Lbl_resultado.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_resultado.Location = new System.Drawing.Point(24, 88);
+            this.Lbl_resultado.Name = "Lbl_resultado";
+            this.Lbl_resultado.Size = new System.Drawing.Size(98, 32);
+            this.Lbl_resultado.TabIndex = 0;
+            this.Lbl_resultado.Text = "0.0000";
             // 
             // tipo_de_cambio
             // 
@@ -170,11 +171,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox Cbo_monedaDe;
-        private System.Windows.Forms.ComboBox Cbo_monedaA;
+        private System.Windows.Forms.ComboBox Cbo_monedaBase;
+        private System.Windows.Forms.ComboBox Cbo_monedaObjetivo;
         private System.Windows.Forms.GroupBox Gpb_consultar;
         private System.Windows.Forms.GroupBox Gpb_cambioAlDia;
-        private System.Windows.Forms.Label Lbl_cambioAlDia;
+        private System.Windows.Forms.Label Lbl_resultado;
         private System.Windows.Forms.Button Btn_consultar;
     }
 }

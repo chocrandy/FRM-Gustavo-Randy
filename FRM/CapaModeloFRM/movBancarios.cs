@@ -45,7 +45,6 @@ namespace CapaModeloFRM
             return tipos;
         }
 
-
         public void AperturaDetalleMov(string cuentaBancariaA, decimal saldoAnteriorA)
         {                        
             //INSERT INTO `mov_bancarios`(`id_mov`, `id_cuenta_bancaria`, `tipo_mov`, `no_referencia`, 
