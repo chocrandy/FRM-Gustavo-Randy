@@ -26,6 +26,7 @@ namespace CapaVistaFRM
         {
             //La idea de usar Adobe Reader salio del siguiente video:
             // https://www.youtube.com/watch?v=H8z8TbpkX5U 
+            /*/
             OpenFileDialog fdlg = new OpenFileDialog();
             fdlg.Title = "Abrir Estado de Cuenta";
             fdlg.InitialDirectory = @"c:\";
@@ -37,7 +38,7 @@ namespace CapaVistaFRM
                 pdfEstadoCuenta.src = fdlg.FileName;
                 //s.insertarBitacora(sUsuario, "Cargo un estado de cuenta", "tbl_conciliacion_bancaria_encabezado");
             }
-
+            /*/
         }
     }
 }

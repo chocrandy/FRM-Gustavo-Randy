@@ -16,5 +16,10 @@ namespace CapaVistaFRM
         {
             InitializeComponent();
         }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "ayudaBancos/ayudaBancos.chm", "revisionDePresupuestos.html");
+        }
     }
 }

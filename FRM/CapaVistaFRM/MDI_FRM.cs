@@ -187,12 +187,12 @@ namespace CapaVistaFRM
         
         private void MDI_FRM_Load(object sender, EventArgs e)
         {
-            /*/
+            
              frm_login login = new frm_login();
              login.ShowDialog();
              Lbl_usuario.Text = login.obtenerNombreUsuario();
-             usuarioActivo = Lbl_usuario.Text; /*/
-             usuarioActivo = "rchocm";
+             usuarioActivo = Lbl_usuario.Text;
+             //usuarioActivo = "rchocm";
         }
 
         private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -347,6 +347,12 @@ namespace CapaVistaFRM
             {
                 frm_mantenimiento_monedas.Activate();
             }
+        }
+
+        private void AyudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "ayudaBancos/ayudaBancos.chm", "mdi_bancos.html");
+            //Help.ShowHelp(this, "C:/Users/Randy/Desktop/UMG/9.no Semestre/Ingeniería de Software/2do Parcial/Proyecto 2/Software/FRM/CapaVistaFRM/bin/Debug/ayudaBancos/ayudaBancos.chm", "mdi_bancos.html");
         }
     }
 }

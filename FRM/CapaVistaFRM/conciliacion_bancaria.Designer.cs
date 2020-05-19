@@ -46,7 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.pdfEstadoCuenta = new AxAcroPDFLib.AxAcroPDF();
+            //this.pdfEstadoCuenta = new AxAcroPDFLib.AxAcroPDF();
             this.Btn_finalizarConciliacion = new System.Windows.Forms.Button();
             this.Btn_abrirEstadoDeCuenta = new System.Windows.Forms.Button();
             this.Btn_abajo = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_libroBancos)).BeginInit();
             this.Gpb_movValidados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_validados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfEstadoCuenta)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pdfEstadoCuenta)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -220,12 +220,12 @@
             // 
             // pdfEstadoCuenta
             // 
-            this.pdfEstadoCuenta.Enabled = true;
-            this.pdfEstadoCuenta.Location = new System.Drawing.Point(836, 140);
-            this.pdfEstadoCuenta.Name = "pdfEstadoCuenta";
-            this.pdfEstadoCuenta.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstadoCuenta.OcxState")));
-            this.pdfEstadoCuenta.Size = new System.Drawing.Size(392, 457);
-            this.pdfEstadoCuenta.TabIndex = 22;
+            //this.pdfEstadoCuenta.Enabled = true;
+            //this.pdfEstadoCuenta.Location = new System.Drawing.Point(836, 140);
+            //this.pdfEstadoCuenta.Name = "pdfEstadoCuenta";
+            //this.pdfEstadoCuenta.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstadoCuenta.OcxState")));
+            //this.pdfEstadoCuenta.Size = new System.Drawing.Size(392, 457);
+            //this.pdfEstadoCuenta.TabIndex = 22;
             // 
             // Btn_finalizarConciliacion
             // 
@@ -300,7 +300,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1254, 643);
             this.Controls.Add(this.Btn_finalizarConciliacion);
-            this.Controls.Add(this.pdfEstadoCuenta);
+            //this.Controls.Add(this.pdfEstadoCuenta);
             this.Controls.Add(this.Btn_abrirEstadoDeCuenta);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -329,7 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_libroBancos)).EndInit();
             this.Gpb_movValidados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_validados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfEstadoCuenta)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pdfEstadoCuenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,7 +357,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Btn_abrirEstadoDeCuenta;
-        private AxAcroPDFLib.AxAcroPDF pdfEstadoCuenta;
+        //private AxAcroPDFLib.AxAcroPDF pdfEstadoCuenta;
         private System.Windows.Forms.Button Btn_finalizarConciliacion;
     }
 }
