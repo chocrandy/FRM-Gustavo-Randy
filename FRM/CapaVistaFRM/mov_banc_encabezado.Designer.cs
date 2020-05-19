@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mov_banc_encabezado));
             this.label1 = new System.Windows.Forms.Label();
             this.Gpb_datos = new System.Windows.Forms.GroupBox();
             this.Cbo_cuentaBancaria = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_siguiente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Gpb_datos.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F);
-            this.label1.Location = new System.Drawing.Point(109, 9);
+            this.label1.Location = new System.Drawing.Point(90, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(347, 36);
             this.label1.TabIndex = 3;
@@ -53,7 +56,7 @@
             this.Gpb_datos.Controls.Add(this.Cbo_cuentaBancaria);
             this.Gpb_datos.Controls.Add(this.label2);
             this.Gpb_datos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Gpb_datos.Location = new System.Drawing.Point(25, 73);
+            this.Gpb_datos.Location = new System.Drawing.Point(41, 80);
             this.Gpb_datos.Name = "Gpb_datos";
             this.Gpb_datos.Size = new System.Drawing.Size(471, 127);
             this.Gpb_datos.TabIndex = 4;
@@ -90,7 +93,7 @@
             this.Btn_siguiente.ForeColor = System.Drawing.Color.Black;
             this.Btn_siguiente.Image = global::CapaVistaFRM.Properties.Resources.search;
             this.Btn_siguiente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_siguiente.Location = new System.Drawing.Point(366, 228);
+            this.Btn_siguiente.Location = new System.Drawing.Point(398, 229);
             this.Btn_siguiente.Name = "Btn_siguiente";
             this.Btn_siguiente.Size = new System.Drawing.Size(130, 47);
             this.Btn_siguiente.TabIndex = 37;
@@ -102,24 +105,36 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(521, 56);
+            this.panel1.Size = new System.Drawing.Size(549, 56);
             this.panel1.TabIndex = 38;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(495, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // mov_banc_encabezado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(521, 288);
+            this.ClientSize = new System.Drawing.Size(549, 288);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Btn_siguiente);
             this.Controls.Add(this.Gpb_datos);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mov_banc_encabezado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "5220 - Movimientos Bancarios";
@@ -128,6 +143,7 @@
             this.Gpb_datos.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,5 +156,6 @@
         private System.Windows.Forms.ComboBox Cbo_cuentaBancaria;
         private System.Windows.Forms.Button Btn_siguiente;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

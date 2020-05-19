@@ -56,5 +56,9 @@ namespace CapaVistaFRM
 
         }
 
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {            
+            Help.ShowHelp(this, "ayudaBancos/ayudaBancos.chm", "tipoDeCambio.html");
+        }
     }
 }
