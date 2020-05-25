@@ -310,3 +310,5 @@ C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Pro
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\Interop.AcroPDFLib.dll
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\Polizas.dll
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 2\Software\FRM\CapaVistaFRM\bin\Debug\Polizas.pdb

@@ -354,5 +354,20 @@ namespace CapaVistaFRM
             Help.ShowHelp(this, "ayudaBancos/ayudaBancos.chm", "mdi_bancos.html");
             //Help.ShowHelp(this, "C:/Users/Randy/Desktop/UMG/9.no Semestre/Ingeniería de Software/2do Parcial/Proyecto 2/Software/FRM/CapaVistaFRM/bin/Debug/ayudaBancos/ayudaBancos.chm", "mdi_bancos.html");
         }
+
+        private void PólizaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Polizas.Polizas poliza = new Polizas.Polizas();
+            poliza.MdiParent = this;
+            poliza.Show();
+            poliza.AsignarQuery(
+                "SELECT 'BANCOS' AS Cuenta, (SELECT ROUND(COALESCE(SUM(A.`saldo`),'0'),2) FROM `cuentas_bancarias` A, `modulos` B " +
+                "WHERE  A.`estado`=1 AND A.`id_modulo` = B.`id_modulo` AND A.fecha_apertura " +
+                "BETWEEN 'FechaI' AND 'FechaF') AS Debe, '0' AS Haber UNION ALL " +
+                "SELECT(concat_ws(' ', 'Cuenta No.', cb.no_cuenta_bancaria)) AS Cuenta, ('0') AS Debe, (cb.`saldo`) AS Haber " +
+                "FROM cuentas_bancarias cb, modulos md WHERE md.id_modulo = cb.id_modulo AND cb.fecha_apertura " +
+                "BETWEEN 'FechaI' AND 'FechaF' AND cb.estado = 1 GROUP BY cb.no_cuenta_bancaria;");
+            poliza.AsignarColores(Color.Firebrick, Color.White);
+        }
     }
 }
