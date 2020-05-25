@@ -369,5 +369,18 @@ namespace CapaVistaFRM
                 "BETWEEN 'FechaI' AND 'FechaF' AND cb.estado = 1 GROUP BY cb.no_cuenta_bancaria;");
             poliza.AsignarColores(Color.Firebrick, Color.White);
         }
+
+        private void CuentasBancariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            try
+            {
+                new reporteCuentasBancarias().Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo Abrir el reporte de Cuentas Bancarias", 
+                    "REPORTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
