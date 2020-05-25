@@ -16,14 +16,14 @@ namespace CapaVistaFRM {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptCuentasBancarias : ReportClass {
+    public class repoCuentasBancarias : ReportClass {
         
-        public rptCuentasBancarias() {
+        public repoCuentasBancarias() {
         }
         
         public override string ResourceName {
             get {
-                return "rptCuentasBancarias.rpt";
+                return "repoCuentasBancarias.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CapaVistaFRM {
         
         public override string FullResourceName {
             get {
-                return "CapaVistaFRM.rptCuentasBancarias.rpt";
+                return "CapaVistaFRM.repoCuentasBancarias.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace CapaVistaFRM {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptCuentasBancarias : Component, ICachedReport {
+    public class CachedrepoCuentasBancarias : Component, ICachedReport {
         
-        public CachedrptCuentasBancarias() {
+        public CachedrepoCuentasBancarias() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace CapaVistaFRM {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptCuentasBancarias rpt = new rptCuentasBancarias();
+            repoCuentasBancarias rpt = new repoCuentasBancarias();
             rpt.Site = this.Site;
             return rpt;
         }

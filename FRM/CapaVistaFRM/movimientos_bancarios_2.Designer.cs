@@ -161,7 +161,7 @@
             this.Dtp_fechaMov.CustomFormat = "yyyy-MM-dd";
             this.Dtp_fechaMov.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dtp_fechaMov.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp_fechaMov.Location = new System.Drawing.Point(277, 47);
+            this.Dtp_fechaMov.Location = new System.Drawing.Point(306, 47);
             this.Dtp_fechaMov.Name = "Dtp_fechaMov";
             this.Dtp_fechaMov.Size = new System.Drawing.Size(194, 27);
             this.Dtp_fechaMov.TabIndex = 15;
@@ -171,7 +171,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(273, 23);
+            this.label5.Location = new System.Drawing.Point(302, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 19);
             this.label5.TabIndex = 3;
@@ -209,7 +209,7 @@
             // Chk_registrado
             // 
             this.Chk_registrado.AutoSize = true;
-            this.Chk_registrado.Location = new System.Drawing.Point(541, 108);
+            this.Chk_registrado.Location = new System.Drawing.Point(570, 108);
             this.Chk_registrado.Name = "Chk_registrado";
             this.Chk_registrado.Size = new System.Drawing.Size(139, 25);
             this.Chk_registrado.TabIndex = 45;
@@ -230,7 +230,7 @@
             // 
             // Txt_beneNoRegistrado
             // 
-            this.Txt_beneNoRegistrado.Location = new System.Drawing.Point(277, 108);
+            this.Txt_beneNoRegistrado.Location = new System.Drawing.Point(306, 108);
             this.Txt_beneNoRegistrado.Name = "Txt_beneNoRegistrado";
             this.Txt_beneNoRegistrado.Size = new System.Drawing.Size(226, 27);
             this.Txt_beneNoRegistrado.TabIndex = 42;
@@ -239,14 +239,14 @@
             // 
             this.Txt_descripcion.Location = new System.Drawing.Point(25, 169);
             this.Txt_descripcion.Name = "Txt_descripcion";
-            this.Txt_descripcion.Size = new System.Drawing.Size(377, 27);
+            this.Txt_descripcion.Size = new System.Drawing.Size(313, 27);
             this.Txt_descripcion.TabIndex = 43;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(273, 86);
+            this.label8.Location = new System.Drawing.Point(302, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(221, 19);
             this.label8.TabIndex = 40;
@@ -264,7 +264,7 @@
             // 
             // Txt_referencia
             // 
-            this.Txt_referencia.Location = new System.Drawing.Point(533, 47);
+            this.Txt_referencia.Location = new System.Drawing.Point(562, 47);
             this.Txt_referencia.Name = "Txt_referencia";
             this.Txt_referencia.Size = new System.Drawing.Size(169, 27);
             this.Txt_referencia.TabIndex = 40;
@@ -273,7 +273,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(529, 23);
+            this.label6.Location = new System.Drawing.Point(558, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 19);
             this.label6.TabIndex = 39;
@@ -309,7 +309,7 @@
             this.Btn_registrar.ForeColor = System.Drawing.Color.Black;
             this.Btn_registrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_registrar.Image")));
             this.Btn_registrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn_registrar.Location = new System.Drawing.Point(774, 26);
+            this.Btn_registrar.Location = new System.Drawing.Point(777, 138);
             this.Btn_registrar.Name = "Btn_registrar";
             this.Btn_registrar.Size = new System.Drawing.Size(95, 67);
             this.Btn_registrar.TabIndex = 36;
@@ -320,7 +320,7 @@
             // 
             // Txt_monto
             // 
-            this.Txt_monto.Location = new System.Drawing.Point(685, 169);
+            this.Txt_monto.Location = new System.Drawing.Point(589, 169);
             this.Txt_monto.Name = "Txt_monto";
             this.Txt_monto.Size = new System.Drawing.Size(169, 27);
             this.Txt_monto.TabIndex = 27;
@@ -329,7 +329,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(680, 147);
+            this.label12.Location = new System.Drawing.Point(584, 147);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(61, 19);
             this.label12.TabIndex = 26;
@@ -340,7 +340,7 @@
             this.Cbo_cargoAbono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cbo_cargoAbono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_cargoAbono.FormattingEnabled = true;
-            this.Cbo_cargoAbono.Location = new System.Drawing.Point(440, 169);
+            this.Cbo_cargoAbono.Location = new System.Drawing.Point(359, 169);
             this.Cbo_cargoAbono.Name = "Cbo_cargoAbono";
             this.Cbo_cargoAbono.Size = new System.Drawing.Size(209, 29);
             this.Cbo_cargoAbono.TabIndex = 23;
@@ -349,7 +349,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(436, 147);
+            this.label10.Location = new System.Drawing.Point(355, 147);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(122, 19);
             this.label10.TabIndex = 22;

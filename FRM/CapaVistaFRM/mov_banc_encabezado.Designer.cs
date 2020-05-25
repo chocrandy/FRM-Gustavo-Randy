@@ -77,11 +77,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 32);
+            this.label2.Location = new System.Drawing.Point(73, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(405, 19);
+            this.label2.Size = new System.Drawing.Size(323, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Cuenta Bancaria donde va registrar el movimiento:";
+            this.label2.Text = "Cuenta Bancaria que deseamos afectar:";
             // 
             // Btn_siguiente
             // 

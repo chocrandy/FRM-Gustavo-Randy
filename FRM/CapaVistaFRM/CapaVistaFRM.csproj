@@ -42,10 +42,10 @@
     <Reference Include="CapaDiseno">
       <HintPath>..\..\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="itextsharp">
       <HintPath>..\itextsharp.dll</HintPath>
     </Reference>
@@ -155,6 +155,12 @@
     <Compile Include="movimientos_bancarios_2.Designer.cs">
       <DependentUpon>movimientos_bancarios_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="repoCuentasBancarias.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>repoCuentasBancarias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="reporteCuentasBancarias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,12 +195,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="rptCuentasBancarias.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptCuentasBancarias.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="tipo_de_cambio.cs">
       <SubType>Form</SubType>
@@ -266,6 +266,10 @@
     <EmbeddedResource Include="movimientos_bancarios_2.resx">
       <DependentUpon>movimientos_bancarios_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="repoCuentasBancarias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>repoCuentasBancarias.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="reporteCuentasBancarias.resx">
       <DependentUpon>reporteCuentasBancarias.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,10 +289,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rptCuentasBancarias.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptCuentasBancarias.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="tipo_de_cambio.resx">
       <DependentUpon>tipo_de_cambio.cs</DependentUpon>
