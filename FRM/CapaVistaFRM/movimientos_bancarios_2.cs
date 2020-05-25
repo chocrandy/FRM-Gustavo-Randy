@@ -27,7 +27,8 @@ namespace CapaVistaFRM
             registro();
             llenarDetalleMovBank();
             verificarApertura();
-            llenarCargoAbono();
+            llenarCargoAbono();            
+            Dtp_fechaMov.Value = DateTime.Today;
         }
 
         void llenarCargoAbono()

@@ -23,8 +23,8 @@ namespace CapaModeloFRM
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo Consultar el Tipo de Cambio. \n\n Error: "
-                    + ex + "", "TIPO DE CAMBIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(" No se pudo Consultar el Tipo de Cambio. \n El servidor no responde. ", 
+                    "TIPO DE CAMBIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return resultado;
         }

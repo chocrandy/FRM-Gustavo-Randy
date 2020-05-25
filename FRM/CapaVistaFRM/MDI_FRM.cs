@@ -30,8 +30,9 @@ namespace CapaVistaFRM
 		private mantenimiento_tipos_cuentas_contables frm_tipo_cuentas_contables;
 		private cuentas_contables frm_cuentas_contables;
 		private libro_Diario frm_libro_diario;
+        private reporteCuentasBancarias frm_reporteCuentasBancarias;
 
-		sentencia sn = new sentencia();
+        sentencia sn = new sentencia();
 		String usuarioActivo = "rchocm";
         public MDI_FRM()
         {
@@ -74,9 +75,11 @@ namespace CapaVistaFRM
 		{ frm_cuentas_contables = null; }
 		private void frm_libro_diario_FormClosed(Object sender, FormClosedEventArgs e)
 		{ frm_libro_diario = null; }
-		//====================Funciones de declaración de Eventos====================
+        private void frm_reporteCuentasBancarias_FormClosed(Object sender, FormClosedEventArgs e)
+        { frm_reporteCuentasBancarias = null; }
+        //====================Funciones de declaración de Eventos====================
 
-		private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
         {            
             //CONCILICACIÓN BANCARIA
             if (frm_conciliacion_bancaria == null)
@@ -374,13 +377,24 @@ namespace CapaVistaFRM
         {            
             try
             {
-                new reporteCuentasBancarias().Show();
+                //REPORTE - CUENTAS BANCARIAS
+                if (frm_reporteCuentasBancarias == null)
+                {
+                    frm_reporteCuentasBancarias = new reporteCuentasBancarias();
+                    frm_reporteCuentasBancarias.MdiParent = this;
+                    frm_reporteCuentasBancarias.FormClosed += new FormClosedEventHandler(frm_reporteCuentasBancarias_FormClosed);
+                    frm_reporteCuentasBancarias.Show();
+                }
+                else
+                {
+                    frm_reporteCuentasBancarias.Activate();
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("No se pudo Abrir el reporte de Cuentas Bancarias", 
                     "REPORTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }            
         }
     }
 }
